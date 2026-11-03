@@ -27,6 +27,9 @@ jobs:
       - name: Fetch government vacancies (NCS)
         run: python3 pipeline/fetch_ncs.py
 
+      - name: Fetch ESIC hospital recruitment notices
+        run: python3 pipeline/fetch_esic.py
+
       - name: Fetch employer career pages (pharma / hospitals)
         run: python3 pipeline/fetch_employers.py
 
