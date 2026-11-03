@@ -31,7 +31,7 @@ pipeline/sources.json       which employer boards to poll
 .github/workflows/          daily refresh on GitHub Actions
 ```
 
-Current contents: **229 listings across 44 fields**, of which **17 are real** — 7 live postings from employer job boards and 10 government vacancies taken from the official NCS portal with the notification PDF link. **The other 212 are marked `"sample": 1`** and labelled "Sample — demo listing" on every card; tick "Hide sample listings" to see only the real ones., 18 worker profiles,
+Current contents: **17 listings, all real** — 7 live postings from employer job boards (each opening the employer's own apply page) and 10 government vacancies from the official NCS portal with the notification PDF link. **There is no sample or demo data on the site.** The 225 hand-written sample listings, the fabricated worker profiles and the illustrative reviews were removed on 3 Nov 2026 and archived in `data/samples-archive.json`, which the build never reads., 18 worker profiles,
 16 free-course platforms, 9 workplace reviews, 12 official government portals.
 
 ## The two ways to change data
@@ -138,8 +138,8 @@ A custom domain is the only cost: roughly ₹700–1,200 a year.
 
 ## Honest status
 
-- 17 listings are real and verifiable; 212 are samples and labelled as samples in
-  the UI and in the data (`"sample": 1`). Nothing sample is presented as live.
+- All 17 listings are real and verifiable. No sample, demo or example vacancy is
+  rendered anywhere on the site.
 - The "safe workplace" and "verified employer" badges are removed from the UI and
   the filters are gone until an employer has actually been checked.
 - Government links: real, official portals (`*.gov.in` / `*.nic.in`).
