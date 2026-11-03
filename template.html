@@ -62,6 +62,38 @@
   .chip:hover{border-color:#c7d6f8;color:var(--brand)}
   .chip.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
 
+
+  /* ---------- landing ---------- */
+  .eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--green-soft);color:#0f766e;
+    font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;margin-bottom:12px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:9px;margin:4px 0 16px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 13px}
+  .stat b{display:block;font-size:19px;letter-spacing:-.5px;line-height:1.2}
+  .stat span{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+  .liveband{background:linear-gradient(135deg,#0b1220,#16263c);border-radius:16px;padding:15px 17px;
+    margin:0 0 18px;color:#fff}
+  .liveband .dot{width:8px;height:8px;border-radius:50%;background:#22c55e;display:inline-block;
+    box-shadow:0 0 0 4px rgba(34,197,94,.18);animation:pulse 2s infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 7px rgba(34,197,94,.08)}}
+  .lrow{display:flex;gap:10px;overflow-x:auto;padding:12px 2px 2px;scrollbar-width:thin}
+  .ljob{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:12px;
+    padding:11px 13px;min-width:245px;flex:none}
+  .landh{font-size:14px;margin:0 0 10px;letter-spacing:-.2px}
+  .tiles{display:grid;grid-template-columns:repeat(auto-fill,minmax(136px,1fr));gap:9px;margin-bottom:22px}
+  .tile{background:#fff;border:1px solid var(--line);border-radius:12px;padding:11px 12px;
+    cursor:pointer;transition:.15s}
+  .tile:hover{border-color:#c7d6f8;transform:translateY(-2px);box-shadow:var(--shadow)}
+  .tile .em{font-size:17px;line-height:1}
+  .tile b{display:block;font-size:12.5px;margin-top:7px;line-height:1.3}
+  .tile span{font-size:11px;color:var(--muted)}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:11px;margin-bottom:26px}
+  .step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}
+  .step .num{width:23px;height:23px;border-radius:7px;background:var(--brand-soft);color:var(--brand-d);
+    font-weight:800;font-size:12px;display:grid;place-items:center;margin-bottom:8px}
+  .step b{font-size:13.5px}
+  .step p{margin:4px 0 0;font-size:12.5px;color:var(--body)}
+  .f-live{background:#0b1220;color:#7dd3fc}
+
   /* ---------- layout ---------- */
   main{padding:22px 0 70px;min-height:60vh}
   .split{display:grid;grid-template-columns:240px 1fr;gap:22px;align-items:start}
@@ -175,6 +207,7 @@
 
 <div class="hero">
   <div class="wrap">
+    <div class="eyebrow">● Free for job seekers — no fees, no middleman, ever</div>
     <h1>Work that fits <em>your course, your skill, your age</em> — not just your degree</h1>
     <p>Freshers, final-year students, ITI and diploma holders, 10th/12th pass, certificate-course students, music and art teachers, people between jobs, and daily-wage workers. Government, private, internships, gigs and local work — all in one free search.</p>
     <div class="search">
@@ -201,6 +234,21 @@
 
     <!-- ============ JOBS ============ -->
     <section id="v-jobs">
+      <div class="stats" id="stats"></div>
+      <div class="liveband" id="liveband"></div>
+
+      <h3 class="landh">Browse by field</h3>
+      <div class="tiles" id="tiles"></div>
+
+      <div class="steps">
+        <div class="step"><div class="num">1</div><b>Search your course, not your degree</b>
+          <p>DMLT, B.Sc Nursing, ITI Welder, tabla teacher, B.Com, LLB, 10th pass — every field has its own door.</p></div>
+        <div class="step"><div class="num">2</div><b>Check who is safe to join</b>
+          <p>Filter to safe-workplace badge and zero application fee. Read what past employees said before you travel.</p></div>
+        <div class="step"><div class="num">3</div><b>Apply at the source</b>
+          <p>Live jobs open the employer's own page. Government jobs open the official portal. We never take money from you.</p></div>
+      </div>
+
       <div class="split">
         <aside class="panel">
           <div class="fg">
@@ -254,6 +302,10 @@
             Try removing a filter, or search a broader word like “nurse”, “technician” or “tailor”.</div>
         </div>
       </div>
+
+      <h3 class="landh" style="margin-top:34px">Company career portals — apply directly, no middleman</h3>
+      <p class="secsub">These open the employer's own careers page, which is where freshers actually get hired — not a third-party form. If a link has moved, search the company name plus “careers”.</p>
+      <div class="cards" id="careerCards"></div>
     </section>
 
     <!-- ============ INTERNSHIPS ============ -->
@@ -474,6 +526,7 @@ function card(j){
     <div class="flags">
       ${j.safe?'<span class="flag f-safe">Safe workplace</span>':'<span class="flag" style="background:#f1f5f9;color:#64748b">Not yet reviewed</span>'}
       ${j.ver?'<span class="flag f-ver">Verified employer</span>':''}
+      ${j.live?'<span class="flag f-live">● Live · apply direct</span>':''}
       ${j.days<=2?'<span class="flag f-new">New</span>':''}
       ${j.intern==="unpaid"?'<span class="flag" style="background:#fff7ed;color:#c2410c">Unpaid + certificate</span>':''}
     </div>
@@ -596,6 +649,104 @@ $("#postForm").addEventListener("submit", e=>{
   $("#postForm").reset();
   toast("Submitted. Thank you!");
 });
+
+
+/* ============================================================
+   LANDING + CAREER PORTALS
+   ============================================================ */
+const EMO = {"Medical":"🩺","Nursing":"💉","Paramedical":"🔬","Pharmacy":"💊","Engineering":"⚙️",
+"IT & Data":"💻","Cyber Security":"🛡️","Teaching":"📚","Government":"🏛️","Gig & Local":"🧰",
+"Music & Performing Arts":"🎸","Creative":"🎨","Film & Media":"🎬","Commerce":"🧾",
+"Commerce & Accounts":"🧾","Law":"⚖️","Agriculture":"🌾","Hospitality & Travel":"🏨",
+"Beauty & Wellness":"💅","Sports & Fitness":"🏋️","Aviation":"✈️","Automotive":"🚗",
+"Design & Creative":"🎨","Animation & Gaming":"🕹️","Architecture & Interior":"📐",
+"Banking & Insurance":"🏦","Logistics & Supply Chain":"📦","Event Management":"🎪",
+"Social Work & NGO":"🤝","Psychology & Counselling":"🧠","Nutrition & Dietetics":"🥗",
+"Food & Dairy":"🥛","Fashion & Textile":"👗","Veterinary":"🐾","Dentistry":"🦷","AYUSH":"🌿",
+"Biotechnology":"🧬","Drone & Robotics":"🛸","Environment":"🌱","Public Health & Admin":"🏥",
+"BPO & Customer Support":"🎧","HR":"👥","Sales & Marketing":"📈","Management":"📊",
+"Research":"🔭","Defence & Police":"🎖️"};
+
+$("#stats").innerHTML = [
+  [JOBS.length,"open listings"],[ALL_FIELDS.length,"fields covered"],
+  [LIVE.length,"live right now"],[WORKERS.length,"worker profiles"],
+  [COURSES.length,"free courses"],[GOVT.length,"govt portals"]
+].map(([n,l])=>`<div class="stat"><b>${n}</b><span>${l}</span></div>`).join("");
+
+$("#liveband").innerHTML = LIVE.length ? `
+  <div style="display:flex;align-items:center;gap:9px;flex-wrap:wrap">
+    <span class="dot"></span>
+    <strong style="font-size:13.5px">Live right now — pulled from employer job boards</strong>
+    <span style="margin-left:auto;font-size:11.5px;opacity:.65">Fetched ${LIVE_DATE}</span>
+  </div>
+  <div class="lrow">${LIVE.map(j=>`
+    <div class="ljob">
+      <div style="font-size:13.5px;font-weight:700;line-height:1.3">${esc(j.t)}</div>
+      <div style="font-size:11.5px;opacity:.75;margin-top:3px">${esc(j.o)} · ${esc(j.city)} · ${esc(j.mode)}</div>
+      <a href="${j.url}" target="_blank" rel="noopener"
+         style="display:inline-block;margin-top:9px;font-size:12.5px;font-weight:700;color:#7dd3fc">Apply on employer site →</a>
+    </div>`).join("")}</div>`
+  : `<div style="font-size:13px;opacity:.8">The live feed is empty right now — the daily data job refills it. Scroll down for all listings.</div>`;
+
+const topTiles = Object.entries(FIELD_COUNTS).sort((a,b)=>b[1]-a[1]).slice(0,11);
+$("#tiles").innerHTML = topTiles.map(([f,n])=>`
+    <div class="tile" data-tile="${esc(f)}"><div class="em">${EMO[f]||"🧭"}</div>
+      <b>${esc(f)}</b><span>${n} openings</span></div>`).join("")
+  + `<div class="tile" data-tile="All"><div class="em">🗂️</div><b>All ${ALL_FIELDS.length} fields</b>
+      <span>${JOBS.length} openings</span></div>`;
+
+$("#tiles").addEventListener("click", e=>{
+  const tile = e.target.closest("[data-tile]"); if(!tile) return;
+  state.cat = tile.dataset.tile;
+  syncChips();
+  const f = $("#field"); if(f) f.value = state.cat;
+  renderJobs();
+  document.querySelector(".split").scrollIntoView({behavior:"smooth", block:"start"});
+});
+
+const CAREERS = [
+  ["Tata Consultancy Services","Fresher hiring through TCS NextStep — the national test route","https://nextstep.tcs.com/","IT services"],
+  ["Infosys","Careers and fresher hiring, including off-campus drives","https://www.infosys.com/careers.html","IT services"],
+  ["Wipro","Careers portal, fresher and lateral roles","https://careers.wipro.com/","IT services"],
+  ["HCLTech","Careers and graduate hiring","https://www.hcltech.com/careers","IT services"],
+  ["Accenture India","Campus and experienced hiring across India","https://www.accenture.com/in-en/careers","Consulting / IT"],
+  ["Cognizant","Careers portal, fresher programmes","https://careers.cognizant.com/global/en","IT services"],
+  ["Amazon India","All India roles, including operations and support","https://www.amazon.jobs/en/locations/india","E-commerce"],
+  ["Flipkart","Careers — tech, operations, supply chain","https://www.flipkartcareers.com/","E-commerce"],
+  ["Myntra","Fashion tech and operations roles","https://careers.myntra.com/","E-commerce"],
+  ["Swiggy","Corporate and operations hiring","https://careers.swiggy.com/","Food tech"],
+  ["Zomato","Corporate roles across functions","https://www.zomato.com/careers","Food tech"],
+  ["PhonePe","Engineering, product and operations","https://www.phonepe.com/careers/","Fintech"],
+  ["Razorpay","Engineering, sales and support","https://razorpay.com/jobs/","Fintech"],
+  ["Zoho","Engineering and support roles, strong fresher intake","https://www.zoho.com/careers/","Product / SaaS"],
+  ["Freshworks","Engineering, support and sales","https://www.freshworks.com/company/careers/","Product / SaaS"],
+  ["Apollo Hospitals","Clinical, nursing and paramedical hiring","https://www.apollohospitals.com/careers","Hospital"],
+  ["Fortis Healthcare","Nursing, paramedical and administration","https://www.fortishealthcare.com/careers","Hospital"],
+  ["Max Healthcare","Nursing, technician and support roles","https://www.maxhealthcare.in/careers","Hospital"],
+  ["Manipal Hospitals","Clinical and paramedical careers","https://www.manipalhospitals.com/careers/","Hospital"],
+  ["Narayana Health","Nursing and allied health hiring","https://www.narayanahealth.org/careers","Hospital"],
+  ["Dr Lal PathLabs","Lab technician and phlebotomist roles","https://www.lalpathlabs.com/careers","Diagnostics"],
+  ["Cipla","Pharma manufacturing, QA and QC","https://www.cipla.com/careers","Pharma"],
+  ["Sun Pharma","Production, QA/QC and research","https://www.sunpharma.com/careers","Pharma"],
+  ["Dr Reddy's Laboratories","Pharma and biotech roles","https://www.drreddys.com/careers","Pharma"],
+  ["Biocon","Biotech and pharma manufacturing","https://www.biocon.com/careers","Biotech"],
+  ["Larsen & Toubro","Engineering, site and diploma-level roles","https://www.larsentoubro.com/corporate/careers/","Engineering"],
+  ["Tata Motors","Engineering, production and technician roles","https://www.tatamotors.com/careers/","Automotive"],
+  ["Bosch India","Engineering and ITI/diploma technician roles","https://www.bosch.in/careers/","Automotive"],
+  ["Ashok Leyland","Engineering and plant roles","https://www.ashokleyland.com/careers","Automotive"],
+  ["Reliance Retail","Store, warehouse and corporate roles","https://careers.ril.com/","Retail"],
+  ["DMart","Store operations and back office","https://www.dmartindia.com/careers","Retail"],
+  ["Delhivery","Logistics operations and tech","https://www.delhivery.com/careers","Logistics"],
+  ["Urban Company","Field technician and partner roles","https://www.urbancompany.com/careers","Services"],
+  ["Nykaa","Retail, beauty advisors and corporate","https://www.nykaa.com/careers","Retail"],
+];
+
+$("#careerCards").innerHTML = CAREERS.map(([n,d,u,tag])=>`
+  <div class="c">
+    <div class="row"><h4>${esc(n)}</h4><span class="pill">${esc(tag)}</span></div>
+    <p>${esc(d)}</p>
+    <a class="link" href="${u}" target="_blank" rel="noopener">Official careers page →</a>
+  </div>`).join("");
 
 /* first paint */
 renderJobs();
