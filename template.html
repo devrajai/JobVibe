@@ -63,6 +63,13 @@
   .chip.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
 
 
+  /* ---------- urgent mode + similar roles ---------- */
+  .btn.urgent{background:#b45309;display:inline-flex;align-items:center;gap:6px}
+  .btn.urgent:hover{background:#92400e}
+  .btn.urgent.on{background:#7c2d12;box-shadow:0 0 0 3px #fed7aa}
+  .similar{font-size:11.5px;color:var(--muted);border-top:1px dashed #eef2f7;padding-top:8px;margin-top:2px}
+  .similar b{color:#475569;font-weight:600}
+
   /* ---------- landing ---------- */
   .eyebrow{display:inline-flex;align-items:center;gap:7px;background:var(--green-soft);color:#0f766e;
     font-size:12px;font-weight:700;padding:5px 11px;border-radius:999px;margin-bottom:12px}
@@ -224,6 +231,7 @@
         <option value="any">No degree needed</option>
       </select>
       <button class="btn" id="searchBtn">Search jobs</button>
+      <button class="btn urgent" id="urgentBtn" title="Daily-wage, gig and paid internship work">⚡ I need money this week</button>
     </div>
     <div class="chips" id="chips"></div>
   </div>
@@ -234,6 +242,7 @@
 
     <!-- ============ JOBS ============ -->
     <section id="v-jobs">
+      <div class="note hide" id="urgentNote"></div>
       <div class="stats" id="stats"></div>
       <div class="liveband" id="liveband"></div>
 
@@ -299,7 +308,7 @@
           </div>
           <div class="grid" id="jgrid"></div>
           <div class="empty hide" id="jempty"><b>Nothing matches that combination yet</b>
-            Try removing a filter, or search a broader word like “nurse”, “technician” or “tailor”.</div>
+            <span id="jemptyMsg">Try removing a filter, or search a broader word like “nurse”, “technician” or “tailor”.</span></div>
         </div>
       </div>
 
@@ -420,7 +429,7 @@ const TABS = [
   ["v-gig","Local & daily work"],["v-workers","Hire a worker"],
   ["v-courses","Free courses"],["v-reviews","Reviews & safety"],["v-post","Post a job"]
 ];
-const state = {q:"",cat:"All",city:"",edu:"",pay:"",types:[],modes:[],safe:false,ver:false,fresh:false,nofee:true,sort:"new",trade:"All"};
+const state = {q:"",cat:"All",city:"",edu:"",pay:"",types:[],modes:[],safe:false,ver:false,fresh:false,nofee:true,sort:"new",trade:"All",urgent:false};
 let SAVED = new Set(JSON.parse(localStorage.getItem("kaamsetu_saved") || "[]"));
 
 function toast(msg){
@@ -466,12 +475,45 @@ $("#chips").addEventListener("click", e=>{
 /* city + edu selects */
 const cities = [...new Set(JOBS.map(j=>j.city))].sort();
 $("#city").innerHTML = `<option value="">All cities</option>` + cities.map(c=>`<option>${c}</option>`).join("");
-$("#q").addEventListener("input", e=>{ state.q = e.target.value.toLowerCase().trim(); renderJobs(); });
+$("#q").addEventListener("input", e=>{
+  const raw = e.target.value;
+  state.q = raw.toLowerCase().trim();
+
+  // a city typed inside the sentence becomes the city filter
+  const city = detectCity(raw);
+  if(city){
+    state.city = city; state.autoCity = true;
+    $("#city").value = city;
+  } else if(state.autoCity){
+    state.city = ""; state.autoCity = false; $("#city").value = "";
+  }
+
+  // "work from home" switches the work-mode filter on
+  if(REMOTE_PHRASE.test(raw)){
+    state.modes = ["Remote"];
+    document.querySelectorAll(".fmode").forEach(c => { if(c.value === "Remote") c.checked = true; });
+  }
+  renderJobs();
+});
 $("#city").addEventListener("change", e=>{ state.city = e.target.value; renderJobs(); });
 $("#edu").addEventListener("change", e=>{ state.edu = e.target.value; renderJobs(); });
 $("#pay").addEventListener("change", e=>{ state.pay = e.target.value; renderJobs(); });
 $("#sort").addEventListener("change", e=>{ state.sort = e.target.value; renderJobs(); });
 $("#searchBtn").addEventListener("click", ()=>{ go("v-jobs"); renderJobs(); });
+$("#urgentBtn").addEventListener("click", ()=>{
+  state.urgent = !state.urgent;
+  $("#urgentBtn").classList.toggle("on", state.urgent);
+  go("v-jobs");
+  const note = $("#urgentNote");
+  note.classList.toggle("hide", !state.urgent);
+  note.innerHTML = state.urgent
+    ? `<b>Money-this-week mode:</b> showing only daily-wage, gig and paid internship work, highest pay first.
+       <a href="#" id="urgentOff" style="color:#b45309;font-weight:700">Turn off</a>`
+    : "";
+  const off = $("#urgentOff");
+  if(off) off.addEventListener("click", e => { e.preventDefault(); $("#urgentBtn").click(); });
+  renderJobs();
+});
 $$(".ftype").forEach(c=>c.addEventListener("change",()=>{ state.types = $$(".ftype:checked").map(x=>x.value); renderJobs(); }));
 $$(".fmode").forEach(c=>c.addEventListener("change",()=>{ state.modes = $$(".fmode:checked").map(x=>x.value); renderJobs(); }));
 $("#safeOnly").addEventListener("change", e=>{ state.safe = e.target.checked; renderJobs(); });
@@ -501,12 +543,119 @@ function matches(j){
   if(state.safe && !j.safe) return false;
   if(state.ver && !j.ver) return false;
   if(state.fresh && j.exp > 0) return false;
-  if(state.q){
-    const hay = (j.t+" "+j.o+" "+j.cat+" "+j.city+" "+j.sk.join(" ")+" "+j.type).toLowerCase();
-    if(!hay.includes(state.q)) return false;
-  }
+  if(state.q && !smartMatch(state.q, j)) return false;
   return true;
 }
+
+/* ---- Hinglish, spelling-tolerant search -------------------------------
+   "nars" -> nurse, "electrishan" -> electrician, "darzi" -> tailor.
+   Anything not in SYN falls back to prefix + one-letter-edit matching,
+   which is what actually catches typos people type on a phone. */
+const SYN = {
+  nars:"nurse", narse:"nurse", narsing:"nurse", nursing:"nurse", nurse:"nurse",
+  daktar:"doctor", daktr:"doctor", dr:"doctor", compounder:"pharmacist",
+  darzi:"tailor", darji:"tailor", silai:"tailor", tailor:"tailor", darjii:"tailor",
+  electrishan:"electrician", electrican:"electrician", bijli:"electrician",
+  plambar:"plumber", plamer:"plumber", mistri:"mason", raj:"mason",
+  tution:"tuition", tuition:"tuition", shikshak:"teacher", adhyapak:"teacher",
+  chalak:"driver", gaadi:"driver", safai:"housekeeping", jhadu:"housekeeping",
+  khana:"cook", maharaj:"cook", rasoi:"cook", hisaab:"accounts",
+  sarkari:"government", govt:"government", sarakari:"government",
+  naukri:"", kaam:"", job:"", vacancy:"", bharti:"",
+  dawai:"pharmacy", medical:"medical", hospital:"hospital",
+  lab:"lab", pathalogy:"pathology", pathology:"pathology",
+  computer:"computer", mobile:"mobile", silaai:"tailor",
+};
+
+function lev(a, b){
+  if(Math.abs(a.length - b.length) > 1) return 2;
+  let prev = Array.from({length: b.length + 1}, (_, i) => i);
+  for(let i = 1; i <= a.length; i++){
+    const cur = [i];
+    for(let j = 1; j <= b.length; j++){
+      cur[j] = Math.min(prev[j] + 1, cur[j-1] + 1, prev[j-1] + (a[i-1] === b[j-1] ? 0 : 1));
+    }
+    prev = cur;
+  }
+  return prev[b.length];
+}
+
+function haystack(j){
+  return (j.t + " " + j.o + " " + j.cat + " " + j.city + " " + j.sk.join(" ") + " " + j.type)
+    .toLowerCase().replace(/[.]/g, "");          // "b.sc" -> "bsc" so "bsc" matches
+}
+
+/* words that carry no meaning for matching: "BSc nursing fresher Vadodara
+   night shift" should search "bsc nursing", not all six words */
+const STOP = new Set(["job","jobs","vacancy","vacancies","opening","openings","fresher",
+  "freshers","experienced","in","near","at","for","the","a","an","and","or","shift",
+  "night","day","urgent","immediately","any","work","me","my","i","want","need","with",
+  "kaam","naukri","bharti","please","new","from","home","ghar","se","wfh",
+  "remote","online","hybrid","office"]);
+const REMOTE_PHRASE = /work\s*from\s*home|from\s*home|ghar\s*se|wfh|\bremote\b/;
+const CITY_ALIAS = {"bangalore":"Bengaluru","bombay":"Mumbai","gurgaon":"Gurugram",
+  "calcutta":"Kolkata","madras":"Chennai","cochin":"Kochi","baroda":"Vadodara",
+  "poona":"Pune","benares":"Varanasi","new delhi":"Delhi"};
+
+function detectCity(q){
+  const lower = q.toLowerCase();
+  const known = (typeof cities !== "undefined" ? cities : []);
+  for(const c of known){
+    if(c === "Remote" || c === "All India") continue;
+    if(lower.includes(c.toLowerCase())) return c;
+  }
+  for(const [alias, real] of Object.entries(CITY_ALIAS)){
+    if(lower.includes(alias) && known.includes(real)) return real;
+  }
+  return "";
+}
+
+const CITY_WORDS = new Set([].concat(
+  (typeof cities !== "undefined" ? cities : []).map(c => c.toLowerCase()),
+  ["bangalore","bombay","gurgaon","calcutta","madras","cochin","baroda","poona","benares","new delhi"]
+));
+
+function parseQuery(q){
+  return q.toLowerCase().replace(/[.]/g, "").split(/\s+/).filter(Boolean)
+    .filter(w => !STOP.has(w) && !CITY_WORDS.has(w));
+}
+
+/* returns a weight: 2 = exact word found, 1 = near miss (stem/prefix/typo), 0 = no */
+function tokenMatch(raw, hay, words){
+  const tok = SYN.hasOwnProperty(raw) ? SYN[raw] : raw;
+  if(!tok) return 2;                                     // filler word, ignore
+  // whole-word match only — "nurse" must not match "nursery"
+  if(words.includes(tok) || hay.includes(" " + tok + " ")) return 2;
+  if(tok.length < 4) return 0;
+
+  // stem: accountant -> account, teachers -> teacher
+  const stem = tok.replace(/(ant|ent|ing|ers|er|ed|s)$/, "");
+  if(stem.length >= 4 && (words.includes(stem) || hay.includes(" " + stem + " ")
+     || words.some(w => w.startsWith(stem)))) return 1;   // "accountant" -> "accounts"
+
+  // short tokens may be prefixes (lab -> laboratory, iti, ac); long ones may not
+  if(tok.length <= 4 && words.some(w => w.startsWith(tok))) return 1;
+  if(words.some(w => lev(tok, w) <= 1)) return 1;                        // one typo
+  return 0;
+}
+
+function scoreJob(tokens, j){
+  if(!tokens.length) return 0;
+  const hay = haystack(j), words = hay.split(/[^a-z0-9]+/).filter(Boolean);
+  return tokens.reduce((n, t) => n + tokenMatch(t, hay, words), 0);
+}
+
+function smartMatch(query, j){
+  const tokens = parseQuery(query);
+  if(!tokens.length) return true;
+  const hay = haystack(j), words = hay.split(/[^a-z0-9]+/).filter(Boolean);
+  const matched = tokens.filter(t => tokenMatch(t, hay, words) > 0).length;
+  return matched >= tokens.length;     // every remaining word must match something
+}
+
+/* ---- similar roles, from the course/field the job belongs to ---- */
+const SAME = {};
+JOBS.forEach(j => { (SAME[j.cat] = SAME[j.cat] || []).includes(j.t) || SAME[j.cat].push(j.t); });
 
 function typeClass(t){ return t==="Government"?"t-govt":t==="Internship"?"t-intern":t==="Gig"?"t-gig":"t-private"; }
 
@@ -530,6 +679,10 @@ function card(j){
       ${j.days<=2?'<span class="flag f-new">New</span>':''}
       ${j.intern==="unpaid"?'<span class="flag" style="background:#fff7ed;color:#c2410c">Unpaid + certificate</span>':''}
     </div>
+    ${(() => {
+        const sim = (SAME[j.cat] || []).filter(x => x !== j.t).slice(0, 2);
+        return sim.length ? `<div class="similar"><b>Similar roles:</b> ${sim.map(esc).join(" · ")}</div>` : "";
+      })()}
     <div class="jfoot">
       <div class="sal">${esc(j.salTxt)}<small>Posted ${j.days===1?"yesterday":j.days+" days ago"}</small></div>
       <div class="acts">
@@ -543,12 +696,33 @@ function card(j){
 function renderJobs(list, gridSel="#jgrid", emptySel="#jempty", headWord){
   const grid = $(gridSel); if(!grid) return;
   let rows = list ? list.filter(matches) : JOBS.filter(matches);
-  if(state.sort === "pay") rows = rows.slice().sort((a,b)=>b.sal-a.sal);
+  if(state.urgent && gridSel === "#jgrid"){
+    rows = rows.filter(j => j.type === "Gig" || (j.type === "Internship" && j.sal > 0));
+  }
+  if(state.urgent && gridSel === "#jgrid") rows = rows.slice().sort((a,b) => b.sal - a.sal);
+  else if(state.sort === "pay") rows = rows.slice().sort((a,b)=>b.sal-a.sal);
   else if(state.sort === "safe") rows = rows.slice().sort((a,b)=>(b.safe-a.safe)||(b.ver-a.ver)||(a.days-b.days));
   else rows = rows.slice().sort((a,b)=>a.days-b.days);
 
+  if(state.q){
+    const tokens = parseQuery(state.q);
+    if(tokens.length) rows = rows.slice().sort((a,b)=>scoreJob(tokens,b)-scoreJob(tokens,a));
+  }
+
   grid.innerHTML = rows.map(card).join("");
-  if(emptySel){ const e = $(emptySel); if(e) e.classList.toggle("hide", rows.length>0); }
+  if(emptySel){
+    const e = $(emptySel); if(e) e.classList.toggle("hide", rows.length > 0);
+    const msg = $("#jemptyMsg");
+    if(msg && !rows.length && state.city)
+      msg.innerHTML = `No openings in <b>${esc(state.city)}</b> for that search right now. ` +
+        `<a href="#" id="clearCity" style="color:var(--brand);font-weight:700">Search all cities</a>`;
+    else if(msg) msg.textContent = "Try removing a filter, or search a broader word like “nurse”, “technician” or “tailor”.";
+    const cc = $("#clearCity");
+    if(cc) cc.addEventListener("click", ev => {
+      ev.preventDefault(); state.city = ""; state.autoCity = false;
+      $("#city").value = ""; renderJobs();
+    });
+  }
   if(gridSel === "#jgrid"){
     $("#jcount").textContent = rows.length + (rows.length===1?" job":" jobs");
     $("#jhead").textContent = state.cat==="All" ? "All openings" : state.cat + " openings";
