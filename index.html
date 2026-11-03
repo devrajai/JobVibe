@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JobVibe — Jobs for every course, every skill, every age</title>
+<meta name="description" content="Free job search for freshers, students, diploma & ITI holders, gig workers, and experienced people. Course-wise jobs, verified government recruitment links, paid & free internships, local worker directory.">
+<style>
+  :root{
+    --ink:#0b1220; --body:#334155; --muted:#6b7a90; --line:#e4e9f0; --bg:#f5f7fb;
+    --brand:#1d4ed8; --brand-d:#163cad; --brand-soft:#eef3ff;
+    --green:#0f766e; --green-soft:#ecfdf5; --amber:#b45309; --amber-soft:#fffbeb;
+    --red:#b91c1c; --red-soft:#fef2f2; --card:#fff; --r:14px;
+    --shadow:0 1px 2px rgba(11,18,32,.04),0 8px 24px rgba(11,18,32,.05);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:"Segoe UI",system-ui,-apple-system,"Noto Sans",Roboto,Helvetica,Arial,sans-serif;
+    line-height:1.55;-webkit-text-size-adjust:100%}
+  a{color:inherit;text-decoration:none}
+  button{font-family:inherit}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 18px}
+
+  /* ---------- header ---------- */
+  header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:50}
+  .bar{display:flex;align-items:center;gap:12px;padding:11px 0;flex-wrap:wrap}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:800;font-size:18px;letter-spacing:-.4px}
+  .logo .mark{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;color:#fff;
+    font-size:13px;font-weight:800;background:linear-gradient(135deg,#1d4ed8,#0f766e)}
+  .logo small{display:block;font-size:10.5px;font-weight:500;color:var(--muted);letter-spacing:.2px}
+  .nav{display:flex;gap:4px;overflow-x:auto;margin-left:auto;scrollbar-width:none;max-width:100%}
+  .nav::-webkit-scrollbar{display:none}
+  .nav button{border:0;background:none;padding:8px 12px;border-radius:9px;font-size:13.5px;
+    color:var(--body);cursor:pointer;white-space:nowrap;font-weight:500}
+  .nav button:hover{background:#f1f5fb;color:var(--brand)}
+  .nav button.on{background:var(--brand-soft);color:var(--brand-d);font-weight:700}
+  .saved-pill{margin-left:4px;font-size:12.5px;color:var(--muted);white-space:nowrap}
+
+  /* ---------- hero ---------- */
+  .hero{background:#fff;border-bottom:1px solid var(--line);padding:26px 0 20px}
+  .hero h1{margin:0 0 8px;font-size:clamp(21px,3.2vw,31px);letter-spacing:-.7px;line-height:1.25}
+  .hero h1 em{font-style:normal;color:var(--brand)}
+  .hero p{margin:0;color:var(--body);max-width:720px;font-size:14.5px}
+  .search{display:flex;gap:9px;margin-top:16px;flex-wrap:wrap}
+  .search input{flex:1 1 300px;min-width:0;padding:13px 15px;border:1px solid var(--line);
+    border-radius:12px;font-size:15px;outline:none;background:#fff;transition:.15s}
+  .search input:focus{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+  .search select{padding:13px 10px;border:1px solid var(--line);border-radius:12px;background:#fff;
+    font-size:14px;color:var(--ink);max-width:100%}
+  .btn{border:0;border-radius:12px;background:var(--brand);color:#fff;font-weight:700;
+    padding:13px 22px;font-size:14.5px;cursor:pointer}
+  .btn:hover{background:var(--brand-d)}
+  .btn.ghost{background:#fff;color:var(--brand);border:1px solid #c7d6f8}
+  .btn.ghost:hover{background:var(--brand-soft)}
+  .btn.sm{padding:8px 14px;font-size:13px;border-radius:9px}
+
+  /* ---------- chips ---------- */
+  .chips{display:flex;gap:7px;flex-wrap:wrap;margin-top:14px}
+  .chip{padding:7px 13px;border:1px solid var(--line);background:#fff;border-radius:999px;
+    font-size:13px;cursor:pointer;color:var(--body);transition:.12s;user-select:none}
+  .chip:hover{border-color:#c7d6f8;color:var(--brand)}
+  .chip.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
+
+  /* ---------- layout ---------- */
+  main{padding:22px 0 70px;min-height:60vh}
+  .split{display:grid;grid-template-columns:240px 1fr;gap:22px;align-items:start}
+  @media(max-width:920px){.split{grid-template-columns:1fr}}
+  .panel{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px}
+  aside.panel{position:sticky;top:70px}
+  @media(max-width:920px){aside.panel{position:static}}
+  .panel h3{margin:0 0 10px;font-size:11.5px;letter-spacing:.8px;text-transform:uppercase;color:var(--muted)}
+  .fg{margin-bottom:16px}
+  .fg label{display:flex;align-items:center;gap:9px;font-size:13.5px;padding:4px 0;cursor:pointer;color:var(--body)}
+  .fg input[type=checkbox]{width:15px;height:15px;accent-color:var(--brand);cursor:pointer;flex:none}
+  .fg select{width:100%;padding:8px;border:1px solid var(--line);border-radius:8px;font-size:13.5px;background:#fff}
+  .clear{width:100%;padding:9px;border:1px solid var(--line);background:#fff;border-radius:9px;
+    font-size:13px;color:var(--muted);cursor:pointer}
+  .clear:hover{color:var(--brand);border-color:#c7d6f8}
+
+  .rhead{display:flex;align-items:baseline;gap:10px;margin-bottom:12px;flex-wrap:wrap}
+  .rhead h2{margin:0;font-size:16.5px}
+  .rhead .n{color:var(--muted);font-size:13.5px}
+  .rhead .sort{margin-left:auto;font-size:13px;color:var(--muted)}
+  .rhead .sort select{border:1px solid var(--line);border-radius:8px;padding:5px 7px;font-size:13px;background:#fff}
+
+  /* ---------- job cards ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(305px,1fr));gap:14px}
+  .job{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;
+    display:flex;flex-direction:column;gap:9px;box-shadow:var(--shadow);transition:.15s}
+  .job:hover{transform:translateY(-2px);border-color:#c7d6f8}
+  .jr{display:flex;gap:10px;justify-content:space-between;align-items:flex-start}
+  .job h4{margin:0;font-size:15px;line-height:1.35;letter-spacing:-.1px}
+  .org{font-size:13px;color:var(--muted);margin-top:2px}
+  .tag{font-size:10.5px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;
+    padding:4px 7px;border-radius:6px;white-space:nowrap;flex:none}
+  .t-govt{background:var(--green-soft);color:var(--green)}
+  .t-private{background:var(--brand-soft);color:var(--brand-d)}
+  .t-intern{background:var(--amber-soft);color:var(--amber)}
+  .t-gig{background:#f3e8ff;color:#6b21a8}
+  .meta{display:flex;flex-wrap:wrap;gap:5px 11px;font-size:12.5px;color:#4a5a72}
+  .skills{display:flex;flex-wrap:wrap;gap:5px}
+  .sk{font-size:11px;background:#f1f5f9;color:#475569;padding:3px 7px;border-radius:5px}
+  .flags{display:flex;gap:6px;flex-wrap:wrap}
+  .flag{font-size:10.5px;padding:3px 7px;border-radius:5px;font-weight:600}
+  .f-safe{background:var(--green-soft);color:var(--green)}
+  .f-ver{background:#eff6ff;color:#1d4ed8}
+  .f-new{background:#fdf2f8;color:#9d174d}
+  .jfoot{margin-top:auto;padding-top:11px;border-top:1px solid #f1f5f9;display:flex;
+    align-items:center;justify-content:space-between;gap:8px}
+  .sal{font-weight:800;font-size:14px}
+  .sal small{display:block;font-weight:400;font-size:11px;color:var(--muted);margin-top:1px}
+  .acts{display:flex;gap:6px;align-items:center}
+  .save{border:1px solid var(--line);background:#fff;border-radius:9px;width:34px;height:34px;
+    cursor:pointer;font-size:15px;line-height:1;color:#94a3b8}
+  .save.on{background:#fdf2f8;border-color:#fbcfe8;color:#db2777}
+
+  .empty{background:#fff;border:1px dashed #cbd5e1;border-radius:var(--r);padding:44px 22px;text-align:center;color:var(--muted)}
+  .empty b{display:block;color:var(--ink);font-size:15.5px;margin-bottom:5px}
+
+  /* ---------- generic section cards ---------- */
+  .sechead{margin:0 0 6px;font-size:clamp(18px,2.4vw,24px);letter-spacing:-.5px}
+  .secsub{margin:0 0 18px;color:var(--body);font-size:14px;max-width:780px}
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+  .c{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;box-shadow:var(--shadow)}
+  .c h4{margin:0 0 4px;font-size:15px}
+  .c p{margin:6px 0 0;font-size:13px;color:var(--body)}
+  .c .row{display:flex;justify-content:space-between;align-items:flex-start;gap:10px}
+  .c .link{display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:var(--brand)}
+  .c .link:hover{text-decoration:underline}
+
+  .warn{background:var(--red-soft);border:1px solid #fecaca;border-radius:var(--r);padding:14px 16px;
+    font-size:13.5px;color:#7f1d1d;margin-bottom:18px}
+  .warn b{color:#991b1b}
+  .info{background:var(--green-soft);border:1px solid #bbf7d0;border-radius:var(--r);padding:14px 16px;
+    font-size:13.5px;color:#14532d;margin-bottom:18px}
+  .note{background:var(--amber-soft);border:1px solid #fde68a;border-radius:var(--r);padding:14px 16px;
+    font-size:13.5px;color:#78350f;margin-bottom:18px}
+
+  .stars{color:#f59e0b;font-size:13px;letter-spacing:1px}
+  .rate{font-weight:800;font-size:14px}
+  .kv{display:flex;gap:6px 14px;flex-wrap:wrap;font-size:12.5px;color:#4a5a72;margin-top:8px}
+  .pill{font-size:11px;background:#f1f5f9;color:#475569;padding:3px 8px;border-radius:999px}
+
+  form.post{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px;max-width:760px}
+  form.post .f{margin-bottom:14px}
+  form.post label{display:block;font-size:13px;font-weight:600;margin-bottom:5px;color:var(--body)}
+  form.post input,form.post select,form.post textarea{width:100%;padding:11px 12px;border:1px solid var(--line);
+    border-radius:10px;font-size:14px;font-family:inherit;outline:none;background:#fff}
+  form.post input:focus,form.post select:focus,form.post textarea:focus{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:600px){.two{grid-template-columns:1fr}}
+  .ok{background:var(--green-soft);border:1px solid #bbf7d0;color:#14532d;padding:12px 14px;
+    border-radius:10px;font-size:13.5px;margin-top:14px;display:none}
+
+  .toast{position:fixed;left:50%;bottom:24px;transform:translate(-50%,80px);background:#0b1220;color:#fff;
+    padding:12px 18px;border-radius:11px;font-size:13.5px;opacity:0;transition:.25s;z-index:200;
+    max-width:90vw;text-align:center;pointer-events:none}
+  .toast.on{opacity:1;transform:translate(-50%,0)}
+
+  footer{border-top:1px solid var(--line);background:#fff;padding:24px 0;font-size:12.5px;color:var(--muted)}
+  footer .frow{display:flex;gap:14px;flex-wrap:wrap;justify-content:space-between}
+  footer a{color:var(--brand)}
+  .hide{display:none !important}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <div class="logo"><span class="mark">JV</span><span>JobVibe<small>jobs for every course, every skill, every age</small></span></div>
+    <nav class="nav" id="nav"></nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap">
+    <h1>Work that fits <em>your course, your skill, your age</em> — not just your degree</h1>
+    <p>Freshers, final-year students, ITI and diploma holders, 10th/12th pass, certificate-course students, music and art teachers, people between jobs, and daily-wage workers. Government, private, internships, gigs and local work — all in one free search.</p>
+    <div class="search">
+      <input id="q" type="search" placeholder="Search: staff nurse, DMLT, site engineer, tailor, constable, video editor, tuition…" autocomplete="off">
+      <select id="city"><option value="">All cities</option></select>
+      <select id="edu">
+        <option value="">Any education</option>
+        <option value="10">10th pass or below</option>
+        <option value="12">12th pass</option>
+        <option value="iti">ITI / Certificate course</option>
+        <option value="dip">Diploma</option>
+        <option value="grad">Graduate (B.A/B.Sc/B.Com/B.Tech…)</option>
+        <option value="pg">Post-graduate / Professional</option>
+        <option value="any">No degree needed</option>
+      </select>
+      <button class="btn" id="searchBtn">Search jobs</button>
+    </div>
+    <div class="chips" id="chips"></div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <!-- ============ JOBS ============ -->
+    <section id="v-jobs">
+      <div class="split">
+        <aside class="panel">
+          <div class="fg">
+            <h3>Field / course</h3>
+            <select id="field"></select>
+          </div>
+          <div class="fg">
+            <h3>Job type</h3>
+            <label><input type="checkbox" class="ftype" value="Government"> Government / Sarkari</label>
+            <label><input type="checkbox" class="ftype" value="Private"> Private company</label>
+            <label><input type="checkbox" class="ftype" value="Internship"> Internship</label>
+            <label><input type="checkbox" class="ftype" value="Gig"> Gig / daily work</label>
+          </div>
+          <div class="fg">
+            <h3>Work mode</h3>
+            <label><input type="checkbox" class="fmode" value="On-site"> On-site</label>
+            <label><input type="checkbox" class="fmode" value="Remote"> Work from home</label>
+            <label><input type="checkbox" class="fmode" value="Hybrid"> Hybrid</label>
+          </div>
+          <div class="fg">
+            <h3>Pay</h3>
+            <select id="pay">
+              <option value="">Any pay</option>
+              <option value="20000">₹20,000+ per month</option>
+              <option value="30000">₹30,000+ per month</option>
+              <option value="50000">₹50,000+ per month</option>
+            </select>
+          </div>
+          <div class="fg">
+            <h3>Safety & trust</h3>
+            <label><input type="checkbox" id="safeOnly"> Safe-workplace badge only</label>
+            <label><input type="checkbox" id="verOnly"> Verified employer only</label>
+            <label><input type="checkbox" id="fresherOnly"> Fresher friendly only</label>
+            <label><input type="checkbox" id="noFee"> Zero application fee</label>
+          </div>
+          <button class="clear" id="clear">Clear all filters</button>
+        </aside>
+        <div>
+          <div class="rhead">
+            <h2 id="jhead">All openings</h2><span class="n" id="jcount"></span>
+            <span class="sort">Sort
+              <select id="sort">
+                <option value="new">Newest first</option>
+                <option value="pay">Highest pay</option>
+                <option value="safe">Best rated workplaces</option>
+              </select>
+            </span>
+          </div>
+          <div class="grid" id="jgrid"></div>
+          <div class="empty hide" id="jempty"><b>Nothing matches that combination yet</b>
+            Try removing a filter, or search a broader word like “nurse”, “technician” or “tailor”.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ INTERNSHIPS ============ -->
+    <section id="v-intern" class="hide">
+      <h2 class="sechead">Internships — paid and free</h2>
+      <p class="secsub">For students in their last year, or anyone who finished study and needs experience on paper. Listings marked “Unpaid but certified” give a certificate and letter of recommendation instead of money — only take those if you actually need the certificate.</p>
+      <div class="info">Rule of thumb: a genuine internship never asks you to pay for “training”, “registration” or a “laptop deposit”. If money flows from you to them, walk away.</div>
+      <div class="grid" id="igrid"></div>
+      <div class="empty hide" id="iempty"><b>No internships match your search</b>Clear the search box on the Jobs tab and try again.</div>
+    </section>
+
+    <!-- ============ GOVERNMENT ============ -->
+    <section id="v-govt" class="hide">
+      <h2 class="sechead">Government recruitment — official sources only</h2>
+      <p class="secsub">Every link below goes to the official government portal. We do not copy application forms, and we never take money for a government job. Always confirm the notification PDF on the official site before applying.</p>
+      <div class="warn"><b>Fake recruitment warning:</b> websites with names like “sarkari-result-online” or “govtjob-apply” often charge ₹200–₹500 for forms. Real recruitment happens only on the domains listed here, ending in <b>.gov.in</b> or <b>.nic.in</b>.</div>
+      <div class="cards" id="govtCards"></div>
+      <h3 style="margin:26px 0 10px;font-size:15px">Live government openings in our listings</h3>
+      <div class="grid" id="ggrid"></div>
+    </section>
+
+    <!-- ============ LOCAL / GIG ============ -->
+    <section id="v-gig" class="hide">
+      <h2 class="sechead">Local &amp; daily work — pay today, not next month</h2>
+      <p class="secsub">For anyone who needs money this week: tailoring, plumbing, electrical repair, carpentry, painting, delivery, shop assistance, watch repair, housekeeping. No degree required for most of these, and no upper age limit.</p>
+      <div class="cards" style="margin-bottom:26px" id="gigBanner"></div>
+      <div class="grid" id="ggig"></div>
+    </section>
+
+    <!-- ============ WORKER DIRECTORY ============ -->
+    <section id="v-workers" class="hide">
+      <h2 class="sechead">Worker directory — hire a skilled person near you</h2>
+      <p class="secsub">The other side of the same idea: a worker builds a free profile with photos of their work, their rate, and whether they offer home visit or pickup-and-drop. Customers find them directly. No commission to us, ever.</p>
+      <div class="chips" id="tradeChips" style="margin-bottom:16px"></div>
+      <div class="cards" id="wgrid"></div>
+    </section>
+
+    <!-- ============ COURSES ============ -->
+    <section id="v-courses" class="hide">
+      <h2 class="sechead">Free courses that actually carry weight</h2>
+      <p class="secsub">Real platforms, real certificates. Where a certificate needs a paid exam, we say so plainly — no “free” claims that turn into a payment page.</p>
+      <div class="note">A certificate alone rarely gets you hired. What gets you hired is the portfolio or the practical test — the certificate is just what makes a recruiter stop scrolling. Do the course, then build one thing with it.</div>
+      <div class="cards" id="courseCards"></div>
+    </section>
+
+    <!-- ============ REVIEWS ============ -->
+    <section id="v-reviews" class="hide">
+      <h2 class="sechead">Honest workplace reviews &amp; safety</h2>
+      <p class="secsub">Written by people who actually worked there — about salary delays, office politics, whether the manager respects women, and whether complaints are heard. Names of reviewers are hidden. Employer names are shown only where multiple people reported the same thing.</p>
+      <div class="info"><b>Our safety filter:</b> the “Safe-workplace badge” is given to employers with no unresolved harassment or wage-theft reports and a verified address. It is not a guarantee — it is a starting point. Always tell a family member where your interview is, and never attend an interview alone at an unknown address.</div>
+      <div class="cards" id="reviewCards"></div>
+    </section>
+
+    <!-- ============ POST ============ -->
+    <section id="v-post" class="hide">
+      <h2 class="sechead">Post a job or a worker profile — free</h2>
+      <p class="secsub">Employers, shopkeepers and households can post here. Every post is checked by a human before it goes live, which is why we ask for a real phone number and a real address. There is no fee, and there never will be a fee for job seekers.</p>
+      <form class="post" id="postForm">
+        <div class="f"><label for="pType">What are you posting?</label>
+          <select id="pType">
+            <option>Job opening</option><option>Internship</option>
+            <option>Local / daily work</option><option>Worker profile (looking for work)</option>
+          </select></div>
+        <div class="two">
+          <div class="f"><label for="pTitle">Title</label><input id="pTitle" required placeholder="e.g. Staff Nurse – ICU"></div>
+          <div class="f"><label for="pOrg">Your business / name</label><input id="pOrg" required placeholder="e.g. City Care Hospital"></div>
+        </div>
+        <div class="two">
+          <div class="f"><label for="pCity">City / area</label><input id="pCity" required placeholder="e.g. Pune, Kothrud"></div>
+          <div class="f"><label for="pPay">Pay</label><input id="pPay" placeholder="e.g. ₹25,000/month or ₹600/day"></div>
+        </div>
+        <div class="two">
+          <div class="f"><label for="pEdu">Minimum education</label>
+            <select id="pEdu"><option>No degree needed</option><option>10th pass</option><option>12th pass</option>
+              <option>ITI / Certificate</option><option>Diploma</option><option>Graduate</option><option>Post-graduate</option></select></div>
+          <div class="f"><label for="pPhone">Contact number (not shown publicly)</label><input id="pPhone" required placeholder="10-digit mobile"></div>
+        </div>
+        <div class="f"><label for="pDesc">Describe the work</label>
+          <textarea id="pDesc" rows="4" placeholder="Duties, timing, whether food/accommodation is provided, and anything a candidate should know."></textarea></div>
+        <button class="btn" type="submit">Submit for review</button>
+        <div class="ok" id="postOk">Saved on this device. In a live site this would land in a moderator’s queue and appear after a human check — that part needs a small database, which is the next build step.</div>
+      </form>
+    </section>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap frow">
+    <span>JobVibe — free for job seekers, always. Listings are realistic samples; government links go to official portals.</span>
+    <span>Free for job seekers, always. <a href="#" onclick="go('v-post');return false;">Post a job</a></span>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+/* ============================================================
+   DATA
+   ============================================================ */
+
+const JOBS = [{"t": "Ayurveda Doctor (BAMS)", "o": "AyurCare Clinic", "cat": "AYUSH", "city": "Nagpur", "type": "Private", "mode": "On-site", "el": "pg", "sal": 45000, "salTxt": "₹45,000/mo", "exp": 0, "days": 3, "sk": ["BAMS", "Panchakarma", "Consultation"], "safe": 1, "ver": 1}, {"t": "Homeopathy Doctor (BHMS)", "o": "HomeoHeal Clinic", "cat": "AYUSH", "city": "Bhopal", "type": "Private", "mode": "On-site", "el": "pg", "sal": 40000, "salTxt": "₹40,000/mo", "exp": 0, "days": 5, "sk": ["BHMS", "Case taking", "Counseling"], "safe": 1, "ver": 1}, {"t": "Naturopathy Therapist", "o": "Wellness Retreat", "cat": "AYUSH", "city": "Rishikesh", "type": "Private", "mode": "On-site", "el": "dip", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 6, "sk": ["Naturopathy", "Diet", "Yoga"], "safe": 1, "ver": 0}, {"t": "Panchakarma Technician", "o": "AyurCare Clinic", "cat": "AYUSH", "city": "Nagpur", "type": "Private", "mode": "On-site", "el": "dip", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 8, "sk": ["Massage", "Steam", "Therapy room"], "safe": 1, "ver": 0}, {"t": "Horticulture Supervisor", "o": "GreenFields Farms", "cat": "Agriculture", "city": "Nashik", "type": "Private", "mode": "On-site", "el": "dip", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 3, "sk": ["Nursery", "Grafting", "Irrigation"], "safe": 1, "ver": 1}, {"t": "Fisheries Field Assistant", "o": "AquaFarm Co-op", "cat": "Agriculture", "city": "Kochi", "type": "Private", "mode": "On-site", "el": "dip", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 6, "sk": ["Pond mgmt", "Feed", "Water testing"], "safe": 1, "ver": 0}, {"t": "Soil Testing Technician", "o": "KrishiConnect", "cat": "Agriculture", "city": "Indore", "type": "Private", "mode": "On-site", "el": "dip", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 7, "sk": ["Soil kit", "Sampling", "Reports"], "safe": 1, "ver": 1}, {"t": "2D Animator", "o": "AnimHouse", "cat": "Animation & Gaming", "city": "Remote", "type": "Private", "mode": "Remote", "el": "any", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 3, "sk": ["Toon Boom", "Storyboard", "Timing"], "safe": 1, "ver": 1}, {"t": "3D Artist (Blender)", "o": "AnimHouse", "cat": "Animation & Gaming", "city": "Remote", "type": "Private", "mode": "Remote", "el": "any", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 1, "days": 4, "sk": ["Blender", "Modelling", "Texturing"], "safe": 1, "ver": 1}, {"t": "VFX Compositor", "o": "PixelWorks VFX", "cat": "Animation & Gaming", "city": "Mumbai", "type": "Private", "mode": "On-site", "el": "grad", "sal": 32000, "salTxt": "₹32,000/mo", "exp": 1, "days": 5, "sk": ["After Effects", "Nuke", "Rotoscopy"], "safe": 1, "ver": 1}, {"t": "Game Tester (QA)", "o": "PlayForge Studios", "cat": "Animation & Gaming", "city": "Bengaluru", "type": "Private", "mode": "On-site", "el": "any", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 6, "sk": ["Game testing", "Bug reports", "Patience"], "safe": 1, "ver": 1}, {"t": "Interior Designer", "o": "SpaceCraft Interiors", "cat": "Architecture & Interior", "city": "Gurugram", "type": "Private", "mode": "On-site", "el": "dip", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 0, "days": 2, "sk": ["AutoCAD", "SketchUp", "Site visits"], "safe": 1, "ver": 1}, {"t": "Junior Architect", "o": "Studio Aakar", "cat": "Architecture & Interior", "city": "Pune", "type": "Private", "mode": "On-site", "el": "grad", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 0, "days": 3, "sk": ["B.Arch", "AutoCAD", "Working drawings"], "safe": 1, "ver": 1}, {"t": "AutoCAD Draftsman", "o": "Skyline Infra Projects", "cat": "Architecture & Interior", "city": "Noida", "type": "Private", "mode": "On-site", "el": "dip", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 5, "sk": ["AutoCAD", "Civil drawings", "Revision"], "safe": 1, "ver": 1}, {"t": "Interior Site Supervisor", "o": "SpaceCraft Interiors", "cat": "Architecture & Interior", "city": "Gurugram", "type": "Private", "mode": "On-site", "el": "dip", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 1, "days": 7, "sk": ["Site supervision", "Carpentry", "Finishes"], "safe": 1, "ver": 0}, {"t": "Auto Mechanic (car)", "o": "ServicePro Garage", "cat": "Automotive", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "iti", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 1, "days": 2, "sk": ["Engine", "Diagnostics", "Tools"], "safe": 1, "ver": 1}, {"t": "Two-wheeler Mechanic", "o": "BikeCare", "cat": "Automotive", "city": "Patna", "type": "Private", "mode": "On-site", "el": "any", "sal": 18000, "salTxt": "₹18,000/mo", "exp": 0, "days": 5, "sk": ["Servicing", "Electricals", "Punctuality"], "safe": 1, "ver": 0}, {"t": "EV Technician", "o": "VoltAuto Services", "cat": "Automotive", "city": "Bengaluru", "type": "Private", "mode": "On-site", "el": "iti", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 6, "sk": ["Battery", "BMS", "EV safety"], "safe": 1, "ver": 0}, {"t": "Service Advisor", "o": "ServicePro Garage", "cat": "Automotive", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "grad", "sal": 24000, "salTxt": "₹24,000/mo", "exp": 0, "days": 7, "sk": ["Customer handling", "Job cards", "Hindi"], "safe": 1, "ver": 1}, {"t": "Cabin Crew", "o": "SkyHigh Airways", "cat": "Aviation", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "grad", "sal": 45000, "salTxt": "₹45,000/mo", "exp": 0, "days": 3, "sk": ["Height 155cm+", "Grooming", "English"], "safe": 1, "ver": 1}, {"t": "Airport Ground Staff", "o": "SkyHigh Airways", "cat": "Aviation", "city": "Hyderabad", "type": "Private", "mode": "On-site", "el": "12", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 4, "sk": ["Boarding", "Baggage", "Shift"], "safe": 1, "ver": 1}, {"t": "Aircraft Maintenance Trainee (AME)", "o": "AeroMech Services", "cat": "Aviation", "city": "Chennai", "type": "Private", "mode": "On-site", "el": "dip", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 0, "days": 7, "sk": ["AME module", "Tools", "Safety"], "safe": 1, "ver": 0}, {"t": "Customer Support Executive (voice)", "o": "TalkBridge", "cat": "BPO & Customer Support", "city": "Hyderabad", "type": "Private", "mode": "On-site", "el": "12", "sal": 18000, "salTxt": "₹18,000/mo", "exp": 0, "days": 2, "sk": ["English", "Night shift allowance", "Typing"], "safe": 1, "ver": 1}, {"t": "Telecaller", "o": "InfoBridge Services", "cat": "BPO & Customer Support", "city": "Indore", "type": "Private", "mode": "On-site", "el": "12", "sal": 15000, "salTxt": "₹15,000/mo", "exp": 0, "days": 3, "sk": ["Hindi", "Calling", "CRM"], "safe": 1, "ver": 1}, {"t": "Chat Support (remote)", "o": "TalkBridge", "cat": "BPO & Customer Support", "city": "Remote", "type": "Private", "mode": "Remote", "el": "any", "sal": 16000, "salTxt": "₹16,000/mo", "exp": 0, "days": 5, "sk": ["Typing 40wpm", "English", "Patience"], "safe": 1, "ver": 1}, {"t": "BPO Team Leader", "o": "TalkBridge", "cat": "BPO & Customer Support", "city": "Hyderabad", "type": "Private", "mode": "On-site", "el": "grad", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 2, "days": 8, "sk": ["Team handling", "SLA", "Reports"], "safe": 1, "ver": 1}, {"t": "Insurance Advisor", "o": "LifeSecure Insurance", "cat": "Banking & Insurance", "city": "Your city", "type": "Private", "mode": "On-site", "el": "any", "sal": 18000, "salTxt": "₹18,000/mo + commission", "exp": 0, "days": 3, "sk": ["Selling", "Trust", "Local network"], "safe": 0, "ver": 1}, {"t": "Loan Processing Officer", "o": "FinServe NBFC", "cat": "Banking & Insurance", "city": "Jaipur", "type": "Private", "mode": "On-site", "el": "grad", "sal": 24000, "salTxt": "₹24,000/mo", "exp": 0, "days": 5, "sk": ["KYC", "Documents", "Credit basics"], "safe": 1, "ver": 1}, {"t": "Microfinance Field Officer", "o": "FinServe NBFC", "cat": "Banking & Insurance", "city": "Patna", "type": "Private", "mode": "On-site", "el": "grad", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 7, "sk": ["Field visits", "Groups", "Collection"], "safe": 1, "ver": 1}, {"t": "Salon Hair Stylist", "o": "Glamour Studio", "cat": "Beauty & Wellness", "city": "Chandigarh", "type": "Private", "mode": "On-site", "el": "any", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 1, "days": 2, "sk": ["Cutting", "Colour", "Blow dry"], "safe": 1, "ver": 1}, {"t": "Spa Therapist", "o": "Wellness Retreat", "cat": "Beauty & Wellness", "city": "Rishikesh", "type": "Private", "mode": "On-site", "el": "dip", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 4, "sk": ["Massage", "Aroma", "Hygiene"], "safe": 1, "ver": 1}, {"t": "Barber", "o": "Glamour Studio", "cat": "Beauty & Wellness", "city": "Chandigarh", "type": "Private", "mode": "On-site", "el": "any", "sal": 18000, "salTxt": "₹18,000/mo", "exp": 1, "days": 5, "sk": ["Haircut", "Beard", "Razors"], "safe": 1, "ver": 0}, {"t": "Nail Artist", "o": "Glamour Studio", "cat": "Beauty & Wellness", "city": "Chandigarh", "type": "Private", "mode": "On-site", "el": "any", "sal": 18000, "salTxt": "₹18,000/mo", "exp": 0, "days": 8, "sk": ["Gel nails", "Art", "Hygiene"], "safe": 1, "ver": 0}, {"t": "Lab Research Assistant", "o": "BioGen Labs", "cat": "Biotechnology", "city": "Hyderabad", "type": "Private", "mode": "On-site", "el": "pg", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 0, "days": 3, "sk": ["Cell culture", "PCR", "Lab safety"], "safe": 1, "ver": 1}, {"t": "QC Microbiologist", "o": "NovaLife Pharma", "cat": "Biotechnology", "city": "Hyderabad", "type": "Private", "mode": "On-site", "el": "grad", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 0, "days": 4, "sk": ["Microbiology", "Sterility test", "GMP"], "safe": 1, "ver": 1}, {"t": "Bioinformatics Trainee", "o": "HelixData Sciences", "cat": "Biotechnology", "city": "Remote", "type": "Private", "mode": "Remote", "el": "pg", "sal": 32000, "salTxt": "₹32,000/mo", "exp": 0, "days": 6, "sk": ["Python", "R", "BLAST"], "safe": 1, "ver": 0}, {"t": "Business Development Executive", "o": "GrowthLoop", "cat": "Commerce", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "any", "sal": 29000, "salTxt": "₹3.5 LPA + incentive", "exp": 0, "days": 2, "sk": ["Sales", "Hindi", "Field visits"], "safe": 0, "ver": 1}, {"t": "Digital Marketing Intern", "o": "GrowthLoop", "cat": "Commerce", "city": "Remote", "type": "Internship", "mode": "Remote", "el": "any", "sal": 10000, "salTxt": "₹10,000 stipend", "exp": 0, "days": 3, "sk": ["Canva", "Instagram", "Basic ads"], "safe": 1, "ver": 1, "intern": "paid"}, {"t": "Accounts Executive", "o": "Shah & Associates", "cat": "Commerce", "city": "Surat", "type": "Private", "mode": "On-site", "el": "grad", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 5, "sk": ["B.Com", "Tally", "Bank reconciliation"], "safe": 1, "ver": 1}, {"t": "GST & Taxation Associate", "o": "Nexus Advisory", "cat": "Commerce", "city": "Mumbai", "type": "Private", "mode": "Hybrid", "el": "grad", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 0, "days": 8, "sk": ["B.Com", "GST", "Return filing"], "safe": 1, "ver": 1}, {"t": "HR Executive", "o": "PeopleBridge Services", "cat": "Commerce", "city": "Gurugram", "type": "Private", "mode": "On-site", "el": "grad", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 0, "days": 9, "sk": ["BBA", "Recruitment", "MS Excel"], "safe": 1, "ver": 0}, {"t": "CA Articleship (IPCC cleared)", "o": "Shah & Associates", "cat": "Commerce & Accounts", "city": "Surat", "type": "Internship", "mode": "On-site", "el": "grad", "sal": 12000, "salTxt": "₹12,000 stipend", "exp": 0, "days": 2, "sk": ["Accounts", "Tax", "Articleship"], "safe": 1, "ver": 1, "intern": "paid"}, {"t": "Tally Operator", "o": "Shah & Associates", "cat": "Commerce & Accounts", "city": "Surat", "type": "Private", "mode": "On-site", "el": "12", "sal": 16000, "salTxt": "₹16,000/mo", "exp": 0, "days": 4, "sk": ["Tally", "Vouchers", "Excel"], "safe": 1, "ver": 1}, {"t": "Audit Assistant", "o": "Nexus Advisory", "cat": "Commerce & Accounts", "city": "Mumbai", "type": "Private", "mode": "On-site", "el": "grad", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 5, "sk": ["Audit", "Excel", "Documentation"], "safe": 1, "ver": 1}, {"t": "Video Editor", "o": "CreatorHub Media", "cat": "Creative", "city": "Remote", "type": "Private", "mode": "Remote", "el": "any", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 2, "sk": ["Premiere Pro", "Reels", "Colour grading"], "safe": 1, "ver": 1}, {"t": "Graphic Designer (Fresher)", "o": "Pixelcraft Studio", "cat": "Creative", "city": "Remote", "type": "Private", "mode": "Remote", "el": "any", "sal": 30000, "salTxt": "₹3.6 LPA", "exp": 0, "days": 3, "sk": ["Photoshop", "Illustrator", "Portfolio"], "safe": 1, "ver": 1}, {"t": "Social Media Manager", "o": "BrandLoom", "cat": "Creative", "city": "Remote", "type": "Private", "mode": "Remote", "el": "any", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 5, "sk": ["Instagram", "Canva", "Copywriting"], "safe": 1, "ver": 0}, {"t": "Video Editing Intern", "o": "CreatorHub Media", "cat": "Creative", "city": "Remote", "type": "Internship", "mode": "Remote", "el": "any", "sal": 8000, "salTxt": "₹8,000 stipend", "exp": 0, "days": 5, "sk": ["Premiere Pro", "Reels", "Quick turnaround"], "safe": 1, "ver": 0, "intern": "paid"}, {"t": "UI Designer (Fresher)", "o": "Pixelcraft Studio", "cat": "Creative", "city": "Remote", "type": "Private", "mode": "Remote", "el": "any", "sal": 37000, "salTxt": "₹4.5 LPA", "exp": 0, "days": 6, "sk": ["Figma", "Design systems", "Portfolio"], "safe": 1, "ver": 1}, {"t": "Photographer Assistant", "o": "Frame Studio", "cat": "Creative", "city": "Jaipur", "type": "Private", "mode": "On-site", "el": "any", "sal": 15000, "salTxt": "₹15,000/mo", "exp": 0, "days": 9, "sk": ["Camera handling", "Lighting", "Editing"], "safe": 1, "ver": 0}, {"t": "Graphic Design Intern (certificate only)", "o": "Pixelcraft Studio", "cat": "Creative", "city": "Remote", "type": "Internship", "mode": "Remote", "el": "any", "sal": 0, "salTxt": "Unpaid — portfolio + certificate", "exp": 0, "days": 9, "sk": ["Photoshop", "Social posts", "Portfolio building"], "safe": 1, "ver": 0, "intern": "unpaid"}, {"t": "Penetration Tester (Junior)", "o": "ShieldNet Labs", "cat": "Cyber Security", "city": "Bengaluru", "type": "Private", "mode": "Hybrid", "el": "grad", "sal": 50000, "salTxt": "₹6.0 LPA", "exp": 0, "days": 2, "sk": ["Burp Suite", "OWASP", "Linux"], "safe": 1, "ver": 1}, {"t": "Cyber Forensics Analyst", "o": "SecureTrace", "cat": "Cyber Security", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "grad", "sal": 46000, "salTxt": "₹5.5 LPA", "exp": 0, "days": 5, "sk": ["FTK", "Chain of custody", "Reporting"], "safe": 1, "ver": 1}, {"t": "Home Guard", "o": "State Home Department", "cat": "Defence & Police", "city": "Your district", "type": "Government", "mode": "On-site", "el": "10", "sal": 15000, "salTxt": "₹15,000/mo", "exp": 0, "days": 7, "sk": ["10th pass", "Physical", "Local duty"], "safe": 1, "ver": 1, "url": "https://www.ncs.gov.in"}, {"t": "Dental Assistant / Hygienist", "o": "SmileCare Dental", "cat": "Dentistry", "city": "Chennai", "type": "Private", "mode": "On-site", "el": "dip", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 3, "sk": ["Dental assisting", "Sterilisation", "X-ray"], "safe": 1, "ver": 1}, {"t": "Dental Receptionist", "o": "SmileCare Dental", "cat": "Dentistry", "city": "Chennai", "type": "Private", "mode": "On-site", "el": "12", "sal": 15000, "salTxt": "₹15,000/mo", "exp": 0, "days": 6, "sk": ["Front desk", "Appointments", "Hindi/English"], "safe": 1, "ver": 1}, {"t": "Drone Pilot – survey", "o": "SkyMap Surveys", "cat": "Drone & Robotics", "city": "Jaipur", "type": "Private", "mode": "On-site", "el": "dip", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 0, "days": 3, "sk": ["DGCA drone licence", "Mapping", "GPS"], "safe": 1, "ver": 1}, {"t": "PLC / Automation Engineer", "o": "Automate India", "cat": "Drone & Robotics", "city": "Pune", "type": "Private", "mode": "On-site", "el": "grad", "sal": 38000, "salTxt": "₹4.5 LPA", "exp": 0, "days": 4, "sk": ["PLC", "SCADA", "Panel wiring"], "safe": 1, "ver": 1}, {"t": "Robotics Technician", "o": "Automate India", "cat": "Drone & Robotics", "city": "Pune", "type": "Private", "mode": "On-site", "el": "dip", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 5, "sk": ["Sensors", "Arduino", "Assembly"], "safe": 1, "ver": 1}, {"t": "Graduate Engineer Trainee – Mechanical", "o": "Bharat Auto Components", "cat": "Engineering", "city": "Chennai", "type": "Private", "mode": "On-site", "el": "grad", "sal": 33000, "salTxt": "₹4.0 LPA", "exp": 0, "days": 1, "sk": ["B.Tech Mech", "AutoCAD", "SolidWorks"], "safe": 1, "ver": 1}, {"t": "ITI Electrician – Maintenance", "o": "Metro Manufacturing", "cat": "Engineering", "city": "Pune", "type": "Private", "mode": "On-site", "el": "iti", "sal": 19000, "salTxt": "₹19,000/mo", "exp": 0, "days": 3, "sk": ["ITI Electrician", "Panel wiring", "Preventive maint."], "safe": 1, "ver": 1}, {"t": "Civil Site Engineer", "o": "Skyline Infra Projects", "cat": "Engineering", "city": "Noida", "type": "Private", "mode": "On-site", "el": "grad", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 0, "days": 4, "sk": ["B.Tech Civil", "Site execution", "Quantity survey"], "safe": 1, "ver": 1}, {"t": "ITI Welder", "o": "SteelFab Industries", "cat": "Engineering", "city": "Raipur", "type": "Private", "mode": "On-site", "el": "iti", "sal": 21000, "salTxt": "₹21,000/mo", "exp": 0, "days": 5, "sk": ["ITI Welder", "MIG", "6G welding"], "safe": 1, "ver": 0}, {"t": "Electrical Engineer – Solar", "o": "GreenVolt Energy", "cat": "Engineering", "city": "Indore", "type": "Private", "mode": "On-site", "el": "grad", "sal": 33000, "salTxt": "₹4.0 LPA", "exp": 0, "days": 6, "sk": ["B.E Electrical", "Solar PV", "Inverters"], "safe": 1, "ver": 1}, {"t": "Solar Panel Installer", "o": "GreenVolt Energy", "cat": "Engineering", "city": "Indore", "type": "Private", "mode": "On-site", "el": "iti", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 7, "sk": ["Panel mounting", "Wiring", "Height work"], "safe": 1, "ver": 1}, {"t": "CNC Operator", "o": "ToolCraft Precision", "cat": "Engineering", "city": "Coimbatore", "type": "Private", "mode": "On-site", "el": "iti", "sal": 23000, "salTxt": "₹23,000/mo", "exp": 1, "days": 8, "sk": ["CNC", "Reading drawings", "VMC"], "safe": 1, "ver": 1}, {"t": "Production Supervisor (Diploma)", "o": "Precision Works", "cat": "Engineering", "city": "Rajkot", "type": "Private", "mode": "On-site", "el": "dip", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 12, "sk": ["Diploma Mech", "CNC", "Shop floor"], "safe": 1, "ver": 0}, {"t": "Environment Field Assistant", "o": "GreenEarth Foundation", "cat": "Environment", "city": "Dehradun", "type": "Private", "mode": "On-site", "el": "grad", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 4, "sk": ["Survey", "Data", "Field work"], "safe": 1, "ver": 1}, {"t": "Forest Guard", "o": "State Forest Department", "cat": "Environment", "city": "Your state", "type": "Government", "mode": "On-site", "el": "12", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 5, "sk": ["Physical test", "Forest law", "Patrolling"], "safe": 1, "ver": 1, "url": "https://www.ncs.gov.in"}, {"t": "Event Coordinator", "o": "EventCraft", "cat": "Event Management", "city": "Jaipur", "type": "Private", "mode": "On-site", "el": "grad", "sal": 24000, "salTxt": "₹24,000/mo", "exp": 0, "days": 2, "sk": ["Vendor calls", "Logistics", "Site visits"], "safe": 1, "ver": 1}, {"t": "Wedding Planner Assistant", "o": "EventCraft", "cat": "Event Management", "city": "Jaipur", "type": "Private", "mode": "On-site", "el": "any", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 4, "sk": ["Decor", "Coordination", "Travel"], "safe": 1, "ver": 0}, {"t": "Sound & Light Technician", "o": "StageCraft Audio", "cat": "Event Management", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "any", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 6, "sk": ["Speakers", "DMX", "Setup"], "safe": 1, "ver": 0}, {"t": "Fashion Designer Assistant", "o": "Label Meera", "cat": "Fashion & Textile", "city": "Mumbai", "type": "Private", "mode": "On-site", "el": "grad", "sal": 24000, "salTxt": "₹24,000/mo", "exp": 0, "days": 3, "sk": ["Illustration", "Pattern", "Sampling"], "safe": 1, "ver": 1}, {"t": "Textile Designer", "o": "WeaveWorks", "cat": "Fashion & Textile", "city": "Surat", "type": "Private", "mode": "On-site", "el": "grad", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 0, "days": 5, "sk": ["Prints", "CAD", "Fabric knowledge"], "safe": 1, "ver": 1}, {"t": "Jewellery Designer", "o": "GoldCraft Jewellers", "cat": "Fashion & Textile", "city": "Jaipur", "type": "Private", "mode": "On-site", "el": "dip", "sal": 26000, "salTxt": "₹26,000/mo", "exp": 0, "days": 7, "sk": ["CAD", "Sketching", "Stones"], "safe": 1, "ver": 0}, {"t": "Content Writer", "o": "WordWorks Media", "cat": "Film & Media", "city": "Remote", "type": "Private", "mode": "Remote", "el": "grad", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 1, "sk": ["English writing", "SEO", "Research"], "safe": 1, "ver": 1}, {"t": "Videographer", "o": "Frame Studio", "cat": "Film & Media", "city": "Jaipur", "type": "Private", "mode": "On-site", "el": "any", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 2, "sk": ["Camera", "Lighting", "Editing"], "safe": 1, "ver": 1}, {"t": "Video Editor – YouTube channel", "o": "CreatorHub Media", "cat": "Film & Media", "city": "Remote", "type": "Private", "mode": "Remote", "el": "any", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 2, "sk": ["Premiere Pro", "Reels", "Thumbnails"], "safe": 1, "ver": 1}, {"t": "Wedding Photographer (freelance)", "o": "Freelance bookings", "cat": "Film & Media", "city": "Your city", "type": "Gig", "mode": "On-site", "el": "any", "sal": 24000, "salTxt": "₹4,000 / day", "exp": 1, "days": 3, "sk": ["DSLR", "Portraits", "Lightroom"], "safe": 1, "ver": 0}, {"t": "Reporter – local news", "o": "Jan Sandesh Daily", "cat": "Film & Media", "city": "Lucknow", "type": "Private", "mode": "On-site", "el": "grad", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 4, "sk": ["Reporting", "Hindi", "Field work"], "safe": 1, "ver": 0}, {"t": "Radio Jockey Assistant", "o": "Radio Mirchi Local", "cat": "Film & Media", "city": "Indore", "type": "Private", "mode": "On-site", "el": "grad", "sal": 18000, "salTxt": "₹18,000/mo", "exp": 0, "days": 6, "sk": ["Voice", "Scripting", "Audio editing"], "safe": 1, "ver": 1}, {"t": "Food Technologist Trainee", "o": "FreshFoods Pvt Ltd", "cat": "Food & Dairy", "city": "Pune", "type": "Private", "mode": "On-site", "el": "grad", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 0, "days": 3, "sk": ["FSSAI", "QA", "Lab tests"], "safe": 1, "ver": 1}, {"t": "Dairy Plant Operator", "o": "Gokul Dairy", "cat": "Food & Dairy", "city": "Kolhapur", "type": "Private", "mode": "On-site", "el": "dip", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 6, "sk": ["Pasteuriser", "CIP", "Hygiene"], "safe": 1, "ver": 1}, {"t": "Bakery Assistant", "o": "CakeHouse", "cat": "Food & Dairy", "city": "Kochi", "type": "Private", "mode": "On-site", "el": "any", "sal": 16000, "salTxt": "₹16,000/mo", "exp": 0, "days": 8, "sk": ["Baking", "Decorating", "Shift"], "safe": 1, "ver": 0}, {"t": "Tailor / Darji – Shop Assistant", "o": "Local tailoring shop", "cat": "Gig & Local", "city": "Your city", "type": "Gig", "mode": "On-site", "el": "any", "sal": 16000, "salTxt": "₹600/day", "exp": 0, "days": 1, "sk": ["Stitching", "Alteration", "Measurements"], "safe": 1, "ver": 0}, {"t": "Plumber – Home Visits", "o": "UrbanFix Services", "cat": "Gig & Local", "city": "Delhi", "type": "Gig", "mode": "On-site", "el": "any", "sal": 18000, "salTxt": "₹500/visit", "exp": 0, "days": 1, "sk": ["Pipe fitting", "Leak repair", "Tools own"], "safe": 1, "ver": 1}, {"t": "Delivery Partner (part-time)", "o": "QuickShip", "cat": "Gig & Local", "city": "Bengaluru", "type": "Gig", "mode": "On-site", "el": "10", "sal": 18000, "salTxt": "₹18,000/mo", "exp": 0, "days": 1, "sk": ["18+", "Own two-wheeler", "Smartphone"], "safe": 1, "ver": 1}, {"t": "Mason (Raj Mistri)", "o": "Site contractor", "cat": "Gig & Local", "city": "Your city", "type": "Gig", "mode": "On-site", "el": "any", "sal": 24000, "salTxt": "₹900/day", "exp": 2, "days": 1, "sk": ["Brickwork", "Plaster", "Level"], "safe": 1, "ver": 0}, {"t": "Electrician – Repair & Wiring", "o": "UrbanFix Services", "cat": "Gig & Local", "city": "Mumbai", "type": "Gig", "mode": "On-site", "el": "iti", "sal": 22000, "salTxt": "₹700/visit", "exp": 1, "days": 2, "sk": ["House wiring", "Fan / AC point", "Safety"], "safe": 1, "ver": 1}, {"t": "Construction Helper", "o": "Site contractor", "cat": "Gig & Local", "city": "Your city", "type": "Gig", "mode": "On-site", "el": "any", "sal": 17000, "salTxt": "₹650/day", "exp": 0, "days": 2, "sk": ["Lifting", "Masonry support", "Site work"], "safe": 0, "ver": 0}, {"t": "Mehndi Artist – Home Service", "o": "Self / direct customers", "cat": "Gig & Local", "city": "Your city", "type": "Gig", "mode": "On-site", "el": "any", "sal": 15000, "salTxt": "₹1,500 / booking", "exp": 0, "days": 2, "sk": ["Designs", "Bridal mehndi", "Own kit"], "safe": 1, "ver": 0}, {"t": "Gardener (Mali)", "o": "Home service", "cat": "Gig & Local", "city": "Your city", "type": "Gig", "mode": "On-site", "el": "any", "sal": 14000, "salTxt": "₹500/visit", "exp": 0, "days": 2, "sk": ["Pruning", "Watering", "Pots"], "safe": 1, "ver": 0}, {"t": "Carpenter – Furniture Repair", "o": "HomeServe India", "cat": "Gig & Local", "city": "Pune", "type": "Gig", "mode": "On-site", "el": "any", "sal": 24000, "salTxt": "₹800/day", "exp": 1, "days": 3, "sk": ["Wood work", "Fittings", "Polish"], "safe": 1, "ver": 0}, {"t": "AC / Fridge Repair Technician", "o": "CoolCare Services", "cat": "Gig & Local", "city": "Chennai", "type": "Gig", "mode": "On-site", "el": "iti", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 1, "days": 3, "sk": ["Gas charging", "Compressor", "ITI Refrigeration"], "safe": 1, "ver": 1}, {"t": "Cook / Maharaj (home)", "o": "Direct households", "cat": "Gig & Local", "city": "Your city", "type": "Gig", "mode": "On-site", "el": "any", "sal": 22000, "salTxt": "₹800/day", "exp": 1, "days": 3, "sk": ["Cooking", "Hygiene", "Menu"], "safe": 1, "ver": 0}, {"t": "House Painter", "o": "Shree Balaji Contractors", "cat": "Gig & Local", "city": "Nagpur", "type": "Gig", "mode": "On-site", "el": "any", "sal": 22000, "salTxt": "₹750/day", "exp": 0, "days": 4, "sk": ["Putty", "Emulsion", "Height work"], "safe": 0, "ver": 0}, {"t": "Personal Driver", "o": "Direct family", "cat": "Gig & Local", "city": "Delhi", "type": "Gig", "mode": "On-site", "el": "10", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 1, "days": 4, "sk": ["LMV licence", "Punctual", "Local routes"], "safe": 1, "ver": 1}, {"t": "Mochi / Cobbler – Shop Assistant", "o": "Local cobbler shop", "cat": "Gig & Local", "city": "Your city", "type": "Gig", "mode": "On-site", "el": "any", "sal": 13000, "salTxt": "₹450/day", "exp": 0, "days": 5, "sk": ["Shoe repair", "Stitching", "Polishing"], "safe": 1, "ver": 0}, {"t": "Packer / Mover", "o": "MoveEasy", "cat": "Gig & Local", "city": "Mumbai", "type": "Gig", "mode": "On-site", "el": "any", "sal": 20000, "salTxt": "₹700/day", "exp": 0, "days": 5, "sk": ["Lifting", "Packing", "Team"], "safe": 1, "ver": 0}, {"t": "Watch Repair Apprentice", "o": "TimeWorks", "cat": "Gig & Local", "city": "Kolkata", "type": "Gig", "mode": "On-site", "el": "any", "sal": 12000, "salTxt": "₹12,000/mo", "exp": 0, "days": 6, "sk": ["Hand tools", "Battery change", "Learn on job"], "safe": 1, "ver": 0}, {"t": "Tiffin Service Cook", "o": "Self / direct customers", "cat": "Gig & Local", "city": "Pune", "type": "Gig", "mode": "On-site", "el": "any", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 6, "sk": ["Bulk cooking", "Delivery", "Hygiene"], "safe": 1, "ver": 0}, {"t": "Housekeeping / Cleaning Staff", "o": "CleanNest Facility", "cat": "Gig & Local", "city": "Gurugram", "type": "Gig", "mode": "On-site", "el": "any", "sal": 14000, "salTxt": "₹14,000/mo", "exp": 0, "days": 7, "sk": ["Cleaning", "No age limit", "Shift work"], "safe": 1, "ver": 1}, {"t": "Car Wash Attendant", "o": "ServicePro Garage", "cat": "Gig & Local", "city": "Delhi", "type": "Gig", "mode": "On-site", "el": "any", "sal": 14000, "salTxt": "₹14,000/mo", "exp": 0, "days": 7, "sk": ["Washing", "Polishing", "Punctuality"], "safe": 1, "ver": 0}, {"t": "Security Guard", "o": "SecureOne Services", "cat": "Gig & Local", "city": "Noida", "type": "Gig", "mode": "On-site", "el": "10", "sal": 16000, "salTxt": "₹16,000/mo", "exp": 0, "days": 8, "sk": ["10th pass", "Night shift", "Age 21–55"], "safe": 1, "ver": 1}, {"t": "Farm Labour (seasonal)", "o": "Local farms", "cat": "Gig & Local", "city": "Your district", "type": "Gig", "mode": "On-site", "el": "any", "sal": 12000, "salTxt": "₹450/day", "exp": 0, "days": 8, "sk": ["Sowing", "Harvest", "Outdoor"], "safe": 1, "ver": 0}, {"t": "SSC GD Constable", "o": "Staff Selection Commission", "cat": "Government", "city": "All India", "type": "Government", "mode": "On-site", "el": "10", "sal": 23500, "salTxt": "₹23,500/mo", "exp": 0, "days": 2, "sk": ["10th pass", "Physical test", "PET/PST"], "safe": 1, "ver": 1, "url": "https://ssc.gov.in"}, {"t": "Anganwadi Worker", "o": "ICDS (Women & Child Dev)", "cat": "Government", "city": "Your district", "type": "Government", "mode": "On-site", "el": "10", "sal": 12000, "salTxt": "₹12,000/mo", "exp": 0, "days": 2, "sk": ["10th pass", "Local resident", "Community"], "safe": 1, "ver": 1, "url": "https://www.ncs.gov.in"}, {"t": "Junior Assistant – Clerical", "o": "District Collectorate", "cat": "Government", "city": "Coimbatore", "type": "Government", "mode": "On-site", "el": "grad", "sal": 25500, "salTxt": "₹25,500/mo", "exp": 0, "days": 3, "sk": ["B.Com", "Typing", "Office procedure"], "safe": 1, "ver": 1, "url": "https://www.tnpsc.gov.in"}, {"t": "IBPS Bank Clerk / PO", "o": "IBPS participating banks", "cat": "Government", "city": "All India", "type": "Government", "mode": "On-site", "el": "grad", "sal": 29000, "salTxt": "₹29,000/mo", "exp": 0, "days": 3, "sk": ["Any graduate", "Prelims + Mains", "Computer knowledge"], "safe": 1, "ver": 1, "url": "https://www.ibps.in"}, {"t": "ASHA Worker", "o": "National Health Mission", "cat": "Government", "city": "Your district", "type": "Government", "mode": "On-site", "el": "10", "sal": 10000, "salTxt": "₹10,000/mo", "exp": 0, "days": 3, "sk": ["10th pass", "Village link", "Health work"], "safe": 1, "ver": 1, "url": "https://nhm.gov.in"}, {"t": "Railway Group D", "o": "Railway Recruitment Board", "cat": "Government", "city": "All India", "type": "Government", "mode": "On-site", "el": "10", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 4, "sk": ["10th / ITI", "CBT exam", "Medical test"], "safe": 1, "ver": 1, "url": "https://www.rrbcdg.gov.in"}, {"t": "Gram Panchayat Clerk", "o": "Gram Panchayat", "cat": "Government", "city": "Your district", "type": "Government", "mode": "On-site", "el": "12", "sal": 18000, "salTxt": "₹18,000/mo", "exp": 0, "days": 4, "sk": ["12th pass", "Typing", "Local language"], "safe": 1, "ver": 1, "url": "https://www.ncs.gov.in"}, {"t": "Railway NTPC (Ticket Collector)", "o": "Railway Recruitment Board", "cat": "Government", "city": "All India", "type": "Government", "mode": "On-site", "el": "12", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 4, "sk": ["12th pass", "CBT", "Medical"], "safe": 1, "ver": 1, "url": "https://www.rrbcdg.gov.in"}, {"t": "ESIC Nursing Officer", "o": "Employees' State Insurance Corporation", "cat": "Government", "city": "All India", "type": "Government", "mode": "On-site", "el": "grad", "sal": 45000, "salTxt": "₹45,000/mo", "exp": 0, "days": 5, "sk": ["GNM / B.Sc Nursing", "Nursing exam", "Govt hospital"], "safe": 1, "ver": 1, "url": "https://www.esic.gov.in"}, {"t": "Postman / MTS", "o": "India Post", "cat": "Government", "city": "All India", "type": "Government", "mode": "On-site", "el": "10", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 5, "sk": ["10th pass", "Cycling route", "Exam"], "safe": 1, "ver": 1, "url": "https://www.indiapost.gov.in"}, {"t": "India Post GDS (Gramin Dak Sevak)", "o": "India Post", "cat": "Government", "city": "All India", "type": "Government", "mode": "On-site", "el": "10", "sal": 12000, "salTxt": "₹12,000/mo", "exp": 0, "days": 6, "sk": ["10th pass", "Local language", "Merit based"], "safe": 1, "ver": 1, "url": "https://www.indiapost.gov.in"}, {"t": "Court Clerk", "o": "District Court", "cat": "Government", "city": "Your district", "type": "Government", "mode": "On-site", "el": "grad", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 6, "sk": ["Graduate", "Typing", "Court procedure"], "safe": 1, "ver": 1, "url": "https://www.ncs.gov.in"}, {"t": "State Police Constable", "o": "State Police Recruitment Board", "cat": "Government", "city": "Your state", "type": "Government", "mode": "On-site", "el": "12", "sal": 25500, "salTxt": "₹25,500/mo", "exp": 0, "days": 7, "sk": ["12th pass", "Running test", "Written exam"], "safe": 1, "ver": 1, "url": "https://www.ncs.gov.in"}, {"t": "UPSC Civil Services", "o": "Union Public Service Commission", "cat": "Government", "city": "All India", "type": "Government", "mode": "On-site", "el": "grad", "sal": 56000, "salTxt": "₹56,100/mo +", "exp": 0, "days": 8, "sk": ["Any graduate", "Prelims", "Age 21–32"], "safe": 1, "ver": 1, "url": "https://upsc.gov.in"}, {"t": "Recruitment Consultant", "o": "PeopleBridge Services", "cat": "HR", "city": "Gurugram", "type": "Private", "mode": "On-site", "el": "grad", "sal": 26000, "salTxt": "₹26,000/mo", "exp": 0, "days": 3, "sk": ["Sourcing", "Screening", "Follow-up"], "safe": 1, "ver": 1}, {"t": "Payroll Executive", "o": "PeopleBridge Services", "cat": "HR", "city": "Gurugram", "type": "Private", "mode": "Hybrid", "el": "grad", "sal": 24000, "salTxt": "₹24,000/mo", "exp": 0, "days": 6, "sk": ["PF/ESI", "Excel", "Attendance"], "safe": 1, "ver": 1}, {"t": "Hotel Front Desk Executive", "o": "Grand Palm Hotel", "cat": "Hospitality & Travel", "city": "Goa", "type": "Private", "mode": "On-site", "el": "grad", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 2, "sk": ["Front office", "ID checks", "English"], "safe": 1, "ver": 1}, {"t": "Commi Chef", "o": "Grand Palm Hotel", "cat": "Hospitality & Travel", "city": "Goa", "type": "Private", "mode": "On-site", "el": "dip", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 3, "sk": ["Kitchen", "Hygiene", "Shift work"], "safe": 1, "ver": 1}, {"t": "Travel Consultant", "o": "TripCraft Holidays", "cat": "Hospitality & Travel", "city": "Mumbai", "type": "Private", "mode": "On-site", "el": "grad", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 4, "sk": ["Itinerary", "GDS", "Sales"], "safe": 1, "ver": 1}, {"t": "Housekeeping Supervisor", "o": "Grand Palm Hotel", "cat": "Hospitality & Travel", "city": "Goa", "type": "Private", "mode": "On-site", "el": "10", "sal": 18000, "salTxt": "₹18,000/mo", "exp": 0, "days": 6, "sk": ["Team", "Linen", "Checklist"], "safe": 1, "ver": 1}, {"t": "Local Tour Guide", "o": "City Tours Co", "cat": "Hospitality & Travel", "city": "Jaipur", "type": "Gig", "mode": "On-site", "el": "any", "sal": 18000, "salTxt": "₹1,200 / tour", "exp": 0, "days": 8, "sk": ["History", "Languages", "Storytelling"], "safe": 1, "ver": 0}, {"t": "Cybersecurity Intern", "o": "ShieldNet Labs", "cat": "IT & Data", "city": "Hyderabad", "type": "Internship", "mode": "Hybrid", "el": "grad", "sal": 15000, "salTxt": "₹15,000 stipend", "exp": 0, "days": 1, "sk": ["Networking", "Linux", "SOC basics"], "safe": 1, "ver": 1, "intern": "paid"}, {"t": "AI / ML Intern", "o": "Metricly Analytics", "cat": "IT & Data", "city": "Remote", "type": "Internship", "mode": "Remote", "el": "grad", "sal": 15000, "salTxt": "₹15,000 stipend", "exp": 0, "days": 1, "sk": ["Python", "Scikit-learn", "Kaggle"], "safe": 1, "ver": 1, "intern": "paid"}, {"t": "QA Engineer – Software", "o": "Trellis Systems", "cat": "IT & Data", "city": "Bengaluru", "type": "Private", "mode": "Remote", "el": "grad", "sal": 50000, "salTxt": "₹6.0 LPA", "exp": 0, "days": 2, "sk": ["Manual testing", "Selenium", "SQL"], "safe": 1, "ver": 1}, {"t": "Cloud Support Associate", "o": "CloudNest Systems", "cat": "IT & Data", "city": "Remote", "type": "Private", "mode": "Remote", "el": "grad", "sal": 38000, "salTxt": "₹4.5 LPA", "exp": 0, "days": 2, "sk": ["AWS", "Linux", "Ticketing"], "safe": 1, "ver": 1}, {"t": "Data Analyst (Fresher)", "o": "Metricly Analytics", "cat": "IT & Data", "city": "Remote", "type": "Private", "mode": "Remote", "el": "grad", "sal": 41000, "salTxt": "₹5.0 LPA", "exp": 0, "days": 3, "sk": ["SQL", "Python", "Power BI"], "safe": 1, "ver": 1}, {"t": "DevOps Trainee", "o": "Trellis Systems", "cat": "IT & Data", "city": "Bengaluru", "type": "Private", "mode": "Hybrid", "el": "grad", "sal": 42000, "salTxt": "₹5.0 LPA", "exp": 0, "days": 3, "sk": ["Docker", "CI/CD", "Git"], "safe": 1, "ver": 1}, {"t": "SOC Analyst L1 (Cyber Security)", "o": "ShieldNet Labs", "cat": "IT & Data", "city": "Hyderabad", "type": "Private", "mode": "Hybrid", "el": "grad", "sal": 35000, "salTxt": "₹4.2 LPA", "exp": 0, "days": 4, "sk": ["Networking", "Linux", "SOC monitoring"], "safe": 1, "ver": 1}, {"t": "Mobile App Developer (Flutter)", "o": "AppWorks Studio", "cat": "IT & Data", "city": "Remote", "type": "Private", "mode": "Remote", "el": "any", "sal": 42000, "salTxt": "₹5.0 LPA", "exp": 0, "days": 4, "sk": ["Flutter", "Dart", "Play Store"], "safe": 1, "ver": 0}, {"t": "Junior Web Developer", "o": "Pixelcraft Studio", "cat": "IT & Data", "city": "Remote", "type": "Private", "mode": "Remote", "el": "any", "sal": 37000, "salTxt": "₹4.5 LPA", "exp": 0, "days": 6, "sk": ["HTML/CSS", "JavaScript", "Portfolio needed"], "safe": 1, "ver": 0}, {"t": "IT Support / Helpdesk", "o": "InfoBridge Services", "cat": "IT & Data", "city": "Indore", "type": "Private", "mode": "On-site", "el": "dip", "sal": 18000, "salTxt": "₹18,000/mo", "exp": 0, "days": 6, "sk": ["Windows", "Networking", "Ticket handling"], "safe": 1, "ver": 1}, {"t": "Data Entry Operator", "o": "InfoBridge Services", "cat": "IT & Data", "city": "Indore", "type": "Private", "mode": "On-site", "el": "12", "sal": 15000, "salTxt": "₹15,000/mo", "exp": 0, "days": 7, "sk": ["Typing 30wpm", "Excel", "Hindi + English"], "safe": 1, "ver": 0}, {"t": "Data Science Trainee", "o": "Metricly Analytics", "cat": "IT & Data", "city": "Remote", "type": "Private", "mode": "Remote", "el": "grad", "sal": 50000, "salTxt": "₹6.0 LPA", "exp": 0, "days": 7, "sk": ["Python", "Pandas", "ML basics"], "safe": 1, "ver": 1}, {"t": "Computer Teacher (Graphics + Basics)", "o": "Bright Institute", "cat": "IT & Data", "city": "Jaipur", "type": "Private", "mode": "On-site", "el": "12", "sal": 18000, "salTxt": "₹18,000/mo", "exp": 0, "days": 9, "sk": ["Photoshop", "MS Office", "Teaching"], "safe": 1, "ver": 0}, {"t": "Legal Associate", "o": "Chambers of R. Menon", "cat": "Law", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "grad", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 0, "days": 3, "sk": ["LLB", "Drafting", "Litigation support"], "safe": 1, "ver": 1}, {"t": "Paralegal – Corporate", "o": "Vertex Legal LLP", "cat": "Law", "city": "Mumbai", "type": "Private", "mode": "Hybrid", "el": "grad", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 6, "sk": ["LLB", "Compliance", "Contract review"], "safe": 1, "ver": 1}, {"t": "Company Secretary Trainee", "o": "Nexus Advisory", "cat": "Law", "city": "Mumbai", "type": "Private", "mode": "On-site", "el": "pg", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 0, "days": 8, "sk": ["CS Executive", "ROC filing", "Minutes"], "safe": 1, "ver": 0}, {"t": "Legal Content Writer", "o": "LawDocs", "cat": "Law", "city": "Remote", "type": "Private", "mode": "Remote", "el": "grad", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 9, "sk": ["Legal writing", "Research", "English"], "safe": 1, "ver": 0}, {"t": "Warehouse Supervisor", "o": "QuickShip", "cat": "Logistics & Supply Chain", "city": "Gurugram", "type": "Private", "mode": "On-site", "el": "grad", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 3, "sk": ["Inventory", "WMS", "Team handling"], "safe": 1, "ver": 1}, {"t": "Delivery Fleet Coordinator", "o": "QuickShip", "cat": "Logistics & Supply Chain", "city": "Bengaluru", "type": "Private", "mode": "On-site", "el": "grad", "sal": 26000, "salTxt": "₹26,000/mo", "exp": 0, "days": 4, "sk": ["Rostering", "Fuel tracking", "Excel"], "safe": 1, "ver": 1}, {"t": "Truck Driver (HMV licence)", "o": "TransLink Logistics", "cat": "Logistics & Supply Chain", "city": "Nagpur", "type": "Private", "mode": "On-site", "el": "10", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 2, "days": 5, "sk": ["HMV licence", "Long route", "Fitness"], "safe": 1, "ver": 1}, {"t": "Supply Chain Trainee", "o": "Metro Manufacturing", "cat": "Logistics & Supply Chain", "city": "Pune", "type": "Private", "mode": "On-site", "el": "grad", "sal": 30000, "salTxt": "₹3.6 LPA", "exp": 0, "days": 8, "sk": ["Procurement", "Excel", "Vendor follow-up"], "safe": 1, "ver": 1}, {"t": "Hospital Administration Intern", "o": "City Care Hospital", "cat": "Management", "city": "Delhi", "type": "Internship", "mode": "On-site", "el": "grad", "sal": 12000, "salTxt": "₹12,000 stipend", "exp": 0, "days": 2, "sk": ["MHA / BBA", "Patient flow", "Ops"], "safe": 1, "ver": 1, "intern": "paid"}, {"t": "Medical Officer – PHC (Contract)", "o": "National Health Mission", "cat": "Medical", "city": "Jaipur", "type": "Government", "mode": "On-site", "el": "pg", "sal": 55000, "salTxt": "₹55,000/mo", "exp": 0, "days": 1, "sk": ["MBBS", "Primary care", "Rural posting"], "safe": 1, "ver": 1, "url": "https://nhm.rajasthan.gov.in"}, {"t": "Junior Resident – General Medicine", "o": "City Care Hospital", "cat": "Medical", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "pg", "sal": 65000, "salTxt": "₹65,000/mo", "exp": 0, "days": 2, "sk": ["MBBS", "Ward rounds", "Emergency"], "safe": 1, "ver": 1}, {"t": "Senior Resident – Anaesthesiology", "o": "AIIMS (via AIIMS Exams)", "cat": "Medical", "city": "Delhi", "type": "Government", "mode": "On-site", "el": "pg", "sal": 100000, "salTxt": "₹1,00,000/mo", "exp": 2, "days": 3, "sk": ["MBBS", "MD Anaesthesia", "OT"], "safe": 1, "ver": 1, "url": "https://www.aiimsexams.ac.in"}, {"t": "Duty Medical Officer", "o": "Sanjeevani Multispecialty", "cat": "Medical", "city": "Pune", "type": "Private", "mode": "On-site", "el": "pg", "sal": 70000, "salTxt": "₹70,000/mo", "exp": 1, "days": 5, "sk": ["MBBS", "ICU", "Casualty"], "safe": 1, "ver": 1}, {"t": "Guitar Teacher (home tuition)", "o": "Self / direct parents", "cat": "Music & Performing Arts", "city": "Your city", "type": "Gig", "mode": "On-site", "el": "any", "sal": 16000, "salTxt": "₹600 / hour", "exp": 0, "days": 1, "sk": ["Acoustic guitar", "Music theory", "Patience"], "safe": 1, "ver": 0}, {"t": "Tabla Player – weddings & events", "o": "Freelance bookings", "cat": "Music & Performing Arts", "city": "Your city", "type": "Gig", "mode": "On-site", "el": "any", "sal": 15000, "salTxt": "₹3,000 / event", "exp": 2, "days": 2, "sk": ["Tabla", "Laya", "Stage experience"], "safe": 1, "ver": 0}, {"t": "Sound Engineer – live events", "o": "StageCraft Audio", "cat": "Music & Performing Arts", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "dip", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 1, "days": 2, "sk": ["Mixing console", "Mics", "Live sound"], "safe": 1, "ver": 1}, {"t": "Piano / Keyboard Teacher", "o": "Harmony Music School", "cat": "Music & Performing Arts", "city": "Mumbai", "type": "Private", "mode": "On-site", "el": "grad", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 3, "sk": ["Piano", "Grade exams", "Sight reading"], "safe": 1, "ver": 1}, {"t": "Dance Teacher – Bollywood", "o": "StepUp Dance Studio", "cat": "Music & Performing Arts", "city": "Ahmedabad", "type": "Private", "mode": "On-site", "el": "any", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 3, "sk": ["Choreography", "Fitness", "Kids batches"], "safe": 1, "ver": 0}, {"t": "Vocal Music Teacher (Hindustani)", "o": "Sangeet Academy", "cat": "Music & Performing Arts", "city": "Varanasi", "type": "Private", "mode": "On-site", "el": "grad", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 4, "sk": ["Hindustani vocal", "Raag", "Bhatkhande"], "safe": 1, "ver": 1}, {"t": "Event Anchor / Theatre Artist", "o": "EventCraft", "cat": "Music & Performing Arts", "city": "Jaipur", "type": "Gig", "mode": "On-site", "el": "any", "sal": 20000, "salTxt": "₹2,500 / event", "exp": 0, "days": 4, "sk": ["Stage presence", "Hindi", "Improv"], "safe": 1, "ver": 0}, {"t": "Recording Studio Assistant", "o": "BlueWave Studio", "cat": "Music & Performing Arts", "city": "Kolkata", "type": "Private", "mode": "On-site", "el": "any", "sal": 18000, "salTxt": "₹18,000/mo", "exp": 0, "days": 5, "sk": ["DAW basics", "Mic setup", "Cables"], "safe": 1, "ver": 0}, {"t": "Music Therapist", "o": "Healing Sounds Centre", "cat": "Music & Performing Arts", "city": "Pune", "type": "Private", "mode": "On-site", "el": "pg", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 1, "days": 6, "sk": ["Music therapy", "Special needs", "Empathy"], "safe": 1, "ver": 1}, {"t": "School Music Teacher", "o": "Vidya Public School", "cat": "Music & Performing Arts", "city": "Bhopal", "type": "Private", "mode": "On-site", "el": "grad", "sal": 24000, "salTxt": "₹24,000/mo", "exp": 0, "days": 7, "sk": ["Music", "B.Ed preferred", "Choir"], "safe": 1, "ver": 1}, {"t": "Staff Nurse – District Hospital", "o": "State Health Society", "cat": "Nursing", "city": "Patna", "type": "Government", "mode": "On-site", "el": "grad", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 0, "days": 2, "sk": ["GNM", "B.Sc Nursing", "Contractual"], "safe": 1, "ver": 1, "url": "https://statehealthsocietybihar.org"}, {"t": "Staff Nurse – General Ward", "o": "Medanta Care", "cat": "Nursing", "city": "Gurugram", "type": "Private", "mode": "On-site", "el": "grad", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 0, "days": 3, "sk": ["B.Sc Nursing", "GNM", "Patient care"], "safe": 1, "ver": 1}, {"t": "ICU Staff Nurse", "o": "LifeLine Hospital", "cat": "Nursing", "city": "Hyderabad", "type": "Private", "mode": "On-site", "el": "grad", "sal": 34000, "salTxt": "₹34,000/mo", "exp": 1, "days": 4, "sk": ["ICU", "Ventilator", "B.Sc Nursing"], "safe": 1, "ver": 1}, {"t": "Nursing Clinical Internship", "o": "Medanta Care", "cat": "Nursing", "city": "Gurugram", "type": "Internship", "mode": "On-site", "el": "dip", "sal": 9000, "salTxt": "₹9,000 stipend + food", "exp": 0, "days": 7, "sk": ["Clinical posting", "Ward duty", "Certificate"], "safe": 1, "ver": 1, "intern": "paid"}, {"t": "OT Nurse", "o": "Nova Superspeciality", "cat": "Nursing", "city": "Ahmedabad", "type": "Private", "mode": "On-site", "el": "dip", "sal": 26000, "salTxt": "₹26,000/mo", "exp": 0, "days": 8, "sk": ["OT technique", "Sterilisation", "Assist surgeon"], "safe": 1, "ver": 0}, {"t": "Community Health Nurse", "o": "Aarogya Foundation", "cat": "Nursing", "city": "Patna", "type": "Private", "mode": "On-site", "el": "dip", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 9, "sk": ["GNM", "Immunisation", "Outreach"], "safe": 1, "ver": 0}, {"t": "Dietician", "o": "HealthFirst Hospital", "cat": "Nutrition & Dietetics", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "pg", "sal": 32000, "salTxt": "₹32,000/mo", "exp": 0, "days": 3, "sk": ["M.Sc Nutrition", "Diet plans", "Ward rounds"], "safe": 1, "ver": 1}, {"t": "Nutritionist (clinic)", "o": "Wellness Retreat", "cat": "Nutrition & Dietetics", "city": "Rishikesh", "type": "Private", "mode": "On-site", "el": "grad", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 6, "sk": ["Diet counselling", "Body comp", "Follow-up"], "safe": 1, "ver": 0}, {"t": "Radiology Technician", "o": "Sunrise Diagnostics", "cat": "Paramedical", "city": "Mumbai", "type": "Private", "mode": "On-site", "el": "dip", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 2, "sk": ["B.Sc Radiology", "X-ray", "CT scan"], "safe": 1, "ver": 1}, {"t": "Cath Lab / ECG Technician", "o": "HeartWorks Institute", "cat": "Paramedical", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "dip", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 1, "days": 4, "sk": ["ECG", "Cath lab", "Cardiac care"], "safe": 1, "ver": 1}, {"t": "Lab Intern (DMLT / B.Sc)", "o": "PathCare Labs", "cat": "Paramedical", "city": "Lucknow", "type": "Internship", "mode": "On-site", "el": "dip", "sal": 8000, "salTxt": "₹8,000 stipend", "exp": 0, "days": 4, "sk": ["Sample handling", "Reports", "Learning"], "safe": 1, "ver": 1, "intern": "paid"}, {"t": "Dialysis Technician", "o": "NephroCare Centre", "cat": "Paramedical", "city": "Chennai", "type": "Private", "mode": "On-site", "el": "dip", "sal": 24000, "salTxt": "₹24,000/mo", "exp": 0, "days": 5, "sk": ["Diploma Dialysis", "Machine setup", "Patient monitoring"], "safe": 1, "ver": 1}, {"t": "Lab Technician (DMLT)", "o": "PathCare Labs", "cat": "Paramedical", "city": "Lucknow", "type": "Private", "mode": "On-site", "el": "dip", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 6, "sk": ["DMLT", "Phlebotomy", "Sample handling"], "safe": 1, "ver": 1}, {"t": "Physiotherapy Assistant", "o": "RehabFirst Clinic", "cat": "Paramedical", "city": "Kochi", "type": "Private", "mode": "On-site", "el": "grad", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 7, "sk": ["BPT", "Exercise therapy", "Ortho rehab"], "safe": 1, "ver": 1}, {"t": "Operation Theatre Technician", "o": "Nova Superspeciality", "cat": "Paramedical", "city": "Ahmedabad", "type": "Private", "mode": "On-site", "el": "dip", "sal": 21000, "salTxt": "₹21,000/mo", "exp": 0, "days": 8, "sk": ["OT tech", "CSSD", "Anaesthesia support"], "safe": 1, "ver": 0}, {"t": "Optometry Assistant", "o": "ClearSight Eye Clinic", "cat": "Paramedical", "city": "Bengaluru", "type": "Private", "mode": "On-site", "el": "dip", "sal": 18000, "salTxt": "₹18,000/mo", "exp": 0, "days": 11, "sk": ["B.Optom", "Refraction", "Counselling"], "safe": 1, "ver": 0}, {"t": "Hospital Pharmacist", "o": "Sanjeevani Multispecialty", "cat": "Pharmacy", "city": "Pune", "type": "Private", "mode": "On-site", "el": "grad", "sal": 26000, "salTxt": "₹26,000/mo", "exp": 0, "days": 3, "sk": ["B.Pharm", "Dispensing", "Inventory"], "safe": 1, "ver": 1}, {"t": "Clinical Research Associate", "o": "Vitalis CRO", "cat": "Pharmacy", "city": "Chennai", "type": "Private", "mode": "Hybrid", "el": "pg", "sal": 40000, "salTxt": "₹40,000/mo", "exp": 1, "days": 5, "sk": ["M.Pharm", "GCP", "Trial documentation"], "safe": 1, "ver": 1}, {"t": "QC Chemist", "o": "Shree Chemicals", "cat": "Pharmacy", "city": "Vadodara", "type": "Private", "mode": "On-site", "el": "grad", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 0, "days": 6, "sk": ["B.Sc Chemistry", "HPLC", "Lab records"], "safe": 1, "ver": 1}, {"t": "Production Chemist", "o": "NovaLife Pharma", "cat": "Pharmacy", "city": "Hyderabad", "type": "Private", "mode": "On-site", "el": "grad", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 0, "days": 7, "sk": ["B.Pharm", "GMP", "Shift work"], "safe": 0, "ver": 1}, {"t": "Chemical Process Engineer Trainee", "o": "Gujarat Chem Works", "cat": "Pharmacy", "city": "Ankleshwar", "type": "Private", "mode": "On-site", "el": "grad", "sal": 32000, "salTxt": "₹3.8 LPA", "exp": 0, "days": 9, "sk": ["B.Tech Chemical", "Process safety", "DCS"], "safe": 1, "ver": 0}, {"t": "Retail Pharmacist", "o": "Wellness Forever", "cat": "Pharmacy", "city": "Nagpur", "type": "Private", "mode": "On-site", "el": "dip", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 10, "sk": ["D.Pharm", "Billing", "Stock audit"], "safe": 1, "ver": 0}, {"t": "Clinical Psychology Assistant", "o": "MindCare Clinic", "cat": "Psychology & Counselling", "city": "Pune", "type": "Private", "mode": "On-site", "el": "pg", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 0, "days": 2, "sk": ["M.A./M.Sc", "Assessment", "Ethics"], "safe": 1, "ver": 1}, {"t": "Career Counsellor", "o": "PathFinder Guidance", "cat": "Psychology & Counselling", "city": "Remote", "type": "Private", "mode": "Remote", "el": "grad", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 4, "sk": ["Counselling", "Course mapping", "Listening"], "safe": 1, "ver": 0}, {"t": "School Counsellor", "o": "Vidya Public School", "cat": "Psychology & Counselling", "city": "Bhopal", "type": "Private", "mode": "On-site", "el": "pg", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 0, "days": 7, "sk": ["RCI / M.A.", "Adolescents", "Confidentiality"], "safe": 1, "ver": 1}, {"t": "Hospital Administrator", "o": "City Care Hospital", "cat": "Public Health & Admin", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "pg", "sal": 45000, "salTxt": "₹45,000/mo", "exp": 1, "days": 2, "sk": ["MHA", "Roster", "NABH"], "safe": 1, "ver": 1}, {"t": "Medical Coder (CPC)", "o": "CodeMed Solutions", "cat": "Public Health & Admin", "city": "Remote", "type": "Private", "mode": "Remote", "el": "grad", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 0, "days": 3, "sk": ["ICD-10", "CPT", "Coding test"], "safe": 1, "ver": 1}, {"t": "Pharmacovigilance Associate", "o": "Vitalis CRO", "cat": "Public Health & Admin", "city": "Chennai", "type": "Private", "mode": "Hybrid", "el": "pg", "sal": 35000, "salTxt": "₹35,000/mo", "exp": 0, "days": 5, "sk": ["Case processing", "Argus", "MedDRA"], "safe": 1, "ver": 1}, {"t": "Health Inspector", "o": "Municipal Corporation", "cat": "Public Health & Admin", "city": "Pune", "type": "Government", "mode": "On-site", "el": "grad", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 0, "days": 6, "sk": ["Sanitation", "Field inspection", "Report"], "safe": 1, "ver": 1, "url": "https://www.ncs.gov.in"}, {"t": "Digital Marketing Executive", "o": "BrandLoom", "cat": "Sales & Marketing", "city": "Remote", "type": "Private", "mode": "Remote", "el": "grad", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 2, "sk": ["Meta Ads", "SEO", "Analytics"], "safe": 1, "ver": 1}, {"t": "Field Sales Officer (FMCG)", "o": "DailyGoods Distributors", "cat": "Sales & Marketing", "city": "Kanpur", "type": "Private", "mode": "On-site", "el": "any", "sal": 20000, "salTxt": "₹20,000/mo + incentive", "exp": 0, "days": 4, "sk": ["Route sales", "Retailers", "Two-wheeler"], "safe": 1, "ver": 1}, {"t": "Field Social Worker", "o": "Aarogya Foundation", "cat": "Social Work & NGO", "city": "Patna", "type": "Private", "mode": "On-site", "el": "grad", "sal": 24000, "salTxt": "₹24,000/mo", "exp": 0, "days": 3, "sk": ["Community work", "Documentation", "Empathy"], "safe": 1, "ver": 1}, {"t": "NGO Project Coordinator", "o": "GreenEarth Foundation", "cat": "Social Work & NGO", "city": "Dehradun", "type": "Private", "mode": "On-site", "el": "pg", "sal": 32000, "salTxt": "₹32,000/mo", "exp": 1, "days": 5, "sk": ["MSW", "Donor reports", "Team"], "safe": 1, "ver": 1}, {"t": "Yoga Instructor", "o": "YogaBharat Studio", "cat": "Sports & Fitness", "city": "Your city", "type": "Gig", "mode": "On-site", "el": "any", "sal": 22000, "salTxt": "₹700 / session", "exp": 0, "days": 1, "sk": ["Hatha yoga", "Pranayama", "Group class"], "safe": 1, "ver": 0}, {"t": "Gym Trainer", "o": "FitZone Gym", "cat": "Sports & Fitness", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "any", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 2, "sk": ["Certification", "Form", "Client handling"], "safe": 1, "ver": 1}, {"t": "Sports Physiotherapist", "o": "FitZone Gym", "cat": "Sports & Fitness", "city": "Delhi", "type": "Private", "mode": "On-site", "el": "grad", "sal": 30000, "salTxt": "₹30,000/mo", "exp": 0, "days": 4, "sk": ["BPT", "Taping", "Rehab"], "safe": 1, "ver": 1}, {"t": "Cricket Coach", "o": "Victory Sports Academy", "cat": "Sports & Fitness", "city": "Nagpur", "type": "Private", "mode": "On-site", "el": "any", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 2, "days": 5, "sk": ["Coaching", "Nets", "Fitness"], "safe": 1, "ver": 1}, {"t": "Swimming Instructor", "o": "AquaFit Club", "cat": "Sports & Fitness", "city": "Kochi", "type": "Private", "mode": "On-site", "el": "any", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 6, "sk": ["Lifesaving", "Freestyle", "Kids"], "safe": 1, "ver": 0}, {"t": "Home Tuition – Class 1 to 5", "o": "Parents near you (direct)", "cat": "Teaching", "city": "Your city", "type": "Gig", "mode": "On-site", "el": "12", "sal": 16000, "salTxt": "₹350–500 / hour", "exp": 0, "days": 1, "sk": ["Any stream", "Patience", "Local area"], "safe": 1, "ver": 0}, {"t": "Pre-Primary Teacher (KG)", "o": "Little Steps Playschool", "cat": "Teaching", "city": "Pune", "type": "Private", "mode": "On-site", "el": "12", "sal": 16000, "salTxt": "₹16,000/mo", "exp": 0, "days": 2, "sk": ["NTT", "Kids care", "Activity planning"], "safe": 1, "ver": 1}, {"t": "Assistant Professor – Physics", "o": "St. Xavier's Degree College", "cat": "Teaching", "city": "Kochi", "type": "Private", "mode": "On-site", "el": "pg", "sal": 45000, "salTxt": "₹45,000/mo", "exp": 1, "days": 4, "sk": ["M.Sc Physics", "NET/SET", "UGC norms"], "safe": 1, "ver": 1}, {"t": "Guest Lecturer – Chemistry", "o": "Government College", "cat": "Teaching", "city": "Jaipur", "type": "Government", "mode": "On-site", "el": "pg", "sal": 35000, "salTxt": "₹35,000/mo", "exp": 0, "days": 5, "sk": ["M.Sc Chemistry", "NET preferred", "Lecture load"], "safe": 1, "ver": 1, "url": "https://rhe.rajasthan.gov.in"}, {"t": "Special Educator", "o": "Vidya Public School", "cat": "Teaching", "city": "Bhopal", "type": "Private", "mode": "On-site", "el": "pg", "sal": 28000, "salTxt": "₹28,000/mo", "exp": 0, "days": 5, "sk": ["RCI registration", "IEP", "Patience"], "safe": 1, "ver": 1}, {"t": "School Teacher – Science", "o": "Vidya Public School", "cat": "Teaching", "city": "Bhopal", "type": "Private", "mode": "On-site", "el": "grad", "sal": 25000, "salTxt": "₹25,000/mo", "exp": 0, "days": 6, "sk": ["B.Ed", "CBSE", "Classroom mgmt"], "safe": 1, "ver": 1}, {"t": "Research Intern (certificate only)", "o": "National Research Institute", "cat": "Teaching", "city": "Remote", "type": "Internship", "mode": "Remote", "el": "pg", "sal": 0, "salTxt": "Unpaid — certificate + LOR", "exp": 0, "days": 6, "sk": ["Literature review", "Data work", "M.Sc / PhD"], "safe": 1, "ver": 1, "intern": "unpaid"}, {"t": "Research Associate", "o": "National Research Institute", "cat": "Teaching", "city": "Bengaluru", "type": "Private", "mode": "On-site", "el": "pg", "sal": 55000, "salTxt": "₹55,000/mo", "exp": 0, "days": 7, "sk": ["PhD / M.Sc", "Lab work", "Publications"], "safe": 1, "ver": 1}, {"t": "PET / Sports Teacher", "o": "Vidya Public School", "cat": "Teaching", "city": "Bhopal", "type": "Private", "mode": "On-site", "el": "grad", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 7, "sk": ["BPEd", "Ground drills", "Discipline"], "safe": 1, "ver": 1}, {"t": "Spoken English Trainer", "o": "FluentEdge Academy", "cat": "Teaching", "city": "Remote", "type": "Private", "mode": "Remote", "el": "grad", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 10, "sk": ["BA English", "TEFL", "Online teaching"], "safe": 1, "ver": 0}, {"t": "Veterinary Field Assistant", "o": "Animal Care Trust", "cat": "Veterinary", "city": "Nashik", "type": "Private", "mode": "On-site", "el": "dip", "sal": 22000, "salTxt": "₹22,000/mo", "exp": 0, "days": 4, "sk": ["Animal handling", "Vaccination", "Field visits"], "safe": 1, "ver": 0}, {"t": "Dairy Vet Assistant", "o": "Gokul Dairy", "cat": "Veterinary", "city": "Kolhapur", "type": "Private", "mode": "On-site", "el": "dip", "sal": 20000, "salTxt": "₹20,000/mo", "exp": 0, "days": 7, "sk": ["Cattle health", "AI", "Records"], "safe": 1, "ver": 1}];
+const GOVT = [{"n": "SSC — Staff Selection Commission", "d": "GD Constable, CHSL, CGL, MTS, JE. 10th, 12th and graduate level central government exams.", "u": "https://ssc.gov.in", "tag": "10th / 12th / Graduate"}, {"n": "UPSC — Civil Services & more", "d": "IAS, IPS, IFS, NDA, CDS, Engineering Services, Medical Services.", "u": "https://upsc.gov.in", "tag": "Graduate +"}, {"n": "Railway Recruitment Board", "d": "Group D, NTPC, ALP, Technician. Largest recruiter for 10th and ITI holders.", "u": "https://www.rrbcdg.gov.in", "tag": "10th / ITI"}, {"n": "IBPS — Bank exams", "d": "Clerk, Probationary Officer, SO and RRB posts across public sector banks.", "u": "https://www.ibps.in", "tag": "Graduate"}, {"n": "ESIC — Employees' State Insurance", "d": "Nursing Officer, Paramedical and UDC posts in ESIC hospitals.", "u": "https://www.esic.gov.in", "tag": "Nursing / Paramedical"}, {"n": "AIIMS Exams", "d": "Nursing Officer, Senior Resident, Junior Resident, paramedical group B & C.", "u": "https://www.aiimsexams.ac.in", "tag": "Medical / Nursing"}, {"n": "India Post", "d": "Gramin Dak Sevak (GDS), Postal Assistant, MTS. 10th pass can apply for GDS.", "u": "https://www.indiapost.gov.in", "tag": "10th pass"}, {"n": "National Career Service (NCS)", "d": "Government job exchange — central, state and private listings in one place, with free registration.", "u": "https://www.ncs.gov.in", "tag": "All levels"}, {"n": "Skill India Digital Hub", "d": "Free short courses and PMKVY skill training with government certification.", "u": "https://www.skillindiadigital.gov.in", "tag": "Skill courses"}, {"n": "Join Indian Army", "d": "Agniveer, TES, SSC Tech, soldier tradesman. 10th, 12th and graduate entries.", "u": "https://joinindianarmy.nic.in", "tag": "10th / 12th / Graduate"}, {"n": "Indian Navy", "d": "Agniveer SSR/MR, cadet entries, 10+2 B.Tech entry.", "u": "https://www.joinindiannavy.gov.in", "tag": "12th / Graduate"}, {"n": "AFCAT — Indian Air Force", "d": "Flying branch and ground duty officer entries for graduates.", "u": "https://afcat.cdac.in", "tag": "Graduate"}];
+const WORKERS = [{"n": "Ramesh Darji", "tr": "Tailor / Darji", "area": "Kothrud, Pune", "exp": 22, "rate": "₹350 per piece", "pd": 1, "cat": ["Blouse stitching", "School uniform", "Alteration"], "r": 4.8, "jobs": 640, "ph": "98••• ••210"}, {"n": "Salim Shaikh", "tr": "Plumber", "area": "Andheri, Mumbai", "exp": 14, "rate": "₹450 per visit", "pd": 0, "cat": ["Leak repair", "Bathroom fitting", "Water tank"], "r": 4.6, "jobs": 1120, "ph": "99••• ••438"}, {"n": "Suresh Yadav", "tr": "Electrician", "area": "Indirapuram, Ghaziabad", "exp": 9, "rate": "₹500 per visit", "pd": 0, "cat": ["House wiring", "Inverter setup", "Fan / light"], "r": 4.7, "jobs": 830, "ph": "88••• ••907"}, {"n": "Kamla Devi", "tr": "Beautician (home service)", "area": "Jaipur West", "exp": 7, "rate": "₹800 per booking", "pd": 1, "cat": ["Bridal makeup", "Threading", "Mehndi"], "r": 4.9, "jobs": 410, "ph": "70••• ••316"}, {"n": "Ashok Vishwakarma", "tr": "Carpenter", "area": "Bhopal", "exp": 18, "rate": "₹800 per day", "pd": 0, "cat": ["Modular kitchen", "Door repair", "Polish"], "r": 4.5, "jobs": 290, "ph": "93••• ••772"}, {"n": "Irfan Mochi", "tr": "Mochi / Cobbler", "area": "Old City, Hyderabad", "exp": 25, "rate": "₹120 per pair", "pd": 1, "cat": ["Sole change", "Zip repair", "Shoe polish"], "r": 4.4, "jobs": 1560, "ph": "96••• ••105"}, {"n": "Deepak Nair", "tr": "AC & Fridge Technician", "area": "Kochi", "exp": 11, "rate": "₹600 per service", "pd": 0, "cat": ["Gas charging", "Compressor change", "Annual service"], "r": 4.8, "jobs": 980, "ph": "90••• ••663"}, {"n": "Mohan Lal", "tr": "Watch Repair", "area": "Chandni Chowk, Delhi", "exp": 30, "rate": "₹200 onwards", "pd": 1, "cat": ["Movement repair", "Battery", "Strap fitting"], "r": 4.7, "jobs": 2100, "ph": "98••• ••874"}, {"n": "Pooja Sahu", "tr": "Home Tutor (Class 1–5)", "area": "Bilaspur", "exp": 4, "rate": "₹400 per hour", "pd": 0, "cat": ["All subjects", "CBSE / State board", "Evening slots"], "r": 4.9, "jobs": 70, "ph": "78••• ••221"}, {"n": "Bharat Solanki", "tr": "Painter", "area": "Ahmedabad", "exp": 15, "rate": "₹750 per day", "pd": 0, "cat": ["Putty work", "Emulsion", "Texture finish"], "r": 4.3, "jobs": 340, "ph": "97••• ••558"}, {"n": "Ravi Sharma", "tr": "Guitar Teacher", "area": "Kothrud, Pune", "exp": 12, "rate": "₹600 / hour", "pd": 0, "cat": ["Acoustic & electric guitar", "Chords for beginners", "Hindi songs"], "r": 4.9, "jobs": 180, "ph": "98••• ••441"}, {"n": "Ustad Imran Khan", "tr": "Tabla Player", "area": "Old City, Hyderabad", "exp": 20, "rate": "₹3,000 / event", "pd": 0, "cat": ["Wedding programmes", "Laya", "Accompanist"], "r": 4.9, "jobs": 320, "ph": "99••• ••217"}, {"n": "Sister Anita", "tr": "Piano / Keyboard Teacher", "area": "Bandra, Mumbai", "exp": 9, "rate": "₹700 / hour", "pd": 0, "cat": ["Trinity grade prep", "Kids", "Keyboard"], "r": 4.8, "jobs": 140, "ph": "90••• ••663"}, {"n": "Vikram Rathore", "tr": "Wedding Photographer", "area": "Jaipur", "exp": 8, "rate": "₹4,000 / day", "pd": 0, "cat": ["Candid", "Album", "Drone add-on"], "r": 4.7, "jobs": 260, "ph": "88••• ••105"}, {"n": "Sundar Mistri", "tr": "Mason (Raj Mistri)", "area": "Bhopal", "exp": 22, "rate": "₹900 / day", "pd": 0, "cat": ["Brickwork", "Plaster", "Tile"], "r": 4.5, "jobs": 410, "ph": "93••• ••772"}, {"n": "Lakshmi Bai", "tr": "Cook / Maharaj", "area": "Pune", "exp": 16, "rate": "₹800 / day", "pd": 1, "cat": ["Gujarati & Maharashtrian thali", "Party cooking"], "r": 4.8, "jobs": 520, "ph": "70••• ••316"}, {"n": "Rafiq Bhai", "tr": "Barber", "area": "Chandigarh", "exp": 11, "rate": "₹150 / cut", "pd": 0, "cat": ["Home visit haircut", "Beard", "Kids"], "r": 4.6, "jobs": 900, "ph": "96••• ••438"}, {"n": "Anjali Nair", "tr": "Dance Teacher", "area": "Kochi", "exp": 6, "rate": "₹500 / class", "pd": 0, "cat": ["Bollywood", "Kids batches", "Wedding choreography"], "r": 4.9, "jobs": 95, "ph": "78••• ••221"}];
+const COURSES = [{"n": "SWAYAM", "d": "Free courses from IITs, NITs and central universities — school, UG, PG and skill levels.", "free": "Learning free. Optional proctored exam is paid if you want credit.", "u": "https://swayam.gov.in", "tag": "All levels"}, {"n": "NPTEL", "d": "Engineering, science and management courses by IIT/IISc faculty. Widely respected in interviews.", "free": "Lectures and assignments free. Certificate exam costs about ₹1,000.", "u": "https://nptel.ac.in", "tag": "Engineering / Science"}, {"n": "freeCodeCamp", "d": "Web development, Python, data analysis, machine learning. Entirely free, with free certifications.", "free": "Completely free, including certificates.", "u": "https://www.freecodecamp.org", "tag": "IT / Coding"}, {"n": "Kaggle Learn", "d": "Short practical courses in Python, Pandas, SQL and machine learning with real datasets.", "free": "Completely free. No certificate, but notebooks become your portfolio.", "u": "https://www.kaggle.com/learn", "tag": "Data / Analytics"}, {"n": "Microsoft Learn", "d": "Azure, Power BI, Excel and security learning paths with free modules.", "free": "Learning free. Some certification exams are paid.", "u": "https://learn.microsoft.com/training", "tag": "IT / Office skills"}, {"n": "Google Skillshop", "d": "Official Google Ads, Analytics and digital marketing courses with free completion certificates.", "free": "Free courses and free certificates.", "u": "https://skillshop.withgoogle.com", "tag": "Marketing"}, {"n": "Cisco Networking Academy", "d": "Networking basics, cybersecurity essentials and Python — a solid base for SOC analyst roles.", "free": "Many self-paced courses are free; advanced certifications are paid.", "u": "https://www.netacad.com", "tag": "Cyber / Networking"}, {"n": "CS50 by Harvard (edX)", "d": "The famous introduction to computer science. Audit it free; problem sets are the real value.", "free": "Free to audit. Paid only if you want the verified certificate.", "u": "https://cs50.harvard.edu/x/", "tag": "Computer Science"}, {"n": "Skill India Digital Hub", "d": "Government platform for PMKVY and NSDC skill courses, including healthcare, electrical and tailoring.", "free": "Free government skill training and assessment in many schemes.", "u": "https://www.skillindiadigital.gov.in", "tag": "Vocational"}, {"n": "DIKSHA", "d": "Teacher training and school curriculum resources, useful for B.Ed students and tuition teachers.", "free": "Free, government-run.", "u": "https://diksha.gov.in", "tag": "Teaching"}, {"n": "OpenLearn (Open University)", "d": "Free short courses across health, business, education and technology with free statements of participation.", "free": "Free learning; some certificates cost a small fee.", "u": "https://www.open.edu/openlearn/", "tag": "All levels"}, {"n": "Alison", "d": "Free diploma and certificate courses in healthcare, IT, trades and office skills.", "free": "Free to learn and free certificates in many courses; printed certificates cost money.", "u": "https://alison.com", "tag": "Vocational / Health"}, {"n": "Justin Guitar", "d": "Free, structured guitar lessons from beginner to intermediate — one of the best free music resources anywhere.", "free": "Completely free, no certificate (your playing is the proof).", "u": "https://www.justinguitar.com", "tag": "Music"}, {"n": "Berklee Intro to Music Production (Coursera)", "d": "Music production basics from Berklee College of Music — the audit option is free.", "free": "Free to audit; certificate costs money.", "u": "https://www.coursera.org/learn/music-production", "tag": "Music"}, {"n": "NIELIT", "d": "Government IT courses and O/A/B/C level certifications recognised for many government jobs.", "free": "Course fees are low but not always free; O/A level exams are paid.", "u": "https://www.nielit.gov.in", "tag": "Government IT"}, {"n": "eGyanKosh (IGNOU)", "d": "Free study material and video lectures for IGNOU and school-level subjects.", "free": "Free to read and download.", "u": "https://egyankosh.ac.in", "tag": "All levels"}];
+const REVIEWS = [{"org": "Medanta Care, Gurugram", "role": "Staff Nurse", "r": 4.5, "yrs": "2022–2024", "good": "Salary always on time on the 1st. Sister-in-charge supported me during night shifts and never forced overtime.", "bad": "Ward is understaffed in monsoon season. Leave approval takes two weeks.", "safe": 1}, {"org": "Nova Superspeciality, Ahmedabad", "role": "OT Technician", "r": 3, "yrs": "2023", "good": "Good exposure to surgeries if you are a fresher — you learn fast.", "bad": "Unpaid overtime is normal. Two people left within six months.", "safe": 0}, {"org": "GrowthLoop, Delhi", "role": "Business Development Executive", "r": 2, "yrs": "2024", "good": "Incentives are real if you hit targets.", "bad": "Targets change mid-month. Women in the team reported uncomfortable late-evening client calls; complaints went nowhere.", "safe": 0}, {"org": "PathCare Labs, Lucknow", "role": "Lab Technician", "r": 4, "yrs": "2021–2023", "good": "Clean lab, proper gloves and safety gear, and the senior tech taught me sample handling properly.", "bad": "Peak hours are exhausting, 12-hour days during health camps.", "safe": 1}, {"org": "Pixelcraft Studio (remote)", "role": "Graphic Designer", "r": 4.5, "yrs": "2024–now", "good": "Fully remote, clear briefs, paid on the 5th every month. No calls after 7pm.", "bad": "Design feedback can be vague, so ask questions early.", "safe": 1}, {"org": "Local tailoring unit, Pune", "role": "Darji (piece-rate)", "r": 3.5, "yrs": "2023–now", "good": "Pickup and drop of cloth is provided, so no travel cost. Payment per piece is clear.", "bad": "During wedding season, 12-hour days. No ESI or PF for piece-rate workers.", "safe": 1}, {"org": "Harmony Music School, Mumbai", "role": "Piano Teacher", "r": 4.5, "yrs": "2023–now", "good": "Students are genuinely interested and fees are shared fairly. Sunday off is respected.", "bad": "Evening batches run late; travel between two branches is on you.", "safe": 1}, {"org": "StageCraft Audio, Delhi", "role": "Sound Engineer", "r": 3.5, "yrs": "2022–2023", "good": "Learned live sound fast — big weddings, big consoles, real experience.", "bad": "Wedding season means 16-hour days with no overtime pay.", "safe": 1}, {"org": "Grand Palm Hotel, Goa", "role": "Front Desk", "r": 2.5, "yrs": "2024", "good": "Training was good and the property is clean.", "bad": "Guests' complaints get taken out on staff. Two female colleagues left after repeated rude behaviour by a senior.", "safe": 0}];
+
+/* ============================================================
+   HELPERS
+   ============================================================ */
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const TABS = [
+  ["v-jobs","Jobs"],["v-intern","Internships"],["v-govt","Government"],
+  ["v-gig","Local & daily work"],["v-workers","Hire a worker"],
+  ["v-courses","Free courses"],["v-reviews","Reviews & safety"],["v-post","Post a job"]
+];
+const state = {q:"",cat:"All",city:"",edu:"",pay:"",types:[],modes:[],safe:false,ver:false,fresh:false,nofee:true,sort:"new",trade:"All"};
+let SAVED = new Set(JSON.parse(localStorage.getItem("kaamsetu_saved") || "[]"));
+
+function toast(msg){
+  const t = $("#toast"); t.textContent = msg; t.classList.add("on");
+  clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove("on"), 2600);
+}
+function esc(s){ return String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c])); }
+
+/* nav */
+$("#nav").innerHTML = TABS.map(([id,label],i)=>
+  `<button data-v="${id}" class="${i===0?"on":""}">${label}</button>`).join("") +
+  `<span class="saved-pill" id="savedPill"></span>`;
+
+function go(id){
+  TABS.forEach(([v]) => $("#"+v).classList.toggle("hide", v !== id));
+  $$("#nav button").forEach(b => b.classList.toggle("on", b.dataset.v === id));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+$("#nav").addEventListener("click", e => {
+  const b = e.target.closest("button"); if(!b) return;
+  go(b.dataset.v);
+  if(b.dataset.v === "v-intern") renderJobs(JOBS.filter(j=>j.type==="Internship"), "#igrid", "#iempty", "internships");
+  if(b.dataset.v === "v-govt") renderJobs(JOBS.filter(j=>j.type==="Government"), "#ggrid", null, "government openings");
+  if(b.dataset.v === "v-gig") renderJobs(JOBS.filter(j=>j.type==="Gig"), "#ggig", null, "local work");
+});
+
+/* chips */
+const FIELD_COUNTS = JOBS.reduce((a,j)=>(a[j.cat]=(a[j.cat]||0)+1,a),{});
+const ALL_FIELDS = Object.keys(FIELD_COUNTS).sort();
+const CATS = ["All", ...Object.entries(FIELD_COUNTS).sort((a,b)=>b[1]-a[1]).slice(0,14).map(x=>x[0])];
+$("#chips").innerHTML = CATS.map(c=>`<button class="chip${c==="All"?" on":""}" data-cat="${c}">${c}</button>`).join("");
+$("#field").innerHTML = `<option value="All">All fields (${ALL_FIELDS.length})</option>` +
+  ALL_FIELDS.map(f=>`<option value="${f}">${f} (${FIELD_COUNTS[f]})</option>`).join("");
+$("#field").addEventListener("change", e=>{ state.cat = e.target.value; syncChips(); renderJobs(); });
+function syncChips(){ $$("#chips .chip").forEach(c=>c.classList.toggle("on", c.dataset.cat===state.cat)); }
+$("#chips").addEventListener("click", e=>{
+  const b = e.target.closest(".chip"); if(!b) return;
+  state.cat = b.dataset.cat;
+  syncChips(); $("#field").value = state.cat;
+  go("v-jobs"); renderJobs();
+});
+
+/* city + edu selects */
+const cities = [...new Set(JOBS.map(j=>j.city))].sort();
+$("#city").innerHTML = `<option value="">All cities</option>` + cities.map(c=>`<option>${c}</option>`).join("");
+$("#q").addEventListener("input", e=>{ state.q = e.target.value.toLowerCase().trim(); renderJobs(); });
+$("#city").addEventListener("change", e=>{ state.city = e.target.value; renderJobs(); });
+$("#edu").addEventListener("change", e=>{ state.edu = e.target.value; renderJobs(); });
+$("#pay").addEventListener("change", e=>{ state.pay = e.target.value; renderJobs(); });
+$("#sort").addEventListener("change", e=>{ state.sort = e.target.value; renderJobs(); });
+$("#searchBtn").addEventListener("click", ()=>{ go("v-jobs"); renderJobs(); });
+$$(".ftype").forEach(c=>c.addEventListener("change",()=>{ state.types = $$(".ftype:checked").map(x=>x.value); renderJobs(); }));
+$$(".fmode").forEach(c=>c.addEventListener("change",()=>{ state.modes = $$(".fmode:checked").map(x=>x.value); renderJobs(); }));
+$("#safeOnly").addEventListener("change", e=>{ state.safe = e.target.checked; renderJobs(); });
+$("#verOnly").addEventListener("change", e=>{ state.ver = e.target.checked; renderJobs(); });
+$("#fresherOnly").addEventListener("change", e=>{ state.fresh = e.target.checked; renderJobs(); });
+$("#noFee").addEventListener("change", e=>{ state.nofee = e.target.checked; renderJobs(); });
+$("#clear").addEventListener("click", ()=>{
+  Object.assign(state,{q:"",cat:"All",city:"",edu:"",pay:"",types:[],modes:[],safe:false,ver:false,fresh:false,nofee:true,sort:"new"});
+  $("#q").value=""; $("#city").value=""; $("#edu").value=""; $("#pay").value=""; $("#sort").value="new";
+  $$(".ftype,.fmode").forEach(c=>c.checked=false);
+  $("#safeOnly").checked=false; $("#verOnly").checked=false; $("#fresherOnly").checked=false; $("#noFee").checked=true;
+  syncChips(); $("#field").value = "All";
+  renderJobs();
+});
+
+/* ============================================================
+   RENDER: job cards
+   ============================================================ */
+
+function matches(j){
+  if(state.cat !== "All" && j.cat !== state.cat) return false;
+  if(state.city && j.city !== state.city) return false;
+  if(state.edu && j.el !== state.edu) return false;
+  if(state.pay && j.sal < +state.pay) return false;
+  if(state.types.length && !state.types.includes(j.type)) return false;
+  if(state.modes.length && !state.modes.includes(j.mode)) return false;
+  if(state.safe && !j.safe) return false;
+  if(state.ver && !j.ver) return false;
+  if(state.fresh && j.exp > 0) return false;
+  if(state.q){
+    const hay = (j.t+" "+j.o+" "+j.cat+" "+j.city+" "+j.sk.join(" ")+" "+j.type).toLowerCase();
+    if(!hay.includes(state.q)) return false;
+  }
+  return true;
+}
+
+function typeClass(t){ return t==="Government"?"t-govt":t==="Internship"?"t-intern":t==="Gig"?"t-gig":"t-private"; }
+
+function card(j){
+  const saved = SAVED.has(j.t+j.o);
+  return `<article class="job">
+    <div class="jr">
+      <div><h4>${esc(j.t)}</h4><div class="org">${esc(j.o)} · ${esc(j.city)}</div></div>
+      <span class="tag ${typeClass(j.type)}">${j.type}</span>
+    </div>
+    <div class="meta">
+      <span>🎓 ${esc(j.cat)}</span>
+      <span>🕒 ${j.exp===0?"Fresher OK":j.exp+"+ yr"}</span>
+      <span>📍 ${esc(j.mode)}</span>
+    </div>
+    <div class="skills">${j.sk.map(s=>`<span class="sk">${esc(s)}</span>`).join("")}</div>
+    <div class="flags">
+      ${j.safe?'<span class="flag f-safe">Safe workplace</span>':'<span class="flag" style="background:#f1f5f9;color:#64748b">Not yet reviewed</span>'}
+      ${j.ver?'<span class="flag f-ver">Verified employer</span>':''}
+      ${j.days<=2?'<span class="flag f-new">New</span>':''}
+      ${j.intern==="unpaid"?'<span class="flag" style="background:#fff7ed;color:#c2410c">Unpaid + certificate</span>':''}
+    </div>
+    <div class="jfoot">
+      <div class="sal">${esc(j.salTxt)}<small>Posted ${j.days===1?"yesterday":j.days+" days ago"}</small></div>
+      <div class="acts">
+        <button class="save ${saved?"on":""}" data-save="${esc(j.t+j.o)}" title="Save job">${saved?"♥":"♡"}</button>
+        <button class="btn sm" data-apply="${esc(j.t)}" data-url="${j.url||""}">Apply</button>
+      </div>
+    </div>
+  </article>`;
+}
+
+function renderJobs(list, gridSel="#jgrid", emptySel="#jempty", headWord){
+  const grid = $(gridSel); if(!grid) return;
+  let rows = list ? list.filter(matches) : JOBS.filter(matches);
+  if(state.sort === "pay") rows = rows.slice().sort((a,b)=>b.sal-a.sal);
+  else if(state.sort === "safe") rows = rows.slice().sort((a,b)=>(b.safe-a.safe)||(b.ver-a.ver)||(a.days-b.days));
+  else rows = rows.slice().sort((a,b)=>a.days-b.days);
+
+  grid.innerHTML = rows.map(card).join("");
+  if(emptySel){ const e = $(emptySel); if(e) e.classList.toggle("hide", rows.length>0); }
+  if(gridSel === "#jgrid"){
+    $("#jcount").textContent = rows.length + (rows.length===1?" job":" jobs");
+    $("#jhead").textContent = state.cat==="All" ? "All openings" : state.cat + " openings";
+  }
+  $("#savedPill").textContent = SAVED.size ? "♥ "+SAVED.size+" saved" : "";
+}
+
+document.addEventListener("click", e=>{
+  const s = e.target.closest("[data-save]");
+  if(s){
+    const k = s.dataset.save;
+    SAVED.has(k) ? SAVED.delete(k) : SAVED.add(k);
+    localStorage.setItem("kaamsetu_saved", JSON.stringify([...SAVED]));
+    renderJobs(); renderJobs(JOBS.filter(j=>j.type==="Internship"), "#igrid", "#iempty");
+    toast(SAVED.has(k) ? "Saved. Find it with the ♥ count in the header." : "Removed from saved.");
+    return;
+  }
+  const a = e.target.closest("[data-apply]");
+  if(a){
+    const url = a.dataset.url;
+    if(url){ window.open(url, "_blank", "noopener"); toast("Opening the official portal in a new tab."); }
+    else { toast("Sample listing — connect a database or your own postings to accept applications."); }
+  }
+});
+
+/* ============================================================
+   RENDER: other sections
+   ============================================================ */
+
+$("#govtCards").innerHTML = GOVT.map(g=>`
+  <div class="c">
+    <div class="row"><h4>${esc(g.n)}</h4><span class="pill">${esc(g.tag)}</span></div>
+    <p>${esc(g.d)}</p>
+    <a class="link" href="${g.u}" target="_blank" rel="noopener">Official portal →</a>
+  </div>`).join("");
+
+const TRADES = ["All", ...new Set(WORKERS.map(w=>w.tr))];
+$("#tradeChips").innerHTML = TRADES.map(t=>`<button class="chip${t==="All"?" on":""}" data-trade="${esc(t)}">${esc(t)}</button>`).join("");
+$("#tradeChips").addEventListener("click", e=>{
+  const b = e.target.closest(".chip"); if(!b) return;
+  state.trade = b.dataset.trade;
+  $$("#tradeChips .chip").forEach(x=>x.classList.toggle("on", x===b));
+  renderWorkers();
+});
+function renderWorkers(){
+  const rows = WORKERS.filter(w => state.trade==="All" || w.tr===state.trade);
+  $("#wgrid").innerHTML = rows.map(w=>`
+    <div class="c">
+      <div class="row">
+        <div><h4>${esc(w.n)}</h4><div class="org" style="font-size:12.5px;color:var(--muted)">${esc(w.tr)} · ${esc(w.area)}</div></div>
+        <div style="text-align:right"><div class="rate">${w.r}★</div><div class="stars">${"★".repeat(Math.round(w.r))}</div></div>
+      </div>
+      <p>${w.cat.map(c=>esc(c)).join(" · ")}</p>
+      <div class="kv">
+        <span>${w.exp} yrs experience</span><span>${esc(w.rate)}</span>
+        <span>${w.jobs}+ jobs done</span>
+        ${w.pd?'<span class="pill" style="background:#ecfdf5;color:#0f766e">Pickup &amp; drop available</span>':'<span class="pill">Shop / home visit</span>'}
+      </div>
+      <a class="link" href="#" onclick="toast('In a live site this opens WhatsApp or calls the worker directly.');return false;">Contact · ${esc(w.ph)}</a>
+    </div>`).join("");
+}
+renderWorkers();
+
+$("#courseCards").innerHTML = COURSES.map(c=>`
+  <div class="c">
+    <div class="row"><h4>${esc(c.n)}</h4><span class="pill">${esc(c.tag)}</span></div>
+    <p>${esc(c.d)}</p>
+    <p style="color:var(--green);font-weight:600;font-size:12.5px">${esc(c.free)}</p>
+    <a class="link" href="${c.u}" target="_blank" rel="noopener">Start learning →</a>
+  </div>`).join("");
+
+$("#reviewCards").innerHTML = REVIEWS.map(v=>`
+  <div class="c">
+    <div class="row">
+      <div><h4>${esc(v.org)}</h4><div class="org" style="font-size:12.5px;color:var(--muted)">${esc(v.role)} · ${esc(v.yrs)}</div></div>
+      <div style="text-align:right"><div class="rate">${v.r}★</div><div class="stars">${"★".repeat(Math.round(v.r))}${"☆".repeat(5-Math.round(v.r))}</div></div>
+    </div>
+    <p style="color:#0f766e"><b>Good:</b> ${esc(v.good)}</p>
+    <p style="color:#b91c1c"><b>Watch out:</b> ${esc(v.bad)}</p>
+    <div class="kv">${v.safe?'<span class="pill" style="background:#ecfdf5;color:#0f766e">Safe workplace badge</span>':'<span class="pill" style="background:#fef2f2;color:#b91c1c">Safety reports unresolved</span>'}</div>
+  </div>`).join("");
+
+$("#gigBanner").innerHTML = `
+  <div class="c"><h4>💼 Need money this week?</h4><p>Daily and piece-rate work pays faster than salaried jobs. Filter by “Gig / daily work” on the Jobs tab, or check the worker directory to see what people charge in your trade.</p></div>
+  <div class="c"><h4>🧰 No degree, no problem</h4><p>Most listings here need skill, not certificates. If you can stitch, wire, weld, paint or repair, you can earn — and the age limit is usually none.</p></div>
+  <div class="c"><h4>🤝 Build a worker profile free</h4><p>Use “Post a job” → “Worker profile”. Add photos of your work, your rate, and whether you offer pickup and drop. Customers contact you directly, no commission.</p></div>`;
+
+$("#postForm").addEventListener("submit", e=>{
+  e.preventDefault();
+  const rec = {
+    type:$("#pType").value, title:$("#pTitle").value, org:$("#pOrg").value,
+    city:$("#pCity").value, pay:$("#pPay").value, edu:$("#pEdu").value,
+    phone:$("#pPhone").value, desc:$("#pDesc").value, at:new Date().toISOString()
+  };
+  const all = JSON.parse(localStorage.getItem("kaamsetu_posts") || "[]");
+  all.push(rec); localStorage.setItem("kaamsetu_posts", JSON.stringify(all));
+  $("#postOk").style.display = "block";
+  $("#postForm").reset();
+  toast("Submitted. Thank you!");
+});
+
+/* first paint */
+renderJobs();
+renderJobs(JOBS.filter(j=>j.type==="Internship"), "#igrid", "#iempty");
+</script>
+</body>
+</html>
