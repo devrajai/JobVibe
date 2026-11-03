@@ -25,11 +25,13 @@ data/base.json              the original hand-written seed data
 pipeline/new_entries.py     the v2 listings, in a compact pipe format
 pipeline/merge.py           merges new_entries.py into site-data.json
 pipeline/fetch_sources.py   pulls live boards -> data/live.json (real apply links)
+pipeline/fetch_ncs.py       pulls government vacancies -> data/govt-live.json
+data/govt-live.json         real government vacancies from ncs.gov.in
 pipeline/sources.json       which employer boards to poll
 .github/workflows/          daily refresh on GitHub Actions
 ```
 
-Current contents: **219 listings across 44 fields**, of which **7 are live postings** fetched from employer boards with the employer's own apply URL, 18 worker profiles,
+Current contents: **229 listings across 44 fields**, of which **17 are real** — 7 live postings from employer job boards and 10 government vacancies taken from the official NCS portal with the notification PDF link. **The other 212 are marked `"sample": 1`** and labelled "Sample — demo listing" on every card; tick "Hide sample listings" to see only the real ones., 18 worker profiles,
 16 free-course platforms, 9 workplace reviews, 12 official government portals.
 
 ## The two ways to change data
@@ -136,7 +138,10 @@ A custom domain is the only cost: roughly ₹700–1,200 a year.
 
 ## Honest status
 
-- Listings: realistic samples, not live vacancies.
+- 17 listings are real and verifiable; 212 are samples and labelled as samples in
+  the UI and in the data (`"sample": 1`). Nothing sample is presented as live.
+- The "safe workplace" and "verified employer" badges are removed from the UI and
+  the filters are gone until an employer has actually been checked.
 - Government links: real, official portals (`*.gov.in` / `*.nic.in`).
 - Free-course links: real platforms; the fee notes reflect what those
   platforms generally charge and should be re-checked before you promise
