@@ -18,15 +18,16 @@ index.html                  the whole site — generated, do not edit by hand
 template.html               the site with /*__SITE_DATA__*/ where data goes
 build.py                    template + data -> index.html
 data/site-data.json         every listing, worker, course and review
+data/live.json              real postings pulled from employer boards today
 data/base.json              the original hand-written seed data
 pipeline/new_entries.py     the v2 listings, in a compact pipe format
 pipeline/merge.py           merges new_entries.py into site-data.json
-pipeline/fetch_sources.py   pulls live boards from Greenhouse / Lever / Ashby
+pipeline/fetch_sources.py   pulls live boards -> data/live.json (real apply links)
 pipeline/sources.json       which employer boards to poll
 .github/workflows/          daily refresh on GitHub Actions
 ```
 
-Current contents: **212 listings across 44 fields**, 18 worker profiles,
+Current contents: **219 listings across 44 fields**, of which **7 are live postings** fetched from employer boards with the employer's own apply URL, 18 worker profiles,
 16 free-course platforms, 9 workplace reviews, 12 official government portals.
 
 ## The two ways to change data
