@@ -270,6 +270,9 @@
       <div class="stats" id="stats"></div>
       <div class="liveband" id="liveband"></div>
 
+      <h3 class="landh">Browse by region</h3>
+      <div class="tiles" id="stateTiles"></div>
+
       <h3 class="landh">Browse by field</h3>
       <div class="tiles" id="tiles"></div>
 
@@ -284,6 +287,10 @@
 
       <div class="split">
         <aside class="panel">
+          <div class="fg">
+            <h3>State / region</h3>
+            <select id="state"></select>
+          </div>
           <div class="fg">
             <h3>Field / course</h3>
             <select id="field"></select>
@@ -595,6 +602,14 @@ const FIELD_COUNTS = JOBS.reduce((a,j)=>(a[j.cat]=(a[j.cat]||0)+1,a),{});
 const ALL_FIELDS = Object.keys(FIELD_COUNTS).sort();
 const CATS = ["All", ...Object.entries(FIELD_COUNTS).sort((a,b)=>b[1]-a[1]).slice(0,14).map(x=>x[0])];
 $("#chips").innerHTML = CATS.map(c=>`<button class="chip${c==="All"?" on":""}" data-cat="${c}">${c}</button>`).join("");
+const STATE_COUNTS = {};
+JOBS.forEach(j => { const s = stateOf(j); STATE_COUNTS[s] = (STATE_COUNTS[s] || 0) + 1; });
+const ALL_STATES = Object.keys(STATE_COUNTS).sort((a,b) =>
+  a === "All India / Remote" ? 1 : b === "All India / Remote" ? -1 : STATE_COUNTS[b] - STATE_COUNTS[a]);
+$("#state").innerHTML = `<option value="">All regions (${ALL_STATES.length})</option>` +
+  ALL_STATES.map(s => `<option value="${esc(s)}">${esc(s)} (${STATE_COUNTS[s]})</option>`).join("");
+$("#state").addEventListener("change", e => { state.stateFilter = e.target.value; renderJobs(); });
+
 $("#field").innerHTML = `<option value="All">All fields (${ALL_FIELDS.length})</option>` +
   ALL_FIELDS.map(f=>`<option value="${f}">${f} (${FIELD_COUNTS[f]})</option>`).join("");
 $("#field").addEventListener("change", e=>{ state.cat = e.target.value; syncChips(); renderJobs(); });
@@ -659,6 +674,7 @@ $("#clear").addEventListener("click", ()=>{
   $$(".ftype,.fmode").forEach(c=>c.checked=false);
   $("#hideSample").checked=false; $("#fresherOnly").checked=false; $("#noFee").checked=true;
   syncChips(); $("#field").value = "All";
+  state.stateFilter = ""; $("#state").value = "";
   renderJobs();
 });
 
@@ -674,6 +690,7 @@ function matches(j){
   if(state.types.length && !state.types.includes(j.type)) return false;
   if(state.modes.length && !state.modes.includes(j.mode)) return false;
   if(state.hideSample && j.sample) return false;
+  if(state.stateFilter && stateOf(j) !== state.stateFilter) return false;
   if(state.fresh && j.exp > 0) return false;
   if(state.q && !smartMatch(state.q, j)) return false;
   return true;
@@ -710,6 +727,13 @@ function lev(a, b){
     prev = cur;
   }
   return prev[b.length];
+}
+
+/* ---- region: city -> state, from data/city-state.json ---- */
+function stateOf(j){
+  const raw = (j.city || "").trim();
+  const city = (CITYSTATE.aliases && CITYSTATE.aliases[raw]) || raw;
+  return (CITYSTATE.cities && CITYSTATE.cities[city]) || "All India / Remote";
 }
 
 function haystack(j){
@@ -801,7 +825,7 @@ function card(j){
     <div class="meta">
       <span>🎓 ${esc(j.cat)}</span>
       <span>🕒 ${j.exp===0?"Fresher OK":j.exp+"+ yr"}</span>
-      <span>📍 ${esc(j.mode)}</span>
+      <span>📍 ${esc(j.mode)}${stateOf(j) !== "All India / Remote" ? " · " + esc(stateOf(j)) : ""}</span>
     </div>
     <div class="skills">${j.sk.map(s=>`<span class="sk">${esc(s)}</span>`).join("")}</div>
     <div class="flags">
@@ -1095,6 +1119,21 @@ $("#liveband").innerHTML = LIVE.length ? `
          style="display:inline-block;margin-top:9px;font-size:12.5px;font-weight:700;color:#7dd3fc">Apply on employer site →</a>
     </div>`).join("")}</div>`
   : `<div style="font-size:13px;opacity:.8">The live feed is empty right now — the daily data job refills it. Scroll down for all listings.</div>`;
+
+const topStates = ALL_STATES.filter(s => s !== "All India / Remote").slice(0, 10);
+$("#stateTiles").innerHTML = topStates.map(s => `
+    <div class="tile" data-state="${esc(s)}"><div class="em">📍</div>
+      <b>${esc(s)}</b><span>${STATE_COUNTS[s]} openings</span></div>`).join("")
+  + `<div class="tile" data-state="All India / Remote"><div class="em">🌐</div>
+      <b>All India / Remote</b><span>${STATE_COUNTS["All India / Remote"] || 0} openings</span></div>`;
+
+$("#stateTiles").addEventListener("click", e => {
+  const tile = e.target.closest("[data-state]"); if(!tile) return;
+  state.stateFilter = tile.dataset.state;
+  $("#state").value = tile.dataset.state;
+  renderJobs();
+  document.querySelector(".split").scrollIntoView({behavior:"smooth", block:"start"});
+});
 
 const topTiles = Object.entries(FIELD_COUNTS).sort((a,b)=>b[1]-a[1]).slice(0,11);
 $("#tiles").innerHTML = topTiles.map(([f,n])=>`
