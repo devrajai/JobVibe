@@ -1,0 +1,109 @@
+{
+ "note": "Official recruitment sources per state. verified=false means the link is the expected official domain but nobody has opened it yet — check before trusting it. Add 3-5 states properly rather than 28 badly.",
+ "states": [
+  {
+   "state": "Gujarat",
+   "verified": false,
+   "sources": [
+    {
+     "name": "GPSC — Gujarat Public Service Commission",
+     "url": "https://gpsc.gujarat.gov.in",
+     "jobs": "Class 1-2 state posts, Deputy Collector, police inspector"
+    },
+    {
+     "name": "GSSSB — Gaun Seva Pasandgi Mandal",
+     "url": "https://gsssb.gujarat.gov.in",
+     "jobs": "Class 3 posts: clerk, junior assistant, technical assistant"
+    },
+    {
+     "name": "NHM Gujarat",
+     "url": "https://nhm.gujarat.gov.in",
+     "jobs": "Nursing, paramedical, MPHW, lab technician on contract"
+    },
+    {
+     "name": "Gujarat Health & Family Welfare",
+     "url": "https://gujhealth.gujarat.gov.in",
+     "jobs": "Medical officer, hospital staff notices"
+    },
+    {
+     "name": "Gujarat ITI / Skill Development",
+     "url": "https://iti.gujarat.gov.in",
+     "jobs": "ITI admission, instructor and apprentice posts"
+    },
+    {
+     "name": "Gujarat Rozgaar / Employment Exchange",
+     "url": "https://talimrojgar.gujarat.gov.in",
+     "jobs": "Local employment exchange listings and job fairs"
+    }
+   ]
+  },
+  {
+   "state": "Maharashtra",
+   "verified": false,
+   "sources": [
+    {
+     "name": "MPSC",
+     "url": "https://mpsc.gov.in",
+     "jobs": "State services, PSI, STI, clerk"
+    },
+    {
+     "name": "NHM Maharashtra",
+     "url": "https://arogya.maharashtra.gov.in",
+     "jobs": "Nursing, paramedical, health worker posts"
+    },
+    {
+     "name": "DMER — Medical Education & Research",
+     "url": "https://dmer.maharashtra.gov.in",
+     "jobs": "Medical college and hospital recruitment"
+    },
+    {
+     "name": "Maharashtra ITI",
+     "url": "https://dvet.gov.in",
+     "jobs": "ITI admissions, instructor posts"
+    }
+   ]
+  },
+  {
+   "state": "Bihar",
+   "verified": false,
+   "sources": [
+    {
+     "name": "BPSC",
+     "url": "https://bpsc.bih.nic.in",
+     "jobs": "State civil services and departmental posts"
+    },
+    {
+     "name": "State Health Society Bihar (NHM)",
+     "url": "https://statehealthsocietybihar.org",
+     "jobs": "ANM, GNM, lab technician, medical officer"
+    },
+    {
+     "name": "CSBC Bihar Police",
+     "url": "https://csbc.bih.nic.in",
+     "jobs": "Constable, sub-inspector recruitment"
+    }
+   ]
+  },
+  {
+   "state": "Kerala",
+   "verified": false,
+   "sources": [
+    {
+     "name": "Kerala PSC",
+     "url": "https://keralapsc.gov.in",
+     "jobs": "All state government posts, LDC, police, teaching"
+    },
+    {
+     "name": "Arogya Keralam (NHM)",
+     "url": "https://arogya.kerala.gov.in",
+     "jobs": "Nursing and paramedical contract posts"
+    },
+    {
+     "name": "Kerala ITI / Industrial Training",
+     "url": "https://det.kerala.gov.in",
+     "jobs": "ITI and apprenticeship notices"
+    }
+   ]
+  }
+ ]
+}
