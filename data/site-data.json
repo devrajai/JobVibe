@@ -18,7 +18,8 @@
     "Consultation"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Homeopathy Doctor (BHMS)",
@@ -38,7 +39,8 @@
     "Counseling"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Naturopathy Therapist",
@@ -58,7 +60,8 @@
     "Yoga"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Panchakarma Technician",
@@ -78,7 +81,8 @@
     "Therapy room"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Horticulture Supervisor",
@@ -98,7 +102,8 @@
     "Irrigation"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Fisheries Field Assistant",
@@ -118,7 +123,8 @@
     "Water testing"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Soil Testing Technician",
@@ -138,7 +144,8 @@
     "Reports"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "2D Animator",
@@ -158,7 +165,8 @@
     "Timing"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "3D Artist (Blender)",
@@ -178,7 +186,8 @@
     "Texturing"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "VFX Compositor",
@@ -198,7 +207,8 @@
     "Rotoscopy"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Game Tester (QA)",
@@ -218,7 +228,8 @@
     "Patience"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Interior Designer",
@@ -238,7 +249,8 @@
     "Site visits"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Junior Architect",
@@ -258,7 +270,8 @@
     "Working drawings"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "AutoCAD Draftsman",
@@ -278,7 +291,8 @@
     "Revision"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Interior Site Supervisor",
@@ -298,7 +312,8 @@
     "Finishes"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Auto Mechanic (car)",
@@ -318,7 +333,8 @@
     "Tools"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Two-wheeler Mechanic",
@@ -338,7 +354,8 @@
     "Punctuality"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "EV Technician",
@@ -358,7 +375,8 @@
     "EV safety"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Service Advisor",
@@ -378,7 +396,8 @@
     "Hindi"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Cabin Crew",
@@ -398,7 +417,8 @@
     "English"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Airport Ground Staff",
@@ -418,7 +438,8 @@
     "Shift"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Aircraft Maintenance Trainee (AME)",
@@ -438,7 +459,8 @@
     "Safety"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Customer Support Executive (voice)",
@@ -458,7 +480,8 @@
     "Typing"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Telecaller",
@@ -478,7 +501,8 @@
     "CRM"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Chat Support (remote)",
@@ -498,7 +522,8 @@
     "Patience"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "BPO Team Leader",
@@ -518,7 +543,8 @@
     "Reports"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Insurance Advisor",
@@ -538,7 +564,8 @@
     "Local network"
    ],
    "safe": 0,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Loan Processing Officer",
@@ -558,7 +585,8 @@
     "Credit basics"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Microfinance Field Officer",
@@ -578,7 +606,8 @@
     "Collection"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Salon Hair Stylist",
@@ -598,7 +627,8 @@
     "Blow dry"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Spa Therapist",
@@ -618,7 +648,8 @@
     "Hygiene"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Barber",
@@ -638,7 +669,8 @@
     "Razors"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Nail Artist",
@@ -658,7 +690,8 @@
     "Hygiene"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Lab Research Assistant",
@@ -678,7 +711,8 @@
     "Lab safety"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "QC Microbiologist",
@@ -698,7 +732,8 @@
     "GMP"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Bioinformatics Trainee",
@@ -718,7 +753,8 @@
     "BLAST"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Business Development Executive",
@@ -738,7 +774,8 @@
     "Field visits"
    ],
    "safe": 0,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Digital Marketing Intern",
@@ -759,7 +796,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "intern": "paid"
+   "intern": "paid",
+   "sample": 1
   },
   {
    "t": "Accounts Executive",
@@ -779,7 +817,8 @@
     "Bank reconciliation"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "GST & Taxation Associate",
@@ -799,7 +838,8 @@
     "Return filing"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "HR Executive",
@@ -819,7 +859,8 @@
     "MS Excel"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "CA Articleship (IPCC cleared)",
@@ -840,7 +881,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "intern": "paid"
+   "intern": "paid",
+   "sample": 1
   },
   {
    "t": "Tally Operator",
@@ -860,7 +902,8 @@
     "Excel"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Audit Assistant",
@@ -880,7 +923,8 @@
     "Documentation"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Video Editor",
@@ -900,7 +944,8 @@
     "Colour grading"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Graphic Designer (Fresher)",
@@ -920,7 +965,8 @@
     "Portfolio"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Social Media Manager",
@@ -940,7 +986,8 @@
     "Copywriting"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Video Editing Intern",
@@ -961,7 +1008,8 @@
    ],
    "safe": 1,
    "ver": 0,
-   "intern": "paid"
+   "intern": "paid",
+   "sample": 1
   },
   {
    "t": "UI Designer (Fresher)",
@@ -981,7 +1029,8 @@
     "Portfolio"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Photographer Assistant",
@@ -1001,7 +1050,8 @@
     "Editing"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Graphic Design Intern (certificate only)",
@@ -1022,7 +1072,8 @@
    ],
    "safe": 1,
    "ver": 0,
-   "intern": "unpaid"
+   "intern": "unpaid",
+   "sample": 1
   },
   {
    "t": "Penetration Tester (Junior)",
@@ -1042,7 +1093,8 @@
     "Linux"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Cyber Forensics Analyst",
@@ -1062,7 +1114,8 @@
     "Reporting"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Home Guard",
@@ -1083,7 +1136,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.ncs.gov.in"
+   "url": "https://www.ncs.gov.in",
+   "sample": 1
   },
   {
    "t": "Dental Assistant / Hygienist",
@@ -1103,7 +1157,8 @@
     "X-ray"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Dental Receptionist",
@@ -1123,7 +1178,8 @@
     "Hindi/English"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Drone Pilot – survey",
@@ -1143,7 +1199,8 @@
     "GPS"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "PLC / Automation Engineer",
@@ -1163,7 +1220,8 @@
     "Panel wiring"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Robotics Technician",
@@ -1183,7 +1241,8 @@
     "Assembly"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Graduate Engineer Trainee – Mechanical",
@@ -1203,7 +1262,8 @@
     "SolidWorks"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "ITI Electrician – Maintenance",
@@ -1223,7 +1283,8 @@
     "Preventive maint."
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Civil Site Engineer",
@@ -1243,7 +1304,8 @@
     "Quantity survey"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "ITI Welder",
@@ -1263,7 +1325,8 @@
     "6G welding"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Electrical Engineer – Solar",
@@ -1283,7 +1346,8 @@
     "Inverters"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Solar Panel Installer",
@@ -1303,7 +1367,8 @@
     "Height work"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "CNC Operator",
@@ -1323,7 +1388,8 @@
     "VMC"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Production Supervisor (Diploma)",
@@ -1343,7 +1409,8 @@
     "Shop floor"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Environment Field Assistant",
@@ -1363,7 +1430,8 @@
     "Field work"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Forest Guard",
@@ -1384,7 +1452,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.ncs.gov.in"
+   "url": "https://www.ncs.gov.in",
+   "sample": 1
   },
   {
    "t": "Event Coordinator",
@@ -1404,7 +1473,8 @@
     "Site visits"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Wedding Planner Assistant",
@@ -1424,7 +1494,8 @@
     "Travel"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Sound & Light Technician",
@@ -1444,7 +1515,8 @@
     "Setup"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Fashion Designer Assistant",
@@ -1464,7 +1536,8 @@
     "Sampling"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Textile Designer",
@@ -1484,7 +1557,8 @@
     "Fabric knowledge"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Jewellery Designer",
@@ -1504,7 +1578,8 @@
     "Stones"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Content Writer",
@@ -1524,7 +1599,8 @@
     "Research"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Videographer",
@@ -1544,7 +1620,8 @@
     "Editing"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Video Editor – YouTube channel",
@@ -1564,7 +1641,8 @@
     "Thumbnails"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Wedding Photographer (freelance)",
@@ -1584,7 +1662,8 @@
     "Lightroom"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Reporter – local news",
@@ -1604,7 +1683,8 @@
     "Field work"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Radio Jockey Assistant",
@@ -1624,7 +1704,8 @@
     "Audio editing"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Food Technologist Trainee",
@@ -1644,7 +1725,8 @@
     "Lab tests"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Dairy Plant Operator",
@@ -1664,7 +1746,8 @@
     "Hygiene"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Bakery Assistant",
@@ -1684,7 +1767,8 @@
     "Shift"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Tailor / Darji – Shop Assistant",
@@ -1704,7 +1788,8 @@
     "Measurements"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Plumber – Home Visits",
@@ -1724,7 +1809,8 @@
     "Tools own"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Delivery Partner (part-time)",
@@ -1744,7 +1830,8 @@
     "Smartphone"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Mason (Raj Mistri)",
@@ -1764,7 +1851,8 @@
     "Level"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Electrician – Repair & Wiring",
@@ -1784,7 +1872,8 @@
     "Safety"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Construction Helper",
@@ -1804,7 +1893,8 @@
     "Site work"
    ],
    "safe": 0,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Mehndi Artist – Home Service",
@@ -1824,7 +1914,8 @@
     "Own kit"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Gardener (Mali)",
@@ -1844,7 +1935,8 @@
     "Pots"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Carpenter – Furniture Repair",
@@ -1864,7 +1956,8 @@
     "Polish"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "AC / Fridge Repair Technician",
@@ -1884,7 +1977,8 @@
     "ITI Refrigeration"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Cook / Maharaj (home)",
@@ -1904,7 +1998,8 @@
     "Menu"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "House Painter",
@@ -1924,7 +2019,8 @@
     "Height work"
    ],
    "safe": 0,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Personal Driver",
@@ -1944,7 +2040,8 @@
     "Local routes"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Mochi / Cobbler – Shop Assistant",
@@ -1964,7 +2061,8 @@
     "Polishing"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Packer / Mover",
@@ -1984,7 +2082,8 @@
     "Team"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Watch Repair Apprentice",
@@ -2004,7 +2103,8 @@
     "Learn on job"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Tiffin Service Cook",
@@ -2024,7 +2124,8 @@
     "Hygiene"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Housekeeping / Cleaning Staff",
@@ -2044,7 +2145,8 @@
     "Shift work"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Car Wash Attendant",
@@ -2064,7 +2166,8 @@
     "Punctuality"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Security Guard",
@@ -2084,7 +2187,8 @@
     "Age 21–55"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Farm Labour (seasonal)",
@@ -2104,7 +2208,8 @@
     "Outdoor"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "SSC GD Constable",
@@ -2125,7 +2230,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://ssc.gov.in"
+   "url": "https://ssc.gov.in",
+   "sample": 1
   },
   {
    "t": "Anganwadi Worker",
@@ -2146,7 +2252,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.ncs.gov.in"
+   "url": "https://www.ncs.gov.in",
+   "sample": 1
   },
   {
    "t": "Junior Assistant – Clerical",
@@ -2167,7 +2274,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.tnpsc.gov.in"
+   "url": "https://www.tnpsc.gov.in",
+   "sample": 1
   },
   {
    "t": "IBPS Bank Clerk / PO",
@@ -2188,7 +2296,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.ibps.in"
+   "url": "https://www.ibps.in",
+   "sample": 1
   },
   {
    "t": "ASHA Worker",
@@ -2209,7 +2318,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://nhm.gov.in"
+   "url": "https://nhm.gov.in",
+   "sample": 1
   },
   {
    "t": "Railway Group D",
@@ -2230,7 +2340,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.rrbcdg.gov.in"
+   "url": "https://www.rrbcdg.gov.in",
+   "sample": 1
   },
   {
    "t": "Gram Panchayat Clerk",
@@ -2251,7 +2362,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.ncs.gov.in"
+   "url": "https://www.ncs.gov.in",
+   "sample": 1
   },
   {
    "t": "Railway NTPC (Ticket Collector)",
@@ -2272,7 +2384,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.rrbcdg.gov.in"
+   "url": "https://www.rrbcdg.gov.in",
+   "sample": 1
   },
   {
    "t": "ESIC Nursing Officer",
@@ -2293,7 +2406,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.esic.gov.in"
+   "url": "https://www.esic.gov.in",
+   "sample": 1
   },
   {
    "t": "Postman / MTS",
@@ -2314,7 +2428,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.indiapost.gov.in"
+   "url": "https://www.indiapost.gov.in",
+   "sample": 1
   },
   {
    "t": "India Post GDS (Gramin Dak Sevak)",
@@ -2335,7 +2450,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.indiapost.gov.in"
+   "url": "https://www.indiapost.gov.in",
+   "sample": 1
   },
   {
    "t": "Court Clerk",
@@ -2356,7 +2472,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.ncs.gov.in"
+   "url": "https://www.ncs.gov.in",
+   "sample": 1
   },
   {
    "t": "State Police Constable",
@@ -2377,7 +2494,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.ncs.gov.in"
+   "url": "https://www.ncs.gov.in",
+   "sample": 1
   },
   {
    "t": "UPSC Civil Services",
@@ -2398,7 +2516,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://upsc.gov.in"
+   "url": "https://upsc.gov.in",
+   "sample": 1
   },
   {
    "t": "Recruitment Consultant",
@@ -2418,7 +2537,8 @@
     "Follow-up"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Payroll Executive",
@@ -2438,7 +2558,8 @@
     "Attendance"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Hotel Front Desk Executive",
@@ -2458,7 +2579,8 @@
     "English"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Commi Chef",
@@ -2478,7 +2600,8 @@
     "Shift work"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Travel Consultant",
@@ -2498,7 +2621,8 @@
     "Sales"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Housekeeping Supervisor",
@@ -2518,7 +2642,8 @@
     "Checklist"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Local Tour Guide",
@@ -2538,7 +2663,8 @@
     "Storytelling"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Cybersecurity Intern",
@@ -2559,7 +2685,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "intern": "paid"
+   "intern": "paid",
+   "sample": 1
   },
   {
    "t": "AI / ML Intern",
@@ -2580,7 +2707,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "intern": "paid"
+   "intern": "paid",
+   "sample": 1
   },
   {
    "t": "QA Engineer – Software",
@@ -2600,7 +2728,8 @@
     "SQL"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Cloud Support Associate",
@@ -2620,7 +2749,8 @@
     "Ticketing"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Data Analyst (Fresher)",
@@ -2640,7 +2770,8 @@
     "Power BI"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "DevOps Trainee",
@@ -2660,7 +2791,8 @@
     "Git"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "SOC Analyst L1 (Cyber Security)",
@@ -2680,7 +2812,8 @@
     "SOC monitoring"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Mobile App Developer (Flutter)",
@@ -2700,7 +2833,8 @@
     "Play Store"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Junior Web Developer",
@@ -2720,7 +2854,8 @@
     "Portfolio needed"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "IT Support / Helpdesk",
@@ -2740,7 +2875,8 @@
     "Ticket handling"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Data Entry Operator",
@@ -2760,7 +2896,8 @@
     "Hindi + English"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Data Science Trainee",
@@ -2780,7 +2917,8 @@
     "ML basics"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Computer Teacher (Graphics + Basics)",
@@ -2800,7 +2938,8 @@
     "Teaching"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Legal Associate",
@@ -2820,7 +2959,8 @@
     "Litigation support"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Paralegal – Corporate",
@@ -2840,7 +2980,8 @@
     "Contract review"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Company Secretary Trainee",
@@ -2860,7 +3001,8 @@
     "Minutes"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Legal Content Writer",
@@ -2880,7 +3022,8 @@
     "English"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Warehouse Supervisor",
@@ -2900,7 +3043,8 @@
     "Team handling"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Delivery Fleet Coordinator",
@@ -2920,7 +3064,8 @@
     "Excel"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Truck Driver (HMV licence)",
@@ -2940,7 +3085,8 @@
     "Fitness"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Supply Chain Trainee",
@@ -2960,7 +3106,8 @@
     "Vendor follow-up"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Hospital Administration Intern",
@@ -2981,7 +3128,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "intern": "paid"
+   "intern": "paid",
+   "sample": 1
   },
   {
    "t": "Medical Officer – PHC (Contract)",
@@ -3002,7 +3150,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://nhm.rajasthan.gov.in"
+   "url": "https://nhm.rajasthan.gov.in",
+   "sample": 1
   },
   {
    "t": "Junior Resident – General Medicine",
@@ -3022,7 +3171,8 @@
     "Emergency"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Senior Resident – Anaesthesiology",
@@ -3043,7 +3193,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.aiimsexams.ac.in"
+   "url": "https://www.aiimsexams.ac.in",
+   "sample": 1
   },
   {
    "t": "Duty Medical Officer",
@@ -3063,7 +3214,8 @@
     "Casualty"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Guitar Teacher (home tuition)",
@@ -3083,7 +3235,8 @@
     "Patience"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Tabla Player – weddings & events",
@@ -3103,7 +3256,8 @@
     "Stage experience"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Sound Engineer – live events",
@@ -3123,7 +3277,8 @@
     "Live sound"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Piano / Keyboard Teacher",
@@ -3143,7 +3298,8 @@
     "Sight reading"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Dance Teacher – Bollywood",
@@ -3163,7 +3319,8 @@
     "Kids batches"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Vocal Music Teacher (Hindustani)",
@@ -3183,7 +3340,8 @@
     "Bhatkhande"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Event Anchor / Theatre Artist",
@@ -3203,7 +3361,8 @@
     "Improv"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Recording Studio Assistant",
@@ -3223,7 +3382,8 @@
     "Cables"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Music Therapist",
@@ -3243,7 +3403,8 @@
     "Empathy"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "School Music Teacher",
@@ -3263,7 +3424,8 @@
     "Choir"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Staff Nurse – District Hospital",
@@ -3284,7 +3446,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://statehealthsocietybihar.org"
+   "url": "https://statehealthsocietybihar.org",
+   "sample": 1
   },
   {
    "t": "Staff Nurse – General Ward",
@@ -3304,7 +3467,8 @@
     "Patient care"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "ICU Staff Nurse",
@@ -3324,7 +3488,8 @@
     "B.Sc Nursing"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Nursing Clinical Internship",
@@ -3345,7 +3510,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "intern": "paid"
+   "intern": "paid",
+   "sample": 1
   },
   {
    "t": "OT Nurse",
@@ -3365,7 +3531,8 @@
     "Assist surgeon"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Community Health Nurse",
@@ -3385,7 +3552,8 @@
     "Outreach"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Dietician",
@@ -3405,7 +3573,8 @@
     "Ward rounds"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Nutritionist (clinic)",
@@ -3425,7 +3594,8 @@
     "Follow-up"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Radiology Technician",
@@ -3445,7 +3615,8 @@
     "CT scan"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Cath Lab / ECG Technician",
@@ -3465,7 +3636,8 @@
     "Cardiac care"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Lab Intern (DMLT / B.Sc)",
@@ -3486,7 +3658,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "intern": "paid"
+   "intern": "paid",
+   "sample": 1
   },
   {
    "t": "Dialysis Technician",
@@ -3506,7 +3679,8 @@
     "Patient monitoring"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Lab Technician (DMLT)",
@@ -3526,7 +3700,8 @@
     "Sample handling"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Physiotherapy Assistant",
@@ -3546,7 +3721,8 @@
     "Ortho rehab"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Operation Theatre Technician",
@@ -3566,7 +3742,8 @@
     "Anaesthesia support"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Optometry Assistant",
@@ -3586,7 +3763,8 @@
     "Counselling"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Hospital Pharmacist",
@@ -3606,7 +3784,8 @@
     "Inventory"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Clinical Research Associate",
@@ -3626,7 +3805,8 @@
     "Trial documentation"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "QC Chemist",
@@ -3646,7 +3826,8 @@
     "Lab records"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Production Chemist",
@@ -3666,7 +3847,8 @@
     "Shift work"
    ],
    "safe": 0,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Chemical Process Engineer Trainee",
@@ -3686,7 +3868,8 @@
     "DCS"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Retail Pharmacist",
@@ -3706,7 +3889,8 @@
     "Stock audit"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Clinical Psychology Assistant",
@@ -3726,7 +3910,8 @@
     "Ethics"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Career Counsellor",
@@ -3746,7 +3931,8 @@
     "Listening"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "School Counsellor",
@@ -3766,7 +3952,8 @@
     "Confidentiality"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Hospital Administrator",
@@ -3786,7 +3973,8 @@
     "NABH"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Medical Coder (CPC)",
@@ -3806,7 +3994,8 @@
     "Coding test"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Pharmacovigilance Associate",
@@ -3826,7 +4015,8 @@
     "MedDRA"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Health Inspector",
@@ -3847,7 +4037,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://www.ncs.gov.in"
+   "url": "https://www.ncs.gov.in",
+   "sample": 1
   },
   {
    "t": "Digital Marketing Executive",
@@ -3867,7 +4058,8 @@
     "Analytics"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Field Sales Officer (FMCG)",
@@ -3887,7 +4079,8 @@
     "Two-wheeler"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Field Social Worker",
@@ -3907,7 +4100,8 @@
     "Empathy"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "NGO Project Coordinator",
@@ -3927,7 +4121,8 @@
     "Team"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Yoga Instructor",
@@ -3947,7 +4142,8 @@
     "Group class"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Gym Trainer",
@@ -3967,7 +4163,8 @@
     "Client handling"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Sports Physiotherapist",
@@ -3987,7 +4184,8 @@
     "Rehab"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Cricket Coach",
@@ -4007,7 +4205,8 @@
     "Fitness"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Swimming Instructor",
@@ -4027,7 +4226,8 @@
     "Kids"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Home Tuition – Class 1 to 5",
@@ -4047,7 +4247,8 @@
     "Local area"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Pre-Primary Teacher (KG)",
@@ -4067,7 +4268,8 @@
     "Activity planning"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Assistant Professor – Physics",
@@ -4087,7 +4289,8 @@
     "UGC norms"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Guest Lecturer – Chemistry",
@@ -4108,7 +4311,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "url": "https://rhe.rajasthan.gov.in"
+   "url": "https://rhe.rajasthan.gov.in",
+   "sample": 1
   },
   {
    "t": "Special Educator",
@@ -4128,7 +4332,8 @@
     "Patience"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "School Teacher – Science",
@@ -4148,7 +4353,8 @@
     "Classroom mgmt"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Research Intern (certificate only)",
@@ -4169,7 +4375,8 @@
    ],
    "safe": 1,
    "ver": 1,
-   "intern": "unpaid"
+   "intern": "unpaid",
+   "sample": 1
   },
   {
    "t": "Research Associate",
@@ -4189,7 +4396,8 @@
     "Publications"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "PET / Sports Teacher",
@@ -4209,7 +4417,8 @@
     "Discipline"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   },
   {
    "t": "Spoken English Trainer",
@@ -4229,7 +4438,8 @@
     "Online teaching"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Veterinary Field Assistant",
@@ -4249,7 +4459,8 @@
     "Field visits"
    ],
    "safe": 1,
-   "ver": 0
+   "ver": 0,
+   "sample": 1
   },
   {
    "t": "Dairy Vet Assistant",
@@ -4269,7 +4480,8 @@
     "Records"
    ],
    "safe": 1,
-   "ver": 1
+   "ver": 1,
+   "sample": 1
   }
  ],
  "govt": [
