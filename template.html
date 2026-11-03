@@ -63,6 +63,36 @@
   .chip.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
 
 
+  /* ---------- prepare: resume builder + interview prep ---------- */
+  .prep{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+  @media(max-width:860px){.prep{grid-template-columns:1fr}}
+  .resume-form input,.resume-form textarea{width:100%;padding:9px 11px;border:1px solid var(--line);
+    border-radius:9px;font-size:13.5px;font-family:inherit;margin-bottom:8px;outline:none;background:#fff}
+  .resume-form input:focus,.resume-form textarea:focus{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+  .resume-form label{display:block;font-size:11.5px;font-weight:700;color:var(--muted);
+    text-transform:uppercase;letter-spacing:.5px;margin:10px 0 4px}
+  #resumePreview{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:26px 24px;
+    font-size:13px;line-height:1.55;min-height:420px}
+  #resumePreview h1{font-size:19px;margin:0 0 2px;letter-spacing:-.3px}
+  #resumePreview .rcontact{font-size:12px;color:var(--muted);margin-bottom:14px}
+  #resumePreview h2{font-size:12px;text-transform:uppercase;letter-spacing:.8px;color:var(--brand);
+    border-bottom:1px solid var(--line);padding-bottom:4px;margin:16px 0 8px}
+  #resumePreview p{margin:0 0 6px}
+  #resumePreview .rline{white-space:pre-wrap}
+  .tip{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:14px}
+  .tip h4{margin:0 0 8px;font-size:14.5px}
+  .tip ul{margin:6px 0 0;padding-left:18px}
+  .tip li{font-size:13px;color:var(--body);margin:4px 0}
+  .two-col{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  @media(max-width:600px){.two-col{grid-template-columns:1fr}}
+  .yes li::marker{color:#0f766e}
+  .no li::marker{color:#b91c1c}
+  @media print{
+    body *{visibility:hidden}
+    #resumePreview,#resumePreview *{visibility:visible}
+    #resumePreview{position:absolute;left:0;top:0;width:100%;border:0;padding:0}
+  }
+
   /* ---------- safety tools ---------- */
   .report{border:0;background:none;color:var(--muted);font-size:11.5px;cursor:pointer;padding:0 2px}
   .report:hover{color:var(--red);text-decoration:underline}
@@ -398,6 +428,111 @@
       <p class="secsub">Real platforms, real certificates. Where a certificate needs a paid exam, we say so plainly — no “free” claims that turn into a payment page.</p>
       <div class="note">A certificate alone rarely gets you hired. What gets you hired is the portfolio or the practical test — the certificate is just what makes a recruiter stop scrolling. Do the course, then build one thing with it.</div>
       <div class="cards" id="courseCards"></div>
+
+      <h3 class="landh" style="margin-top:30px">Free for students — tools, email and certificates</h3>
+      <p class="secsub">Real programmes, official pages. Eligibility is decided by each company, so open the page and check before you count on it.</p>
+      <div class="cards" id="freebieCards"></div>
+    </section>
+
+    <!-- ============ PREPARE ============ -->
+    <section id="v-prep" class="hide">
+      <h2 class="sechead">Interview preparation — and a resume you can print</h2>
+      <p class="secsub">Nobody teaches this in college. What to carry, how to sit, what to say when you don't know the answer, and a one-page resume you can build here and save as PDF for free.</p>
+
+      <div class="prep">
+        <div>
+          <div class="tool">
+            <h3>Resume builder</h3>
+            <p class="hint">Fill this in, then press Print → choose "Save as PDF". Nothing is uploaded — it all stays in your browser.</p>
+            <div class="resume-form">
+              <label>Full name</label><input id="rName" placeholder="Riya Patel">
+              <div class="two-col">
+                <div><label>Phone</label><input id="rPhone" placeholder="98xxxxxxxx"></div>
+                <div><label>Email</label><input id="rEmail" placeholder="riya@example.com"></div>
+              </div>
+              <div class="two-col">
+                <div><label>City</label><input id="rCity" placeholder="Ahmedabad"></div>
+                <div><label>Target role</label><input id="rRole" placeholder="Lab Technician"></div>
+              </div>
+              <label>Education (one per line: course | institute | year | %)</label>
+              <textarea id="rEdu" rows="3" placeholder="DMLT | Govt Medical College, Ahmedabad | 2026 | 78%"></textarea>
+              <label>Skills (comma separated)</label>
+              <input id="rSkills" placeholder="Sample handling, Phlebotomy, Lab records, Hindi/English">
+              <label>Experience / internship / project (one per line)</label>
+              <textarea id="rExp" rows="3" placeholder="Lab intern, PathCare Labs, 3 months — 60 samples/day, CBC and urine routine"></textarea>
+              <label>Languages</label><input id="rLang" placeholder="Gujarati, Hindi, English">
+              <button class="btn" id="rPrint" style="margin-top:12px">Print / Save as PDF</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="resumePreview">
+          <h1>Your Name</h1>
+          <div class="rcontact">Phone · Email · City · Target role</div>
+          <h2>Objective</h2><p class="rline" id="pObj">Start typing on the left and this page fills itself in.</p>
+          <h2>Education</h2><p class="rline" id="pEdu">—</p>
+          <h2>Skills</h2><p class="rline" id="pSkills">—</p>
+          <h2>Experience / Projects</h2><p class="rline" id="pExp">—</p>
+          <h2>Languages</h2><p class="rline" id="pLang">—</p>
+        </div>
+      </div>
+
+      <h3 class="landh" style="margin-top:28px">What to carry, and how to behave</h3>
+      <div class="tip">
+        <h4>Documents — carry two sets, in one folder</h4>
+        <ul>
+          <li>3 copies of your resume, 4 passport photos, a pen</li>
+          <li>10th and 12th marksheets, diploma/degree certificates, all originals plus one photocopy set</li>
+          <li>Aadhaar, PAN if you have it, and a bank passbook copy for salary account</li>
+          <li>Experience or internship letter, if any; registration certificate (Nursing Council, State Pharmacy Council, ITI NCVT)</li>
+          <li>Caste/EWS certificate if you are claiming reservation — for government posts this is checked strictly</li>
+        </ul>
+      </div>
+
+      <div class="tip">
+        <h4>Body language — the part nobody marks you on but everyone notices</h4>
+        <div class="two-col">
+          <div><b style="font-size:12.5px;color:#0f766e">DO</b>
+            <ul class="yes">
+              <li>Reach 15 minutes early; sit down and breathe before you go in</li>
+              <li>Knock, ask before entering, greet the panel — "Good morning sir/ma'am"</li>
+              <li>Sit upright, hands on your lap or on the table, both feet on the floor</li>
+              <li>Look at the person asking the question; if there are three, glance at all three</li>
+              <li>Speak slowly. Pause before answering — it reads as confidence</li>
+              <li>Say "I don't know, but I would find out by…" instead of guessing</li>
+            </ul>
+          </div>
+          <div><b style="font-size:12.5px;color:#b91c1c">DON'T</b>
+            <ul class="no">
+              <li>Don't keep your phone even on silent — switch it off before entering</li>
+              <li>Don't cross your arms, tap the table or bounce your leg</li>
+              <li>Don't chew gum, don't lean back into the chair, don't look at the floor</li>
+              <li>Don't say "any job is fine" — it sounds like you have no interest</li>
+              <li>Don't criticise your last employer or college</li>
+              <li>Don't ask about salary in the first round unless they raise it</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip">
+        <h4>Answers that work, even with no experience</h4>
+        <ul>
+          <li><b>"Tell me about yourself"</b> — 45 seconds: who you are, what you studied, one thing you did with it, why this job. Not your family history.</li>
+          <li><b>"Why should we hire you?"</b> — name the one thing the job needs and show you have it: "You need someone who can handle 60 samples a day without mixing labels — that was my daily work in my internship."</li>
+          <li><b>"What is your weakness?"</b> — a real one plus what you do about it. "I used to be slow at documentation, so I made a checklist; my last supervisor said my records were the cleanest."</li>
+          <li><b>"You have no experience"</b> — agree, then point at practice: college labs, internships, a project, a certificate, a portfolio.</li>
+          <li><b>Ask them two questions</b> — "What does a normal shift look like?" and "What would you want me to learn in the first month?"</li>
+        </ul>
+      </div>
+
+      <h3 class="landh">Questions by field</h3>
+      <div class="cards" id="fieldQs"></div>
+
+      <div class="note" style="margin-top:18px">
+        <b>If they ask for money, it is not a job.</b> No genuine employer charges a registration fee, a security deposit or a
+        "training cost" before joining. Government recruitment charges an exam fee on the official portal only — never to a person.
+      </div>
     </section>
 
     <!-- ============ REVIEWS ============ -->
@@ -539,7 +674,7 @@ const $$ = s => [...document.querySelectorAll(s)];
 const TABS = [
   ["v-jobs","Jobs"],["v-intern","Internships"],["v-govt","Government"],
   ["v-gig","Local & daily work"],["v-workers","Hire a worker"],
-  ["v-courses","Free courses"],["v-reviews","Reviews & safety"],
+  ["v-courses","Free courses"],["v-prep","Prepare"],["v-reviews","Reviews & safety"],
   ["v-safety","Safety & report"],["v-post","Post a job"]
 ];
 const state = {q:"",cat:"All",city:"",edu:"",pay:"",types:[],modes:[],safe:false,ver:false,fresh:false,nofee:true,sort:"new",trade:"All",urgent:false};
@@ -1232,6 +1367,108 @@ $("#careerCards").innerHTML = CAREERS.map(([n,d,u,tag])=>`
     <div class="row"><h4>${esc(n)}</h4><span class="pill">${esc(tag)}</span></div>
     <p>${esc(d)}</p>
     <a class="link" href="${u}" target="_blank" rel="noopener">Official careers page →</a>
+  </div>`).join("");
+
+/* ============================================================
+   RESUME BUILDER
+   ============================================================ */
+const R = {
+  name:"rName", phone:"rPhone", email:"rEmail", city:"rCity", role:"rRole",
+  edu:"rEdu", skills:"rSkills", exp:"rExp", lang:"rLang"
+};
+function resumeUpdate(){
+  const v = k => (document.getElementById(R[k]) || {}).value || "";
+  const name = v("name") || "Your Name";
+  const contact = [v("phone"), v("email"), v("city"), v("role")].filter(Boolean).join(" · ")
+                  || "Phone · Email · City · Target role";
+  const p = document.getElementById("resumePreview");
+  p.querySelector("h1").textContent = name;
+  p.querySelector(".rcontact").textContent = contact;
+
+  const role = v("role");
+  const edu  = v("edu");
+  document.getElementById("pObj").textContent = role
+    ? `${role} candidate${edu ? " with " + edu.split("\n")[0].split("|")[0].trim() : ""}. Looking for a first role where I can work to a fixed process and learn from a senior.`
+    : "Start typing on the left and this page fills itself in.";
+  document.getElementById("pEdu").textContent = edu
+    ? edu.split("\n").map(l => "• " + l.replace(/\s*\|\s*/g, " — ")).join("\n") : "—";
+  document.getElementById("pSkills").textContent = v("skills") ? v("skills") : "—";
+  document.getElementById("pExp").textContent = v("exp")
+    ? v("exp").split("\n").map(l => "• " + l).join("\n") : "—";
+  document.getElementById("pLang").textContent = v("lang") ? v("lang") : "—";
+}
+Object.values(R).forEach(id => {
+  const el = document.getElementById(id);
+  if(el) el.addEventListener("input", resumeUpdate);
+});
+const rp = document.getElementById("rPrint");
+if(rp) rp.addEventListener("click", () => window.print());
+resumeUpdate();
+
+/* ============================================================
+   QUESTIONS BY FIELD
+   ============================================================ */
+const FIELD_QS = [
+  ["Nursing / GNM", ["A patient's relatives are angry about a delay. What do you do first?",
+    "How do you make sure you give the right medicine to the right patient?",
+    "What will you do if you disagree with the doctor's instruction?",
+    "How do you handle a 12-hour night shift and still stay alert?",
+    "What is the first thing you check before starting a shift?"]],
+  ["Lab / DMLT / OT technician", ["A sample is haemolysed and the result looks wrong. What do you do?",
+    "How do you prevent mixing up two patients' samples?",
+    "What is the difference between sterilisation and disinfection?",
+    "You see a senior skip a safety step. What do you do?",
+    "Which tests have you actually performed with your own hands?"]],
+  ["ITI / Electrician / Fitter", ["What safety steps do you take before touching a live panel?",
+    "How do you trace a fault in a circuit that keeps tripping?",
+    "What tools do you own, and which ones can you use without supervision?",
+    "Explain one job you completed start to finish.",
+    "What will you do if you are asked to work at height without a harness?"]],
+  ["IT / QA / Support", ["A bug is reported that you cannot reproduce. What next?",
+    "How would you explain a technical problem to someone who is not technical?",
+    "What is the difference between testing and debugging?",
+    "Show me something you built. Why did you build it that way?",
+    "How do you keep learning when the technology keeps changing?"]],
+  ["Teaching / Tuition", ["How will you teach a student who is two chapters behind?",
+    "A parent says their child is not improving. What do you say?",
+    "How do you keep a class of 40 quiet without shouting?",
+    "Which board and subjects can you teach confidently?",
+    "How do you check whether the class actually understood?"]],
+  ["Pharmacy", ["What do you check before dispensing a prescription?",
+    "A customer asks for an antibiotic without a prescription. What do you say?",
+    "How do you store insulin, and why?",
+    "What is the difference between generic and branded medicine?",
+    "What will you do if you notice an expired strip on the shelf?"]]
+];
+const fq = document.getElementById("fieldQs");
+if(fq) fq.innerHTML = FIELD_QS.map(([field, qs]) => `
+  <div class="c">
+    <h4>${esc(field)}</h4>
+    <ul style="margin:8px 0 0;padding-left:17px">
+      ${qs.map(q => `<li style="font-size:12.5px;color:var(--body);margin:5px 0">${esc(q)}</li>`).join("")}
+    </ul>
+  </div>`).join("");
+
+/* ============================================================
+   STUDENT FREEBIES
+   ============================================================ */
+const FREEBIES = [
+  ["GitHub Student Developer Pack","Free while you are a student: GitHub Pro, free domains, cloud credits, and dozens of paid developer tools at no cost.","Verify with your college ID or .edu address.","https://education.github.com/pack","Coding"],
+  ["Microsoft 365 Education","Word, Excel, PowerPoint and 1 TB OneDrive, free for students at eligible institutions — including a school or college email address.","Ask your college whether they are enrolled; otherwise check your institution's page.","https://www.microsoft.com/en-in/education/products/office","Office / email"],
+  ["Canva for Education","The full Canva design tool, free for students and teachers — useful for resumes, posters and college projects.","Sign up with a school email or a document that proves you are enrolled.","https://www.canva.com/education/","Design"],
+  ["Figma for Education","Figma's professional plan free for students and educators — the standard tool for UI design jobs.","Verify with your student status.","https://www.figma.com/education/","Design / UI"],
+  ["JetBrains Student Pack","IntelliJ, PyCharm and WebStorm free while you study — the same IDEs professionals use.","Needs a student email or an ISIC card.","https://www.jetbrains.com/community/education/","Coding"],
+  ["Notion for Education","The Plus plan free for students with a school email — good for notes, projects and a portfolio page.","Requires an academic email address.","https://www.notion.com/product/notion-for-education","Notes / portfolio"],
+  ["Autodesk Education","AutoCAD, Revit and Fusion 360 free for students — the software civil, mechanical and interior design jobs ask for.","One-year education licence, renewable while enrolled.","https://www.autodesk.com/education/edu-software/overview","CAD / engineering"],
+  ["Coursera Financial Aid","Every paid course has a 'Financial Aid' link — apply and you can get the full course free if approved.","Takes about 15 days for approval; write a specific application.","https://www.coursera.org/","Courses"],
+];
+const fb = document.getElementById("freebieCards");
+if(fb) fb.innerHTML = FREEBIES.map(([n,d,how,u,tag]) => `
+  <div class="c">
+    <div class="row"><h4>${esc(n)}</h4><span class="pill">${esc(tag)}</span></div>
+    <p>${esc(d)}</p>
+    <p style="color:var(--green);font-weight:600;font-size:12.5px">${esc(how)}</p>
+    <a class="link" href="${u}" target="_blank" rel="noopener">Official page →</a>
   </div>`).join("");
 
 /* first paint */
