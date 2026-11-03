@@ -30,6 +30,13 @@ jobs:
       - name: Fetch employer career pages (pharma / hospitals)
         run: python3 pipeline/fetch_employers.py
 
+      - name: Fetch aggregators (Adzuna / Jooble)
+        env:
+          ADZUNA_ID: ${{ secrets.ADZUNA_ID }}
+          ADZUNA_KEY: ${{ secrets.ADZUNA_KEY }}
+          JOOBLE_KEY: ${{ secrets.JOOBLE_KEY }}
+        run: python3 pipeline/fetch_aggregators.py
+
       - name: Rebuild the site
         run: python3 build.py
 
@@ -37,7 +44,7 @@ jobs:
         run: |
           git config user.name  "job-data-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/live.json data/govt-live.json data/site-data.json index.html
+          git add data/live.json data/govt-live.json data/rotation-state.json data/site-data.json index.html
           if git diff --cached --quiet; then
             echo "No changes today."
           else
