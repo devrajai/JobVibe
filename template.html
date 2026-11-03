@@ -63,6 +63,27 @@
   .chip.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
 
 
+  /* ---------- safety tools ---------- */
+  .report{border:0;background:none;color:var(--muted);font-size:11.5px;cursor:pointer;padding:0 2px}
+  .report:hover{color:var(--red);text-decoration:underline}
+  .tool{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:18px}
+  .tool h3{margin:0 0 4px;font-size:15px}
+  .tool p.hint{margin:0 0 12px;font-size:12.5px;color:var(--muted)}
+  .tool textarea{width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;
+    font-family:inherit;font-size:13.5px;outline:none;resize:vertical;background:#fff}
+  .tool textarea:focus{border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-soft)}
+  .verdict{margin-top:14px;padding:13px 15px;border-radius:11px;font-size:13.5px;display:none}
+  .verdict.show{display:block}
+  .verdict.bad{background:var(--red-soft);border:1px solid #fecaca;color:#7f1d1d}
+  .verdict.warn{background:var(--amber-soft);border:1px solid #fde68a;color:#78350f}
+  .verdict.good{background:var(--green-soft);border:1px solid #bbf7d0;color:#14532d}
+  .verdict ul{margin:8px 0 0;padding-left:18px}
+  .verdict li{margin:3px 0}
+  .legal{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px}
+  .legal h3{margin:0 0 8px;font-size:14.5px}
+  .legal p,.legal li{font-size:13px;color:var(--body);margin:6px 0}
+  .legal ul{padding-left:18px}
+
   /* ---------- urgent mode + similar roles ---------- */
   .btn.urgent{background:#b45309;display:inline-flex;align-items:center;gap:6px}
   .btn.urgent:hover{background:#92400e}
@@ -368,6 +389,78 @@
       <div class="cards" id="reviewCards"></div>
     </section>
 
+    <!-- ============ SAFETY & REPORT ============ -->
+    <section id="v-safety" class="hide">
+      <h2 class="sechead">Check a job offer before you trust it</h2>
+      <p class="secsub">Scammers target freshers hardest. Paste a WhatsApp or email message below — it is checked inside your browser, nothing is uploaded, and nothing is stored.</p>
+
+      <div class="tool">
+        <h3>Fake offer checker</h3>
+        <p class="hint">Paste the message you received. We look for the patterns that show up in almost every job scam.</p>
+        <textarea id="scamText" rows="5" placeholder="Paste the WhatsApp / SMS / email message here…"></textarea>
+        <button class="btn" id="scamBtn" style="margin-top:10px">Check this message</button>
+        <div class="verdict" id="scamVerdict"></div>
+      </div>
+
+      <div class="tool">
+        <h3>Report a job, an employer or harassment</h3>
+        <p class="hint">A human reads every report. If a job asked you for money, or an employer behaved badly, tell us — it protects the next person.</p>
+        <form id="reportForm">
+          <div class="f" style="margin-bottom:12px">
+            <label for="repWhat" style="display:block;font-size:13px;font-weight:600;margin-bottom:5px">Which job or employer?</label>
+            <input id="repWhat" required placeholder="Job title and employer name" style="width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:inherit">
+          </div>
+          <div class="f" style="margin-bottom:12px">
+            <label for="repType" style="display:block;font-size:13px;font-weight:600;margin-bottom:5px">What happened?</label>
+            <select id="repType" style="width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:inherit">
+              <option>They asked for money / registration fee</option>
+              <option>The job does not exist / no response after paying</option>
+              <option>Harassment or inappropriate behaviour</option>
+              <option>Unsafe working conditions</option>
+              <option>Fake government or railway recruitment</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="f" style="margin-bottom:12px">
+            <label for="repDetail" style="display:block;font-size:13px;font-weight:600;margin-bottom:5px">Details</label>
+            <textarea id="repDetail" rows="4" placeholder="What exactly happened? Dates, amounts, phone numbers."></textarea>
+          </div>
+          <div class="f" style="margin-bottom:12px">
+            <label for="repContact" style="display:block;font-size:13px;font-weight:600;margin-bottom:5px">Your phone or email (optional — only if you want a reply)</label>
+            <input id="repContact" placeholder="Optional" style="width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:inherit">
+          </div>
+          <button class="btn" type="submit">Send report</button>
+          <div class="ok" id="reportOk"></div>
+        </form>
+      </div>
+
+      <div class="legal">
+        <h3>How to check a company yourself, in five minutes</h3>
+        <ul>
+          <li><b>Company exists?</b> Search the name on the MCA portal — every registered Indian company is listed there with its CIN and directors.</li>
+          <li><b>Real address?</b> Put the address into Google Maps. A hospital or factory has photos and years of reviews. A scam has a flat number.</li>
+          <li><b>Real website?</b> A working domain with a phone number and a physical address. "Coming soon" pages and free subdomains are a warning sign.</li>
+          <li><b>Who contacted you?</b> A company recruiter uses a company email domain, not a personal Gmail or a Telegram-only account.</li>
+          <li><b>Ask one specific question</b> — "who is the reporting manager and what is the shift timing?" Scammers cannot answer specifics.</li>
+        </ul>
+      </div>
+
+      <div class="legal">
+        <h3>Privacy — in plain words</h3>
+        <p>This site has no server and no database. Saved jobs and your applied list live only in your own browser's storage, and clearing your browser deletes them.</p>
+        <p>When you submit a report or post a job, the form sends that text to our email inbox so a human can review it. We do not store it on a website, we do not sell it, and we never publish your phone number.</p>
+        <p>We do not ask for Aadhaar numbers, OTPs, bank details or document photos. If anyone asks you for those in the name of a job, it is a scam — report it above.</p>
+        <p>To have a submission deleted, email us with the same text you sent and we will remove it from the inbox.</p>
+      </div>
+
+      <div class="legal">
+        <h3>Terms, briefly</h3>
+        <p>JobVibe lists jobs from employers, government portals and public job boards. We check what we can, but we cannot guarantee any employer. Always verify before you travel or pay anything.</p>
+        <p>We never charge job seekers. Any site or person asking for a fee in our name is not us.</p>
+        <p>Reviews are the personal opinions of the people who wrote them. We remove reviews that name individual managers, contain abuse, or cannot be corroborated.</p>
+      </div>
+    </section>
+
     <!-- ============ POST ============ -->
     <section id="v-post" class="hide">
       <h2 class="sechead">Post a job or a worker profile — free</h2>
@@ -427,10 +520,46 @@ const $$ = s => [...document.querySelectorAll(s)];
 const TABS = [
   ["v-jobs","Jobs"],["v-intern","Internships"],["v-govt","Government"],
   ["v-gig","Local & daily work"],["v-workers","Hire a worker"],
-  ["v-courses","Free courses"],["v-reviews","Reviews & safety"],["v-post","Post a job"]
+  ["v-courses","Free courses"],["v-reviews","Reviews & safety"],
+  ["v-safety","Safety & report"],["v-post","Post a job"]
 ];
 const state = {q:"",cat:"All",city:"",edu:"",pay:"",types:[],modes:[],safe:false,ver:false,fresh:false,nofee:true,sort:"new",trade:"All",urgent:false};
-let SAVED = new Set(JSON.parse(localStorage.getItem("kaamsetu_saved") || "[]"));
+let SAVED = new Set(JSON.parse(localStorage.getItem("jobvibe_saved") || "[]"));
+
+/* ============================================================
+   FORM DELIVERY
+   The site is static, so submissions have to go somewhere.
+   Put a free Web3Forms access key below (web3forms.com — 250
+   submissions/month free, no card) and every post and report
+   lands in your email inbox. Leave it empty and the form falls
+   back to the visitor's own mail app, so nothing is ever lost.
+   ============================================================ */
+const FORM = {
+  web3forms_key: "",              // e.g. "a1b2c3d4-0000-1111-2222-333344445555"
+  email: ""                       // optional: your address for the mailto fallback
+};
+
+function sendSubmission(subject, lines){
+  const body = lines.join("\n");
+  if(FORM.web3forms_key){
+    return fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {"Content-Type": "application/json", Accept: "application/json"},
+      body: JSON.stringify({access_key: FORM.web3forms_key, subject: subject,
+        from_name: "JobVibe website", message: body})
+    }).then(r => r.json()).then(d => {
+      if(!d.success) throw new Error(d.message || "send failed");
+      return "sent";
+    });
+  }
+  if(FORM.email){
+    window.location.href = "mailto:" + FORM.email +
+      "?subject=" + encodeURIComponent(subject) +
+      "&body=" + encodeURIComponent(body);
+    return Promise.resolve("mailto");
+  }
+  return Promise.resolve("unsent");
+}
 
 function toast(msg){
   const t = $("#toast"); t.textContent = msg; t.classList.add("on");
@@ -686,6 +815,7 @@ function card(j){
     <div class="jfoot">
       <div class="sal">${esc(j.salTxt)}<small>Posted ${j.days===1?"yesterday":j.days+" days ago"}</small></div>
       <div class="acts">
+        <button class="report" data-report="${esc(j.t)} — ${esc(j.o)}" title="Report this job">⚑ Report</button>
         <button class="save ${saved?"on":""}" data-save="${esc(j.t+j.o)}" title="Save job">${saved?"♥":"♡"}</button>
         <button class="btn sm" data-apply="${esc(j.t)}" data-url="${j.url||""}">Apply</button>
       </div>
@@ -731,11 +861,18 @@ function renderJobs(list, gridSel="#jgrid", emptySel="#jempty", headWord){
 }
 
 document.addEventListener("click", e=>{
+  const rep = e.target.closest("[data-report]");
+  if(rep){
+    go("v-safety");
+    const w = $("#repWhat");
+    if(w){ w.value = rep.dataset.report; w.focus(); }
+    return;
+  }
   const s = e.target.closest("[data-save]");
   if(s){
     const k = s.dataset.save;
     SAVED.has(k) ? SAVED.delete(k) : SAVED.add(k);
-    localStorage.setItem("kaamsetu_saved", JSON.stringify([...SAVED]));
+    localStorage.setItem("jobvibe_saved", JSON.stringify([...SAVED]));
     renderJobs(); renderJobs(JOBS.filter(j=>j.type==="Internship"), "#igrid", "#iempty");
     toast(SAVED.has(k) ? "Saved. Find it with the ♥ count in the header." : "Removed from saved.");
     return;
@@ -813,15 +950,106 @@ $("#gigBanner").innerHTML = `
 $("#postForm").addEventListener("submit", e=>{
   e.preventDefault();
   const rec = {
-    type:$("#pType").value, title:$("#pTitle").value, org:$("#pOrg").value,
-    city:$("#pCity").value, pay:$("#pPay").value, edu:$("#pEdu").value,
-    phone:$("#pPhone").value, desc:$("#pDesc").value, at:new Date().toISOString()
+    type: $("#pType").value, title: $("#pTitle").value, org: $("#pOrg").value,
+    city: $("#pCity").value, pay: $("#pPay").value, edu: $("#pEdu").value,
+    phone: $("#pPhone").value, desc: $("#pDesc").value, at: new Date().toISOString()
   };
-  const all = JSON.parse(localStorage.getItem("kaamsetu_posts") || "[]");
-  all.push(rec); localStorage.setItem("kaamsetu_posts", JSON.stringify(all));
-  $("#postOk").style.display = "block";
-  $("#postForm").reset();
-  toast("Submitted. Thank you!");
+  const all = JSON.parse(localStorage.getItem("jobvibe_posts") || "[]");
+  all.push(rec);
+  localStorage.setItem("jobvibe_posts", JSON.stringify(all));
+
+  const lines = [
+    "Type: " + rec.type, "Title: " + rec.title, "Employer: " + rec.org,
+    "City: " + rec.city, "Pay: " + rec.pay, "Minimum education: " + rec.edu,
+    "Contact: " + rec.phone, "", "Description:", rec.desc
+  ];
+  sendSubmission("New JobVibe submission: " + rec.type, lines)
+    .then(mode => {
+      const ok = $("#postOk");
+      ok.style.display = "block";
+      ok.textContent = mode === "sent"
+        ? "Sent. A human reviews every post before it goes live."
+        : mode === "mailto"
+          ? "Your mail app has opened with the details — press send there to deliver it."
+          : "Saved on this device. To actually receive submissions, add a free Web3Forms key on line 1 of the FORM block in template.html — it takes two minutes.";
+      $("#postForm").reset();
+      toast("Submitted. Thank you!");
+    })
+    .catch(err => {
+      const ok = $("#postOk");
+      ok.style.display = "block";
+      ok.textContent = "Could not send (" + err.message + "). Your details are saved on this device — please try again later.";
+    });
+});
+
+/* ---- report form ---- */
+$("#reportForm").addEventListener("submit", e=>{
+  e.preventDefault();
+  const lines = [
+    "Job / employer: " + $("#repWhat").value,
+    "Problem: " + $("#repType").value,
+    "Details: " + $("#repDetail").value,
+    "Reporter contact: " + ($("#repContact").value || "not given")
+  ];
+  sendSubmission("JobVibe report: " + $("#repType").value, lines)
+    .then(mode => {
+      const ok = $("#reportOk");
+      ok.style.display = "block";
+      ok.textContent = mode === "sent"
+        ? "Report received. Thank you — we will check this employer."
+        : mode === "mailto"
+          ? "Your mail app has opened with the report — press send to deliver it."
+          : "Your report is noted on this device only. Add a Web3Forms key in the FORM block so reports reach a real inbox.";
+      $("#reportForm").reset();
+      toast("Report submitted.");
+    })
+    .catch(err => toast("Could not send: " + err.message));
+});
+
+/* ---- fake offer checker ---- */
+const SCAM_RULES = [
+  {re: /(registration|joining|security|refundable)\s*(fee|charge|deposit|amount)/i,
+   flag: "Asks for a registration, joining or security fee"},
+  {re: /(₹|rs\.?|inr)\s?\d{3,}/i, flag: "Mentions a payment amount"},
+  {re: /(@gmail\.com|@yahoo\.|@hotmail\.|t\.me\/|telegram|only\s*whatsapp)/i,
+   flag: "Contact is a personal Gmail or Telegram, not a company address"},
+  {re: /(guaranteed?\s*(job|placement|income)|100%\s*placement|no\s*interview|direct\s*joining)/i,
+   flag: "Promises a guaranteed job, or joining with no interview"},
+  {re: /(today\s*only|last\s*date\s*today|limited\s*slots?|only\s*\d+\s*seats)/i,
+   flag: "Creates false urgency"},
+  {re: /(aadhaar|aadhar|pan\s*card|otp|bank\s*details|passbook|upi\s*id)/i,
+   needs: /(fee|deposit|send|pay\b|telegram|gmail|whatsapp)/i,
+   flag: "Asks for documents, OTP or bank details together with a payment or an anonymous contact"},
+  {re: /(work\s*from\s*home|typing\s*job|data\s*entry)[\s\S]{0,60}(fee|deposit|charge)/i,
+   flag: "The classic 'work from home typing' fee pattern"},
+  {re: /(send\s*(money|amount)|pay\s*(us|me)\s*first|transfer\s*(the\s*)?amount)/i,
+   flag: "Asks you to send money first"},
+  {re: /(no\s*experience\s*needed)[\s\S]{0,60}(\d{2,}\s?k|salary|per\s*month)/i,
+   flag: "High salary with no experience needed"}
+];
+
+$("#scamBtn").addEventListener("click", ()=>{
+  const text = $("#scamText").value.trim();
+  const box = $("#scamVerdict");
+  if(!text){
+    box.className = "verdict show warn";
+    box.innerHTML = "Paste the message first — even a single WhatsApp forward is enough to check.";
+    return;
+  }
+  const hits = SCAM_RULES.filter(r => r.re.test(text) && (!r.needs || r.needs.test(text)))
+    .map(r => r.flag);
+  if(hits.length >= 3){
+    box.className = "verdict show bad";
+    box.innerHTML = `<b>This looks like a scam.</b> ${hits.length} red flags found. Do not pay anything, do not share documents.` +
+      `<ul>${hits.map(h => `<li>${esc(h)}</li>`).join("")}</ul>`;
+  } else if(hits.length){
+    box.className = "verdict show warn";
+    box.innerHTML = `<b>Be careful.</b> ${hits.length} red flag${hits.length>1?"s":""} found — ask for the company address and call the landline before going anywhere.` +
+      `<ul>${hits.map(h => `<li>${esc(h)}</li>`).join("")}</ul>`;
+  } else {
+    box.className = "verdict show good";
+    box.innerHTML = "<b>No common scam pattern found.</b> That is not a guarantee — a clean message can still be fake. Verify the company address and never pay a fee.";
+  }
 });
 
 
