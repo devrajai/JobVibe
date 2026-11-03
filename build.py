@@ -38,7 +38,10 @@ pairs = [("JOBS", jobs), ("GOVT", data["govt"]), ("WORKERS", data["workers"]),
 block = "\n".join(
     f"const {name} = {json.dumps(value, ensure_ascii=False)};" for name, value in pairs
 )
+cs_path = root / "data" / "city-state.json"
+citystate = json.loads(cs_path.read_text(encoding="utf-8")) if cs_path.exists() else {"cities": {}, "aliases": {}, "special": {}}
 block += f"\nconst LIVE = {json.dumps(live_jobs, ensure_ascii=False)};"
+block += f"\nconst CITYSTATE = {json.dumps({'cities': citystate.get('cities', {}), 'aliases': citystate.get('aliases', {})}, ensure_ascii=False)};"
 block += f"\nconst LIVE_DATE = {json.dumps(fetched)};"
 
 (root / "index.html").write_text(tpl.replace("/*__SITE_DATA__*/", block), encoding="utf-8")
