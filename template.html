@@ -714,6 +714,9 @@ const SYN = {
   dawai:"pharmacy", medical:"medical", hospital:"hospital",
   lab:"lab", pathalogy:"pathology", pathology:"pathology",
   computer:"computer", mobile:"mobile", silaai:"tailor",
+  pharmd:"pharmacist", bpharm:"pharmacist", mpharm:"pharmacist", dpharm:"pharmacist",
+  pharma:"pharmacy", pharmacist:"pharmacist", dawai:"pharmacist", medical:"medical",
+  qa:"quality", qc:"quality", quality:"quality",
 };
 
 function lev(a, b){
@@ -773,7 +776,7 @@ const CITY_WORDS = new Set([].concat(
 
 function parseQuery(q){
   return q.toLowerCase().replace(/[.]/g, "").split(/\s+/).filter(Boolean)
-    .filter(w => !STOP.has(w) && !CITY_WORDS.has(w));
+    .filter(w => w.length > 1 && !STOP.has(w) && !CITY_WORDS.has(w));   // drop "b", "d" in "b pharm"
 }
 
 /* returns a weight: 2 = exact word found, 1 = near miss (stem/prefix/typo), 0 = no */
@@ -1174,6 +1177,12 @@ const CAREERS = [
   ["Narayana Health","Nursing and allied health hiring","https://www.narayanahealth.org/careers","Hospital"],
   ["Dr Lal PathLabs","Lab technician and phlebotomist roles","https://www.lalpathlabs.com/careers","Diagnostics"],
   ["Cipla","Pharma manufacturing, QA and QC","https://www.cipla.com/careers","Pharma"],
+  ["HLL Lifecare","Government of India pharma PSU — pharmacist, QA/QC, production, regulatory","https://www.lifecarehll.com/careers","Pharma PSU"],
+  ["NIPER","National Institute of Pharmaceutical Education and Research — research and faculty posts","https://www.niper.gov.in/","Pharma research"],
+  ["CSIR-CDRI","Central Drug Research Institute — research fellows and scientists","https://www.cdri.res.in/","Pharma research"],
+  ["Zydus Lifesciences","Manufacturing, QA/QC, R&D and regulatory affairs","https://www.zyduslife.com/careers","Pharma"],
+  ["Alkem Laboratories","Production, quality and field roles","https://www.alkemlabs.com/careers","Pharma"],
+  ["ESIC Recruitments","Pharmacist and paramedical posts across ESIC hospitals, all states","https://esic.gov.in/Recruitments","Govt hospitals"],
   ["Sun Pharma","Production, QA/QC and research","https://www.sunpharma.com/careers","Pharma"],
   ["Dr Reddy's Laboratories","Pharma and biotech roles","https://www.drreddys.com/careers","Pharma"],
   ["Biocon","Biotech and pharma manufacturing","https://www.biocon.com/careers","Biotech"],
