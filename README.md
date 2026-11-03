@@ -19,6 +19,8 @@ template.html               the site with /*__SITE_DATA__*/ where data goes
 build.py                    template + data -> index.html
 data/site-data.json         every listing, worker, course and review
 data/live.json              real postings pulled from employer boards today
+data/course-map.json        105 courses -> job-title keywords (the course-first edge)
+data/city-state.json        city -> state lookup, 125 cities + aliases
 data/base.json              the original hand-written seed data
 pipeline/new_entries.py     the v2 listings, in a compact pipe format
 pipeline/merge.py           merges new_entries.py into site-data.json
