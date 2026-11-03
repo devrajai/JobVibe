@@ -367,6 +367,11 @@
       <p class="secsub">Every link below goes to the official government portal. We do not copy application forms, and we never take money for a government job. Always confirm the notification PDF on the official site before applying.</p>
       <div class="warn"><b>Fake recruitment warning:</b> websites with names like “sarkari-result-online” or “govtjob-apply” often charge ₹200–₹500 for forms. Real recruitment happens only on the domains listed here, ending in <b>.gov.in</b> or <b>.nic.in</b>.</div>
       <div class="cards" id="govtCards"></div>
+
+      <h3 style="margin:26px 0 6px;font-size:15px">State-level recruitment — start with these states</h3>
+      <p class="secsub">Each state runs its own commission, health mission and police board. These are the official
+        domains; open them once and confirm before trusting a link.</p>
+      <div class="cards" id="stateCards"></div>
       <h3 style="margin:26px 0 10px;font-size:15px">Live government openings in our listings</h3>
       <div class="grid" id="ggrid"></div>
     </section>
@@ -930,6 +935,14 @@ $("#govtCards").innerHTML = GOVT.map(g=>`
     <div class="row"><h4>${esc(g.n)}</h4><span class="pill">${esc(g.tag)}</span></div>
     <p>${esc(g.d)}</p>
     <a class="link" href="${g.u}" target="_blank" rel="noopener">Official portal →</a>
+  </div>`).join("");
+
+$("#stateCards").innerHTML = (typeof STATE_SOURCES !== "undefined" ? STATE_SOURCES : []).map(s => `
+  <div class="c">
+    <div class="row"><h4>${esc(s.state)}</h4><span class="pill">${s.sources.length} sources</span></div>
+    ${s.sources.map(x => `<p style="margin:7px 0"><a class="link" style="margin:0;font-size:12.5px"
+        href="${x.url}" target="_blank" rel="noopener">${esc(x.name)} →</a>
+        <span style="display:block;color:var(--muted);font-size:11.5px">${esc(x.jobs)}</span></p>`).join("")}
   </div>`).join("");
 
 const TRADES = ["All", ...new Set(WORKERS.map(w=>w.tr))];
