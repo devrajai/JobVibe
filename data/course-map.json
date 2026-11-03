@@ -1,0 +1,2398 @@
+{
+ "version": 1,
+ "updated": "2026-11-03",
+ "how_to_use": "When a student picks a course, search every keyword in `keywords` plus every string in `titles` against the job title, skills and employer description. Match case-insensitively on whole words. A job matching any keyword inherits this course's `category` and `education_min` if the job does not already state them. `aliases` are for searching the course list itself (typing 'gnm' or 'bsc nursing').",
+ "courses": [
+  {
+   "id": "10th",
+   "course": "10th pass (any stream)",
+   "aliases": [
+    "10th",
+    "matric",
+    "ssc",
+    "fail 10th"
+   ],
+   "category": "Gig & Local",
+   "education_min": "10",
+   "keywords": [
+    "helper",
+    "security guard",
+    "delivery",
+    "housekeeping",
+    "peon",
+    "attendant",
+    "anganwadi",
+    "asha worker",
+    "mts",
+    "constable",
+    "group d"
+   ],
+   "titles": [
+    "Helper",
+    "Security Guard",
+    "MTS"
+   ]
+  },
+  {
+   "id": "12th",
+   "course": "12th pass (any stream)",
+   "aliases": [
+    "12th",
+    "intermediate",
+    "hsc",
+    "fail 12th"
+   ],
+   "category": "Commerce",
+   "education_min": "12",
+   "keywords": [
+    "data entry",
+    "telecaller",
+    "receptionist",
+    "computer operator",
+    "delivery",
+    "cabin crew",
+    "constable",
+    "clerk",
+    "gd constable"
+   ],
+   "titles": [
+    "Data Entry Operator",
+    "Telecaller",
+    "Clerk"
+   ]
+  },
+  {
+   "id": "ame",
+   "course": "AME (Aircraft Maintenance)",
+   "aliases": [
+    "ame",
+    "aircraft maintenance"
+   ],
+   "category": "Aviation",
+   "education_min": "dip",
+   "keywords": [
+    "aircraft maintenance",
+    "ame",
+    "line maintenance",
+    "avionics",
+    "airframe"
+   ],
+   "titles": [
+    "Aircraft Maintenance Trainee",
+    "Avionics Technician"
+   ]
+  },
+  {
+   "id": "animation",
+   "course": "Animation / VFX Diploma",
+   "aliases": [
+    "animation",
+    "vfx",
+    "3d animation"
+   ],
+   "category": "Animation & Gaming",
+   "education_min": "dip",
+   "keywords": [
+    "2d animator",
+    "3d artist",
+    "vfx compositor",
+    "game artist",
+    "motion graphics",
+    "rotoscopy",
+    "blender"
+   ],
+   "titles": [
+    "2D Animator",
+    "3D Artist",
+    "VFX Compositor"
+   ]
+  },
+  {
+   "id": "anm",
+   "course": "ANM",
+   "aliases": [
+    "anm",
+    "auxiliary nurse midwife",
+    "midwife"
+   ],
+   "category": "Nursing",
+   "education_min": "dip",
+   "keywords": [
+    "anm",
+    "auxiliary nurse midwife",
+    "anganwadi",
+    "asha worker",
+    "health worker",
+    "immunisation"
+   ],
+   "titles": [
+    "ANM",
+    "ASHA Worker",
+    "Anganwadi Worker"
+   ]
+  },
+  {
+   "id": "aviation",
+   "course": "Cabin Crew / Aviation Diploma",
+   "aliases": [
+    "cabin crew",
+    "aviation",
+    "air hostess",
+    "ground staff"
+   ],
+   "category": "Aviation",
+   "education_min": "12",
+   "keywords": [
+    "cabin crew",
+    "ground staff",
+    "airport",
+    "ticketing executive",
+    "air hostess",
+    "boarding"
+   ],
+   "titles": [
+    "Cabin Crew",
+    "Airport Ground Staff"
+   ]
+  },
+  {
+   "id": "b-ed",
+   "course": "B.Ed",
+   "aliases": [
+    "b.ed",
+    "bed",
+    "teaching degree"
+   ],
+   "category": "Teaching",
+   "education_min": "grad",
+   "keywords": [
+    "school teacher",
+    "primary teacher",
+    "tuition teacher",
+    "subject teacher",
+    "prt",
+    "tgt",
+    "pgt",
+    "home tuition"
+   ],
+   "titles": [
+    "School Teacher",
+    "Tuition Teacher"
+   ]
+  },
+  {
+   "id": "ba-english",
+   "course": "BA English",
+   "aliases": [
+    "ba english",
+    "english literature"
+   ],
+   "category": "Teaching",
+   "education_min": "grad",
+   "keywords": [
+    "spoken english trainer",
+    "content writer",
+    "english teacher",
+    "editor",
+    "proofreader",
+    "translator",
+    "copywriter"
+   ],
+   "titles": [
+    "Spoken English Trainer",
+    "Content Writer"
+   ]
+  },
+  {
+   "id": "bams",
+   "course": "BAMS",
+   "aliases": [
+    "bams",
+    "ayurveda",
+    "ayurvedic"
+   ],
+   "category": "AYUSH",
+   "education_min": "pg",
+   "keywords": [
+    "ayurveda doctor",
+    "ayurvedic physician",
+    "panchakarma",
+    "bams",
+    "ayurveda consultant"
+   ],
+   "titles": [
+    "Ayurveda Doctor",
+    "Panchakarma Consultant"
+   ]
+  },
+  {
+   "id": "banking",
+   "course": "B.Com + Banking (IBPS prep)",
+   "aliases": [
+    "banking",
+    "ibps",
+    "bank exam"
+   ],
+   "category": "Banking & Insurance",
+   "education_min": "grad",
+   "keywords": [
+    "bank clerk",
+    "probationary officer",
+    "loan officer",
+    "microfinance officer",
+    "branch operations",
+    "cashier"
+   ],
+   "titles": [
+    "Bank Clerk",
+    "Probationary Officer",
+    "Loan Officer"
+   ]
+  },
+  {
+   "id": "barch",
+   "course": "B.Arch",
+   "aliases": [
+    "b.arch",
+    "architecture"
+   ],
+   "category": "Architecture & Interior",
+   "education_min": "grad",
+   "keywords": [
+    "junior architect",
+    "architect",
+    "working drawings",
+    "site architect",
+    "revit",
+    "sketchup"
+   ],
+   "titles": [
+    "Junior Architect",
+    "Architect"
+   ]
+  },
+  {
+   "id": "baslp",
+   "course": "BASLP",
+   "aliases": [
+    "baslp",
+    "audiology",
+    "speech therapy"
+   ],
+   "category": "Paramedical",
+   "education_min": "grad",
+   "keywords": [
+    "audiologist",
+    "speech therapist",
+    "hearing aid",
+    "audiology",
+    "speech language pathologist"
+   ],
+   "titles": [
+    "Audiologist",
+    "Speech Therapist"
+   ]
+  },
+  {
+   "id": "bba",
+   "course": "BBA",
+   "aliases": [
+    "bba",
+    "business administration"
+   ],
+   "category": "Management",
+   "education_min": "grad",
+   "keywords": [
+    "business development executive",
+    "operations executive",
+    "hr executive",
+    "sales executive",
+    "management trainee"
+   ],
+   "titles": [
+    "Business Development Executive",
+    "Operations Executive"
+   ]
+  },
+  {
+   "id": "bca",
+   "course": "BCA",
+   "aliases": [
+    "bca",
+    "computer applications"
+   ],
+   "category": "IT & Data",
+   "education_min": "grad",
+   "keywords": [
+    "software developer",
+    "web developer",
+    "it support",
+    "tester",
+    "system administrator",
+    "data entry",
+    "computer operator"
+   ],
+   "titles": [
+    "Software Developer",
+    "IT Support Executive"
+   ]
+  },
+  {
+   "id": "bcom",
+   "course": "B.Com",
+   "aliases": [
+    "b.com",
+    "bcom",
+    "commerce"
+   ],
+   "category": "Commerce & Accounts",
+   "education_min": "grad",
+   "keywords": [
+    "accounts executive",
+    "accountant",
+    "tally operator",
+    "gst",
+    "audit assistant",
+    "taxation",
+    "billing executive",
+    "accounts payable"
+   ],
+   "titles": [
+    "Accounts Executive",
+    "GST Associate",
+    "Tally Operator"
+   ]
+  },
+  {
+   "id": "bdes",
+   "course": "B.Des / Graphic Design",
+   "aliases": [
+    "b.des",
+    "graphic design",
+    "ui design"
+   ],
+   "category": "Creative",
+   "education_min": "grad",
+   "keywords": [
+    "graphic designer",
+    "ui designer",
+    "visual designer",
+    "video editor",
+    "social media designer",
+    "brand designer",
+    "figma"
+   ],
+   "titles": [
+    "Graphic Designer",
+    "UI Designer",
+    "Video Editor"
+   ]
+  },
+  {
+   "id": "bds",
+   "course": "BDS",
+   "aliases": [
+    "bds",
+    "dentist",
+    "dental surgeon"
+   ],
+   "category": "Dentistry",
+   "education_min": "pg",
+   "keywords": [
+    "dental surgeon",
+    "dentist",
+    "endodontist",
+    "orthodontist",
+    "dental assistant",
+    "dental hygienist"
+   ],
+   "titles": [
+    "Dental Surgeon",
+    "Associate Dentist",
+    "Dental Assistant"
+   ]
+  },
+  {
+   "id": "beauty",
+   "course": "Beautician (NSQF)",
+   "aliases": [
+    "beautician",
+    "beauty",
+    "salon",
+    "mehndi"
+   ],
+   "category": "Beauty & Wellness",
+   "education_min": "any",
+   "keywords": [
+    "beautician",
+    "hair stylist",
+    "salon",
+    "mehndi artist",
+    "nail artist",
+    "spa therapist",
+    "makeup artist",
+    "barber"
+   ],
+   "titles": [
+    "Beautician",
+    "Hair Stylist",
+    "Mehndi Artist"
+   ]
+  },
+  {
+   "id": "bfa",
+   "course": "BFA Fine Arts",
+   "aliases": [
+    "bfa",
+    "fine arts",
+    "painting"
+   ],
+   "category": "Creative",
+   "education_min": "grad",
+   "keywords": [
+    "illustrator",
+    "art teacher",
+    "painter",
+    "animator",
+    "mural artist"
+   ],
+   "titles": [
+    "Illustrator",
+    "Art Teacher"
+   ]
+  },
+  {
+   "id": "bhm",
+   "course": "BHM Hotel Management",
+   "aliases": [
+    "bhm",
+    "hotel management",
+    "hospitality"
+   ],
+   "category": "Hospitality & Travel",
+   "education_min": "grad",
+   "keywords": [
+    "front desk",
+    "commi chef",
+    "housekeeping supervisor",
+    "f&b executive",
+    "hotel management trainee",
+    "steward",
+    "guest relations"
+   ],
+   "titles": [
+    "Front Desk Executive",
+    "Commi Chef",
+    "Housekeeping Supervisor"
+   ]
+  },
+  {
+   "id": "bhms",
+   "course": "BHMS",
+   "aliases": [
+    "bhms",
+    "homeopathy",
+    "homeopathic"
+   ],
+   "category": "AYUSH",
+   "education_min": "pg",
+   "keywords": [
+    "homeopathy doctor",
+    "homeopathic physician",
+    "bhms",
+    "homeo consultant"
+   ],
+   "titles": [
+    "Homeopathy Doctor"
+   ]
+  },
+  {
+   "id": "bot",
+   "course": "BOT (Occupational Therapy)",
+   "aliases": [
+    "bot",
+    "occupational therapy"
+   ],
+   "category": "Paramedical",
+   "education_min": "grad",
+   "keywords": [
+    "occupational therapist",
+    "paediatric therapy",
+    "rehab",
+    "sensory integration"
+   ],
+   "titles": [
+    "Occupational Therapist"
+   ]
+  },
+  {
+   "id": "bped",
+   "course": "B.P.Ed / Sports",
+   "aliases": [
+    "b.p.ed",
+    "physical education",
+    "sports"
+   ],
+   "category": "Sports & Fitness",
+   "education_min": "grad",
+   "keywords": [
+    "pet teacher",
+    "sports coach",
+    "gym trainer",
+    "fitness instructor",
+    "swimming instructor",
+    "strength coach"
+   ],
+   "titles": [
+    "PET Teacher",
+    "Gym Trainer",
+    "Sports Coach"
+   ]
+  },
+  {
+   "id": "bpharm",
+   "course": "B.Pharm",
+   "aliases": [
+    "b.pharm",
+    "bpharm",
+    "pharmacy graduate"
+   ],
+   "category": "Pharmacy",
+   "education_min": "grad",
+   "keywords": [
+    "pharmacist",
+    "hospital pharmacist",
+    "production chemist",
+    "qc chemist",
+    "qa officer",
+    "regulatory affairs",
+    "dispensing"
+   ],
+   "titles": [
+    "Hospital Pharmacist",
+    "QC Chemist",
+    "Production Officer"
+   ]
+  },
+  {
+   "id": "bpo-training",
+   "course": "Customer Support / BPO training",
+   "aliases": [
+    "bpo",
+    "voice process",
+    "call centre"
+   ],
+   "category": "BPO & Customer Support",
+   "education_min": "12",
+   "keywords": [
+    "customer support",
+    "voice process",
+    "chat support",
+    "telecaller",
+    "team leader",
+    "international process"
+   ],
+   "titles": [
+    "Customer Support Executive",
+    "Chat Support Associate"
+   ]
+  },
+  {
+   "id": "bpt",
+   "course": "BPT (Physiotherapy)",
+   "aliases": [
+    "bpt",
+    "physiotherapy",
+    "physiotherapist"
+   ],
+   "category": "Paramedical",
+   "education_min": "grad",
+   "keywords": [
+    "physiotherapist",
+    "physiotherapy assistant",
+    "rehab",
+    "sports physio",
+    "exercise therapy",
+    "ortho rehab"
+   ],
+   "titles": [
+    "Physiotherapist",
+    "Physiotherapy Assistant"
+   ]
+  },
+  {
+   "id": "bsc-agri",
+   "course": "B.Sc Agriculture",
+   "aliases": [
+    "agriculture",
+    "bsc agri",
+    "agronomy"
+   ],
+   "category": "Agriculture",
+   "education_min": "grad",
+   "keywords": [
+    "agronomist",
+    "field officer",
+    "soil testing",
+    "horticulture",
+    "sales agronomist",
+    "crop advisory",
+    "krishi"
+   ],
+   "titles": [
+    "Agronomist",
+    "Field Officer"
+   ]
+  },
+  {
+   "id": "bsc-bio",
+   "course": "B.Sc Zoology / Botany",
+   "aliases": [
+    "zoology",
+    "botany",
+    "life science"
+   ],
+   "category": "Biotechnology",
+   "education_min": "grad",
+   "keywords": [
+    "lab assistant",
+    "field assistant",
+    "research assistant",
+    "biology teacher",
+    "tissue culture"
+   ],
+   "titles": [
+    "Lab Assistant",
+    "Biology Teacher"
+   ]
+  },
+  {
+   "id": "bsc-biotech",
+   "course": "B.Sc Biotechnology",
+   "aliases": [
+    "biotechnology",
+    "biotech"
+   ],
+   "category": "Biotechnology",
+   "education_min": "grad",
+   "keywords": [
+    "research assistant",
+    "cell culture",
+    "bioinformatics",
+    "qc microbiologist",
+    "lab technician",
+    "molecular biology"
+   ],
+   "titles": [
+    "Research Assistant",
+    "Lab Technician"
+   ]
+  },
+  {
+   "id": "bsc-chem",
+   "course": "B.Sc Chemistry",
+   "aliases": [
+    "chemistry",
+    "bsc chemistry"
+   ],
+   "category": "Biotechnology",
+   "education_min": "grad",
+   "keywords": [
+    "qc chemist",
+    "qa chemist",
+    "chemical analyst",
+    "lab analyst",
+    "hplc",
+    "titration"
+   ],
+   "titles": [
+    "QC Chemist",
+    "Lab Analyst"
+   ]
+  },
+  {
+   "id": "bsc-hort",
+   "course": "B.Sc Horticulture",
+   "aliases": [
+    "horticulture",
+    "nursery"
+   ],
+   "category": "Agriculture",
+   "education_min": "grad",
+   "keywords": [
+    "horticulture supervisor",
+    "nursery manager",
+    "landscape supervisor",
+    "floriculture"
+   ],
+   "titles": [
+    "Horticulture Supervisor",
+    "Nursery Manager"
+   ]
+  },
+  {
+   "id": "bsc-micro",
+   "course": "B.Sc Microbiology",
+   "aliases": [
+    "microbiology",
+    "microbiologist"
+   ],
+   "category": "Biotechnology",
+   "education_min": "grad",
+   "keywords": [
+    "microbiologist",
+    "qc microbiologist",
+    "sterility testing",
+    "lab analyst",
+    "media preparation"
+   ],
+   "titles": [
+    "QC Microbiologist",
+    "Lab Analyst"
+   ]
+  },
+  {
+   "id": "bsc-mlt",
+   "course": "B.Sc MLT",
+   "aliases": [
+    "bsc mlt",
+    "medical lab technology",
+    "lab technologist"
+   ],
+   "category": "Paramedical",
+   "education_min": "grad",
+   "keywords": [
+    "medical lab technologist",
+    "microbiology lab",
+    "biochemistry lab",
+    "pathology technician",
+    "lab supervisor"
+   ],
+   "titles": [
+    "Medical Lab Technologist",
+    "Lab Supervisor"
+   ]
+  },
+  {
+   "id": "bsc-nursing",
+   "course": "B.Sc Nursing",
+   "aliases": [
+    "bsc nursing",
+    "b.sc nursing",
+    "nursing graduate"
+   ],
+   "category": "Nursing",
+   "education_min": "grad",
+   "keywords": [
+    "staff nurse",
+    "icu nurse",
+    "ot nurse",
+    "ward nurse",
+    "nursing officer",
+    "clinical instructor",
+    "infection control nurse"
+   ],
+   "titles": [
+    "Staff Nurse",
+    "ICU Nurse",
+    "Nursing Officer"
+   ]
+  },
+  {
+   "id": "bsc-stats",
+   "course": "B.Sc Statistics / Data",
+   "aliases": [
+    "statistics",
+    "data analyst",
+    "biostatistics"
+   ],
+   "category": "IT & Data",
+   "education_min": "grad",
+   "keywords": [
+    "data analyst",
+    "biostatistician",
+    "mis executive",
+    "business analyst",
+    "analytics",
+    "sql",
+    "power bi"
+   ],
+   "titles": [
+    "Data Analyst",
+    "MIS Executive"
+   ]
+  },
+  {
+   "id": "btech-aiml",
+   "course": "B.Tech AI / ML / Data Science",
+   "aliases": [
+    "ai",
+    "ml",
+    "data science",
+    "machine learning"
+   ],
+   "category": "IT & Data",
+   "education_min": "grad",
+   "keywords": [
+    "data scientist",
+    "machine learning engineer",
+    "ml engineer",
+    "data analyst",
+    "ai engineer",
+    "python developer",
+    "deep learning"
+   ],
+   "titles": [
+    "Data Scientist",
+    "ML Engineer",
+    "Data Analyst"
+   ]
+  },
+  {
+   "id": "btech-chemical",
+   "course": "B.Tech Chemical",
+   "aliases": [
+    "chemical engineering",
+    "b.tech chemical"
+   ],
+   "category": "Engineering",
+   "education_min": "grad",
+   "keywords": [
+    "process engineer",
+    "plant operator",
+    "production chemist",
+    "dcs",
+    "process safety"
+   ],
+   "titles": [
+    "Process Engineer",
+    "Plant Engineer"
+   ]
+  },
+  {
+   "id": "btech-civil",
+   "course": "B.Tech Civil",
+   "aliases": [
+    "civil",
+    "b.tech civil"
+   ],
+   "category": "Architecture & Interior",
+   "education_min": "grad",
+   "keywords": [
+    "site engineer",
+    "civil engineer",
+    "quantity surveyor",
+    "structural engineer",
+    "autocad draftsman",
+    "site execution"
+   ],
+   "titles": [
+    "Site Engineer",
+    "Civil Engineer",
+    "Quantity Surveyor"
+   ]
+  },
+  {
+   "id": "btech-cse",
+   "course": "B.Tech CSE / IT",
+   "aliases": [
+    "cse",
+    "computer science",
+    "b.tech it",
+    "software engineering"
+   ],
+   "category": "IT & Data",
+   "education_min": "grad",
+   "keywords": [
+    "software developer",
+    "software engineer",
+    "qa engineer",
+    "full stack",
+    "java developer",
+    "python developer",
+    "web developer",
+    "it support",
+    "tester",
+    "sde"
+   ],
+   "titles": [
+    "Software Engineer",
+    "QA Engineer",
+    "Web Developer"
+   ]
+  },
+  {
+   "id": "btech-ece",
+   "course": "B.Tech ECE",
+   "aliases": [
+    "ece",
+    "electronics",
+    "embedded"
+   ],
+   "category": "Engineering",
+   "education_min": "grad",
+   "keywords": [
+    "embedded engineer",
+    "electronics engineer",
+    "vlsi",
+    "telecom engineer",
+    "rf engineer",
+    "hardware engineer"
+   ],
+   "titles": [
+    "Embedded Engineer",
+    "Electronics Engineer"
+   ]
+  },
+  {
+   "id": "btech-electrical",
+   "course": "B.Tech Electrical",
+   "aliases": [
+    "electrical",
+    "b.tech electrical"
+   ],
+   "category": "Engineering",
+   "education_min": "grad",
+   "keywords": [
+    "electrical engineer",
+    "solar engineer",
+    "substation",
+    "maintenance engineer",
+    "panel design",
+    "switchgear"
+   ],
+   "titles": [
+    "Electrical Engineer",
+    "Maintenance Engineer"
+   ]
+  },
+  {
+   "id": "btech-mech",
+   "course": "B.Tech Mechanical",
+   "aliases": [
+    "mechanical",
+    "b.tech mech"
+   ],
+   "category": "Engineering",
+   "education_min": "grad",
+   "keywords": [
+    "graduate engineer trainee",
+    "design engineer",
+    "production engineer",
+    "maintenance engineer",
+    "cad engineer",
+    "solidworks",
+    "autocad"
+   ],
+   "titles": [
+    "Graduate Engineer Trainee",
+    "Design Engineer",
+    "Production Engineer"
+   ]
+  },
+  {
+   "id": "bums",
+   "course": "BUMS",
+   "aliases": [
+    "bums",
+    "unani",
+    "hakim"
+   ],
+   "category": "AYUSH",
+   "education_min": "pg",
+   "keywords": [
+    "unani doctor",
+    "unani physician",
+    "hakim",
+    "bums"
+   ],
+   "titles": [
+    "Unani Physician"
+   ]
+  },
+  {
+   "id": "ca",
+   "course": "CA (Inter / IPCC)",
+   "aliases": [
+    "ca",
+    "chartered accountant",
+    "ipcc"
+   ],
+   "category": "Commerce & Accounts",
+   "education_min": "pg",
+   "keywords": [
+    "articleship",
+    "audit assistant",
+    "chartered accountant",
+    "tax consultant",
+    "statutory audit",
+    "gst practitioner"
+   ],
+   "titles": [
+    "Audit Assistant",
+    "Article Assistant"
+   ]
+  },
+  {
+   "id": "carpentry",
+   "course": "Carpentry (NSQF)",
+   "aliases": [
+    "carpentry",
+    "carpenter",
+    "furniture"
+   ],
+   "category": "Gig & Local",
+   "education_min": "any",
+   "keywords": [
+    "carpenter",
+    "furniture repair",
+    "modular kitchen",
+    "polish",
+    "wood work"
+   ],
+   "titles": [
+    "Carpenter",
+    "Furniture Repair Technician"
+   ]
+  },
+  {
+   "id": "cath-lab",
+   "course": "Cath Lab / ECG Technician",
+   "aliases": [
+    "ecg technician",
+    "cath lab",
+    "cardiac technician"
+   ],
+   "category": "Paramedical",
+   "education_min": "dip",
+   "keywords": [
+    "ecg technician",
+    "cath lab",
+    "cardiac technician",
+    "echo technician",
+    "tmt"
+   ],
+   "titles": [
+    "ECG Technician",
+    "Cath Lab Technician"
+   ]
+  },
+  {
+   "id": "cma",
+   "course": "CMA (Cost Accountant)",
+   "aliases": [
+    "cma",
+    "cost accountant",
+    "icwa"
+   ],
+   "category": "Commerce & Accounts",
+   "education_min": "pg",
+   "keywords": [
+    "cost accountant",
+    "costing executive",
+    "finance analyst",
+    "budgeting",
+    "variance analysis"
+   ],
+   "titles": [
+    "Cost Accountant",
+    "Finance Analyst"
+   ]
+  },
+  {
+   "id": "cnc",
+   "course": "CNC / VMC Operator",
+   "aliases": [
+    "cnc",
+    "vmc",
+    "machine operator"
+   ],
+   "category": "Engineering",
+   "education_min": "iti",
+   "keywords": [
+    "cnc operator",
+    "vmc operator",
+    "machine setter",
+    "tool room",
+    "programming",
+    "gcode"
+   ],
+   "titles": [
+    "CNC Operator",
+    "VMC Operator"
+   ]
+  },
+  {
+   "id": "cs",
+   "course": "CS (Company Secretary)",
+   "aliases": [
+    "cs",
+    "company secretary"
+   ],
+   "category": "Law",
+   "education_min": "pg",
+   "keywords": [
+    "company secretary",
+    "roc filing",
+    "compliance officer",
+    "board minutes",
+    "secretarial"
+   ],
+   "titles": [
+    "Company Secretary Trainee",
+    "Compliance Officer"
+   ]
+  },
+  {
+   "id": "cyber-cert",
+   "course": "Cyber Security (CEH / CompTIA)",
+   "aliases": [
+    "ceh",
+    "comptia",
+    "cyber security",
+    "ethical hacking"
+   ],
+   "category": "Cyber Security",
+   "education_min": "any",
+   "keywords": [
+    "soc analyst",
+    "security analyst",
+    "penetration tester",
+    "pentest",
+    "cyber forensics",
+    "network security",
+    "vapt",
+    "information security"
+   ],
+   "titles": [
+    "SOC Analyst",
+    "Penetration Tester",
+    "Security Analyst"
+   ]
+  },
+  {
+   "id": "dairy",
+   "course": "Diploma Dairy",
+   "aliases": [
+    "dairy",
+    "dairy technology"
+   ],
+   "category": "Food & Dairy",
+   "education_min": "dip",
+   "keywords": [
+    "dairy plant operator",
+    "milk testing",
+    "dairy supervisor",
+    "pasteuriser",
+    "chilling centre"
+   ],
+   "titles": [
+    "Dairy Plant Operator",
+    "Dairy Supervisor"
+   ]
+  },
+  {
+   "id": "defence-prep",
+   "course": "NDA / CDS / Agniveer preparation",
+   "aliases": [
+    "nda",
+    "cds",
+    "agniveer",
+    "defence",
+    "police exam"
+   ],
+   "category": "Defence & Police",
+   "education_min": "12",
+   "keywords": [
+    "agniveer",
+    "constable",
+    "home guard",
+    "soldier",
+    "gd constable",
+    "sub inspector",
+    "capf"
+   ],
+   "titles": [
+    "Agniveer",
+    "Constable",
+    "Home Guard"
+   ]
+  },
+  {
+   "id": "dental-hyg",
+   "course": "Dental Hygienist / Assistant",
+   "aliases": [
+    "dental hygienist",
+    "dental assistant"
+   ],
+   "category": "Dentistry",
+   "education_min": "dip",
+   "keywords": [
+    "dental assistant",
+    "dental hygienist",
+    "dental receptionist",
+    "dental chair side",
+    "sterilisation"
+   ],
+   "titles": [
+    "Dental Assistant",
+    "Dental Hygienist"
+   ]
+  },
+  {
+   "id": "dialysis",
+   "course": "Dialysis Technician",
+   "aliases": [
+    "dialysis",
+    "haemodialysis"
+   ],
+   "category": "Paramedical",
+   "education_min": "dip",
+   "keywords": [
+    "dialysis technician",
+    "haemodialysis",
+    "nephrology technician",
+    "renal technician"
+   ],
+   "titles": [
+    "Dialysis Technician"
+   ]
+  },
+  {
+   "id": "dip-civil",
+   "course": "Diploma Civil",
+   "aliases": [
+    "diploma civil",
+    "polytechnic civil"
+   ],
+   "category": "Architecture & Interior",
+   "education_min": "dip",
+   "keywords": [
+    "site supervisor",
+    "surveyor",
+    "autocad draftsman",
+    "billing engineer",
+    "site incharge"
+   ],
+   "titles": [
+    "Site Supervisor",
+    "AutoCAD Draftsman"
+   ]
+  },
+  {
+   "id": "dip-elec",
+   "course": "Diploma Electrical",
+   "aliases": [
+    "diploma electrical",
+    "polytechnic electrical"
+   ],
+   "category": "Engineering",
+   "education_min": "dip",
+   "keywords": [
+    "electrical supervisor",
+    "maintenance technician",
+    "substation operator",
+    "panel operator"
+   ],
+   "titles": [
+    "Electrical Supervisor",
+    "Maintenance Technician"
+   ]
+  },
+  {
+   "id": "dip-mech",
+   "course": "Diploma Mechanical",
+   "aliases": [
+    "diploma mechanical",
+    "polytechnic mechanical"
+   ],
+   "category": "Engineering",
+   "education_min": "dip",
+   "keywords": [
+    "production supervisor",
+    "cnc operator",
+    "quality inspector",
+    "maintenance supervisor",
+    "shift supervisor",
+    "machine shop"
+   ],
+   "titles": [
+    "Production Supervisor",
+    "CNC Operator"
+   ]
+  },
+  {
+   "id": "dmlt",
+   "course": "DMLT",
+   "aliases": [
+    "dmlt",
+    "lab technician diploma",
+    "medical laboratory technology"
+   ],
+   "category": "Paramedical",
+   "education_min": "dip",
+   "keywords": [
+    "lab technician",
+    "laboratory technician",
+    "pathology",
+    "phlebotomist",
+    "sample collection",
+    "clinical laboratory",
+    "dmlt"
+   ],
+   "titles": [
+    "Lab Technician",
+    "Pathology Technician",
+    "Phlebotomist"
+   ]
+  },
+  {
+   "id": "dpharm",
+   "course": "D.Pharm",
+   "aliases": [
+    "d.pharm",
+    "dpharm",
+    "retail pharmacist"
+   ],
+   "category": "Pharmacy",
+   "education_min": "dip",
+   "keywords": [
+    "retail pharmacist",
+    "chemist shop",
+    "dispensing pharmacist",
+    "pharmacy assistant",
+    "medical store"
+   ],
+   "titles": [
+    "Retail Pharmacist",
+    "Pharmacy Assistant"
+   ]
+  },
+  {
+   "id": "driving",
+   "course": "HMV / LMV Driving",
+   "aliases": [
+    "driving",
+    "driver",
+    "hmv licence"
+   ],
+   "category": "Logistics & Supply Chain",
+   "education_min": "10",
+   "keywords": [
+    "driver",
+    "truck driver",
+    "personal driver",
+    "delivery partner",
+    "hmv",
+    "lmv"
+   ],
+   "titles": [
+    "Driver",
+    "Delivery Partner"
+   ]
+  },
+  {
+   "id": "drone",
+   "course": "Drone Pilot (DGCA)",
+   "aliases": [
+    "drone pilot",
+    "dgca drone",
+    "uav"
+   ],
+   "category": "Drone & Robotics",
+   "education_min": "any",
+   "keywords": [
+    "drone pilot",
+    "uav pilot",
+    "survey pilot",
+    "agri drone",
+    "mapping drone",
+    "rpas"
+   ],
+   "titles": [
+    "Drone Pilot",
+    "Survey Pilot"
+   ]
+  },
+  {
+   "id": "electrical-house",
+   "course": "Electrical / Appliance Repair (certificate)",
+   "aliases": [
+    "appliance repair",
+    "electrical repair"
+   ],
+   "category": "Gig & Local",
+   "education_min": "any",
+   "keywords": [
+    "electrician",
+    "appliance repair",
+    "ac repair",
+    "washing machine repair",
+    "home service"
+   ],
+   "titles": [
+    "Electrician",
+    "Appliance Repair Technician"
+   ]
+  },
+  {
+   "id": "env-science",
+   "course": "B.Sc Environmental Science",
+   "aliases": [
+    "environment",
+    "environmental science",
+    "evs"
+   ],
+   "category": "Environment",
+   "education_min": "grad",
+   "keywords": [
+    "environment officer",
+    "field assistant",
+    "survey",
+    "waste management",
+    "pollution control",
+    "esg"
+   ],
+   "titles": [
+    "Environment Field Assistant",
+    "ESG Associate"
+   ]
+  },
+  {
+   "id": "event-mgmt",
+   "course": "Diploma Event Management",
+   "aliases": [
+    "event management",
+    "event planning",
+    "wedding planner"
+   ],
+   "category": "Event Management",
+   "education_min": "12",
+   "keywords": [
+    "event coordinator",
+    "wedding planner",
+    "sound and light technician",
+    "exhibition",
+    "banquet"
+   ],
+   "titles": [
+    "Event Coordinator",
+    "Wedding Planner Assistant"
+   ]
+  },
+  {
+   "id": "fashion",
+   "course": "Fashion Design",
+   "aliases": [
+    "fashion design",
+    "textile design",
+    "apparel"
+   ],
+   "category": "Fashion & Textile",
+   "education_min": "grad",
+   "keywords": [
+    "fashion designer",
+    "sampling assistant",
+    "textile designer",
+    "merchandiser",
+    "pattern maker",
+    "garment"
+   ],
+   "titles": [
+    "Fashion Designer",
+    "Textile Designer"
+   ]
+  },
+  {
+   "id": "food-tech",
+   "course": "B.Sc Food Technology",
+   "aliases": [
+    "food technology",
+    "food tech"
+   ],
+   "category": "Food & Dairy",
+   "education_min": "grad",
+   "keywords": [
+    "food technologist",
+    "qa executive",
+    "fssai",
+    "production supervisor",
+    "quality control",
+    "bakery"
+   ],
+   "titles": [
+    "Food Technologist",
+    "QA Executive"
+   ]
+  },
+  {
+   "id": "gnm",
+   "course": "GNM",
+   "aliases": [
+    "gnm",
+    "general nursing"
+   ],
+   "category": "Nursing",
+   "education_min": "dip",
+   "keywords": [
+    "staff nurse",
+    "gnm nurse",
+    "ward nurse",
+    "community health nurse",
+    "nursing assistant"
+   ],
+   "titles": [
+    "Staff Nurse",
+    "Community Health Nurse"
+   ]
+  },
+  {
+   "id": "hospital-admin",
+   "course": "MHA / Hospital Administration",
+   "aliases": [
+    "hospital administration",
+    "mha"
+   ],
+   "category": "Public Health & Admin",
+   "education_min": "pg",
+   "keywords": [
+    "hospital administrator",
+    "medical superintendent",
+    "front office manager",
+    "operations manager",
+    "nursing superintendent"
+   ],
+   "titles": [
+    "Hospital Administrator",
+    "Operations Manager"
+   ]
+  },
+  {
+   "id": "insurance",
+   "course": "Insurance / IRDAI certified",
+   "aliases": [
+    "insurance",
+    "irdai",
+    "lic"
+   ],
+   "category": "Banking & Insurance",
+   "education_min": "any",
+   "keywords": [
+    "insurance advisor",
+    "insurance agent",
+    "claims executive",
+    "underwriting assistant",
+    "policy servicing"
+   ],
+   "titles": [
+    "Insurance Advisor",
+    "Claims Executive"
+   ]
+  },
+  {
+   "id": "interior",
+   "course": "Interior Design",
+   "aliases": [
+    "interior design",
+    "interior designer"
+   ],
+   "category": "Architecture & Interior",
+   "education_min": "dip",
+   "keywords": [
+    "interior designer",
+    "autocad draftsman",
+    "site supervisor",
+    "3d visualiser",
+    "modular kitchen"
+   ],
+   "titles": [
+    "Interior Designer",
+    "AutoCAD Draftsman"
+   ]
+  },
+  {
+   "id": "iti-electrician",
+   "course": "ITI Electrician",
+   "aliases": [
+    "iti electrician",
+    "electrician"
+   ],
+   "category": "Engineering",
+   "education_min": "iti",
+   "keywords": [
+    "electrician",
+    "wireman",
+    "maintenance electrician",
+    "panel wiring",
+    "house wiring",
+    "motor winding"
+   ],
+   "titles": [
+    "Electrician",
+    "Maintenance Electrician"
+   ]
+  },
+  {
+   "id": "iti-fitter",
+   "course": "ITI Fitter",
+   "aliases": [
+    "iti fitter",
+    "fitter"
+   ],
+   "category": "Engineering",
+   "education_min": "iti",
+   "keywords": [
+    "fitter",
+    "assembly fitter",
+    "maintenance fitter",
+    "machine operator",
+    "bench fitter"
+   ],
+   "titles": [
+    "Fitter",
+    "Maintenance Fitter"
+   ]
+  },
+  {
+   "id": "iti-mmv",
+   "course": "ITI Mechanic Motor Vehicle",
+   "aliases": [
+    "mmv",
+    "motor vehicle mechanic",
+    "auto mechanic"
+   ],
+   "category": "Automotive",
+   "education_min": "iti",
+   "keywords": [
+    "auto mechanic",
+    "two wheeler mechanic",
+    "service technician",
+    "diesel mechanic",
+    "vehicle technician"
+   ],
+   "titles": [
+    "Auto Mechanic",
+    "Service Technician"
+   ]
+  },
+  {
+   "id": "iti-rac",
+   "course": "ITI Refrigeration & AC",
+   "aliases": [
+    "rac",
+    "refrigeration",
+    "ac technician"
+   ],
+   "category": "Engineering",
+   "education_min": "iti",
+   "keywords": [
+    "ac technician",
+    "refrigeration technician",
+    "hvac technician",
+    "cold storage",
+    "gas charging"
+   ],
+   "titles": [
+    "AC Technician",
+    "HVAC Technician"
+   ]
+  },
+  {
+   "id": "iti-welder",
+   "course": "ITI Welder",
+   "aliases": [
+    "iti welder",
+    "welder",
+    "welding"
+   ],
+   "category": "Engineering",
+   "education_min": "iti",
+   "keywords": [
+    "welder",
+    "mig welding",
+    "tig welding",
+    "arc welding",
+    "fabrication",
+    "6g welding"
+   ],
+   "titles": [
+    "Welder",
+    "Fabrication Technician"
+   ]
+  },
+  {
+   "id": "iti-wireman",
+   "course": "ITI Wireman",
+   "aliases": [
+    "wireman",
+    "licenced wireman"
+   ],
+   "category": "Engineering",
+   "education_min": "iti",
+   "keywords": [
+    "wireman",
+    "house wiring",
+    "industrial wiring",
+    "licenced wireman",
+    "cable laying"
+   ],
+   "titles": [
+    "Wireman",
+    "Electrical Technician"
+   ]
+  },
+  {
+   "id": "journalism",
+   "course": "BA Journalism / Mass Comm",
+   "aliases": [
+    "journalism",
+    "mass communication",
+    "media"
+   ],
+   "category": "Film & Media",
+   "education_min": "grad",
+   "keywords": [
+    "reporter",
+    "content writer",
+    "video editor",
+    "social media manager",
+    "pr executive",
+    "news anchor",
+    "sub editor"
+   ],
+   "titles": [
+    "Reporter",
+    "Content Writer",
+    "Video Editor"
+   ]
+  },
+  {
+   "id": "llb",
+   "course": "LLB",
+   "aliases": [
+    "llb",
+    "law graduate",
+    "advocate"
+   ],
+   "category": "Law",
+   "education_min": "grad",
+   "keywords": [
+    "legal associate",
+    "paralegal",
+    "advocate",
+    "legal executive",
+    "compliance",
+    "legal content writer",
+    "litigation"
+   ],
+   "titles": [
+    "Legal Associate",
+    "Paralegal"
+   ]
+  },
+  {
+   "id": "mba",
+   "course": "MBA",
+   "aliases": [
+    "mba",
+    "management"
+   ],
+   "category": "Management",
+   "education_min": "pg",
+   "keywords": [
+    "business development manager",
+    "hr manager",
+    "marketing manager",
+    "operations manager",
+    "sales manager",
+    "product manager"
+   ],
+   "titles": [
+    "Business Development Manager",
+    "Operations Manager"
+   ]
+  },
+  {
+   "id": "mbbs",
+   "course": "MBBS",
+   "aliases": [
+    "mbbs",
+    "doctor",
+    "physician"
+   ],
+   "category": "Medical",
+   "education_min": "pg",
+   "keywords": [
+    "junior resident",
+    "duty medical officer",
+    "medical officer",
+    "casualty",
+    "house surgeon",
+    "physician",
+    "medical superintendent"
+   ],
+   "titles": [
+    "Junior Resident",
+    "Duty Medical Officer",
+    "Medical Officer"
+   ]
+  },
+  {
+   "id": "mca",
+   "course": "MCA",
+   "aliases": [
+    "mca",
+    "master of computer applications"
+   ],
+   "category": "IT & Data",
+   "education_min": "pg",
+   "keywords": [
+    "software engineer",
+    "full stack developer",
+    "system analyst",
+    "technical lead",
+    "backend developer"
+   ],
+   "titles": [
+    "Software Engineer",
+    "System Analyst"
+   ]
+  },
+  {
+   "id": "mcom",
+   "course": "M.Com",
+   "aliases": [
+    "m.com",
+    "mcom"
+   ],
+   "category": "Commerce & Accounts",
+   "education_min": "pg",
+   "keywords": [
+    "accounts manager",
+    "finance executive",
+    "internal audit",
+    "costing",
+    "financial analyst"
+   ],
+   "titles": [
+    "Finance Executive",
+    "Accounts Manager"
+   ]
+  },
+  {
+   "id": "med-net",
+   "course": "M.Ed / UGC NET",
+   "aliases": [
+    "m.ed",
+    "ugc net",
+    "net qualified"
+   ],
+   "category": "Teaching",
+   "education_min": "pg",
+   "keywords": [
+    "assistant professor",
+    "lecturer",
+    "guest faculty",
+    "teacher trainer",
+    "principal",
+    "academic coordinator"
+   ],
+   "titles": [
+    "Assistant Professor",
+    "Guest Lecturer"
+   ]
+  },
+  {
+   "id": "medical-coding",
+   "course": "Medical Coding (CPC)",
+   "aliases": [
+    "medical coding",
+    "cpc",
+    "icd"
+   ],
+   "category": "Public Health & Admin",
+   "education_min": "grad",
+   "keywords": [
+    "medical coder",
+    "medical coding",
+    "icd-10",
+    "cpt",
+    "medical records",
+    "hcc coding"
+   ],
+   "titles": [
+    "Medical Coder",
+    "Senior Medical Coder"
+   ]
+  },
+  {
+   "id": "mobile-repair",
+   "course": "Mobile Repair (NSQF)",
+   "aliases": [
+    "mobile repair",
+    "phone repair"
+   ],
+   "category": "Gig & Local",
+   "education_min": "any",
+   "keywords": [
+    "mobile repair",
+    "service technician",
+    "chip level repair",
+    "smartphone repair",
+    "display replacement"
+   ],
+   "titles": [
+    "Mobile Repair Technician"
+   ]
+  },
+  {
+   "id": "mpharm",
+   "course": "M.Pharm / Clinical Research",
+   "aliases": [
+    "m.pharm",
+    "clinical research",
+    "pharmacovigilance"
+   ],
+   "category": "Pharmacy",
+   "education_min": "pg",
+   "keywords": [
+    "clinical research associate",
+    "cra",
+    "pharmacovigilance",
+    "medical writing",
+    "regulatory affairs",
+    "drug safety"
+   ],
+   "titles": [
+    "Clinical Research Associate",
+    "Pharmacovigilance Associate"
+   ]
+  },
+  {
+   "id": "msc-phy",
+   "course": "M.Sc Physics / Chemistry / Maths",
+   "aliases": [
+    "m.sc physics",
+    "m.sc chemistry",
+    "m.sc maths"
+   ],
+   "category": "Teaching",
+   "education_min": "pg",
+   "keywords": [
+    "assistant professor",
+    "lecturer",
+    "lab instructor",
+    "research associate",
+    "subject expert",
+    "jee neet faculty"
+   ],
+   "titles": [
+    "Assistant Professor",
+    "Lab Instructor"
+   ]
+  },
+  {
+   "id": "msw",
+   "course": "MSW (Social Work)",
+   "aliases": [
+    "msw",
+    "social work",
+    "ngo"
+   ],
+   "category": "Social Work & NGO",
+   "education_min": "pg",
+   "keywords": [
+    "social worker",
+    "project coordinator",
+    "field officer",
+    "community mobiliser",
+    "ngo",
+    "program officer"
+   ],
+   "titles": [
+    "Field Social Worker",
+    "Project Coordinator"
+   ]
+  },
+  {
+   "id": "music",
+   "course": "Music (Visharad / Diploma)",
+   "aliases": [
+    "music",
+    "guitar",
+    "tabla",
+    "piano",
+    "vocal"
+   ],
+   "category": "Music & Performing Arts",
+   "education_min": "any",
+   "keywords": [
+    "music teacher",
+    "guitar teacher",
+    "tabla player",
+    "vocal teacher",
+    "piano teacher",
+    "sound engineer",
+    "studio assistant",
+    "dance teacher"
+   ],
+   "titles": [
+    "Music Teacher",
+    "Guitar Teacher",
+    "Sound Engineer"
+   ]
+  },
+  {
+   "id": "ntt",
+   "course": "NTT / D.El.Ed",
+   "aliases": [
+    "ntt",
+    "d.el.ed",
+    "nursery teacher"
+   ],
+   "category": "Teaching",
+   "education_min": "12",
+   "keywords": [
+    "pre primary teacher",
+    "playschool teacher",
+    "kg teacher",
+    "nursery teacher",
+    "anganwadi"
+   ],
+   "titles": [
+    "Pre-Primary Teacher",
+    "KG Teacher"
+   ]
+  },
+  {
+   "id": "nutrition",
+   "course": "B.Sc / M.Sc Nutrition",
+   "aliases": [
+    "nutrition",
+    "dietetics",
+    "dietician"
+   ],
+   "category": "Nutrition & Dietetics",
+   "education_min": "grad",
+   "keywords": [
+    "dietician",
+    "nutritionist",
+    "diet counsellor",
+    "clinical nutrition",
+    "food service"
+   ],
+   "titles": [
+    "Dietician",
+    "Nutritionist"
+   ]
+  },
+  {
+   "id": "optom",
+   "course": "B.Optom",
+   "aliases": [
+    "b.optom",
+    "optometry",
+    "optometrist"
+   ],
+   "category": "Paramedical",
+   "education_min": "grad",
+   "keywords": [
+    "optometrist",
+    "optometry assistant",
+    "refraction",
+    "eye clinic",
+    "optical store",
+    "vision technician"
+   ],
+   "titles": [
+    "Optometrist",
+    "Optometry Assistant"
+   ]
+  },
+  {
+   "id": "ot-tech",
+   "course": "B.Sc OT Technician",
+   "aliases": [
+    "ot technician",
+    "operation theatre",
+    "anaesthesia technician"
+   ],
+   "category": "Paramedical",
+   "education_min": "dip",
+   "keywords": [
+    "ot technician",
+    "operation theatre",
+    "anaesthesia technician",
+    "cssd",
+    "critical care technician",
+    "surgical assistant"
+   ],
+   "titles": [
+    "OT Technician",
+    "Anaesthesia Technician"
+   ]
+  },
+  {
+   "id": "phd",
+   "course": "PhD",
+   "aliases": [
+    "phd",
+    "doctorate",
+    "research scholar"
+   ],
+   "category": "Teaching",
+   "education_min": "pg",
+   "keywords": [
+    "research associate",
+    "assistant professor",
+    "postdoctoral",
+    "scientist",
+    "principal investigator",
+    "research fellow"
+   ],
+   "titles": [
+    "Research Associate",
+    "Assistant Professor"
+   ]
+  },
+  {
+   "id": "plc",
+   "course": "PLC / Automation",
+   "aliases": [
+    "plc",
+    "scada",
+    "automation",
+    "instrumentation"
+   ],
+   "category": "Drone & Robotics",
+   "education_min": "dip",
+   "keywords": [
+    "plc programmer",
+    "automation engineer",
+    "scada",
+    "instrumentation technician",
+    "hmi",
+    "panel design"
+   ],
+   "titles": [
+    "Automation Engineer",
+    "Instrumentation Technician"
+   ]
+  },
+  {
+   "id": "plumbing",
+   "course": "Plumbing (NSQF)",
+   "aliases": [
+    "plumbing",
+    "plumber"
+   ],
+   "category": "Gig & Local",
+   "education_min": "any",
+   "keywords": [
+    "plumber",
+    "pipe fitter",
+    "bathroom fitting",
+    "water tank",
+    "leak repair"
+   ],
+   "titles": [
+    "Plumber"
+   ]
+  },
+  {
+   "id": "psychology",
+   "course": "BA / B.Sc Psychology",
+   "aliases": [
+    "psychology",
+    "counselling",
+    "counsellor"
+   ],
+   "category": "Psychology & Counselling",
+   "education_min": "grad",
+   "keywords": [
+    "counsellor",
+    "career counsellor",
+    "school counsellor",
+    "clinical psychology assistant",
+    "hr executive",
+    "wellbeing"
+   ],
+   "titles": [
+    "Counsellor",
+    "Career Counsellor"
+   ]
+  },
+  {
+   "id": "public-health",
+   "course": "B.Sc Public Health / MPH",
+   "aliases": [
+    "public health",
+    "mph"
+   ],
+   "category": "Public Health & Admin",
+   "education_min": "pg",
+   "keywords": [
+    "health inspector",
+    "public health officer",
+    "program coordinator",
+    "health administrator",
+    "surveillance"
+   ],
+   "titles": [
+    "Health Inspector",
+    "Program Coordinator"
+   ]
+  },
+  {
+   "id": "radiology",
+   "course": "B.Sc Radiology / DRIT",
+   "aliases": [
+    "radiology",
+    "drit",
+    "radiographer",
+    "x-ray"
+   ],
+   "category": "Paramedical",
+   "education_min": "dip",
+   "keywords": [
+    "radiology technician",
+    "radiographer",
+    "x-ray technician",
+    "ct scan",
+    "mri technician",
+    "cath lab"
+   ],
+   "titles": [
+    "Radiology Technician",
+    "Radiographer",
+    "CT/MRI Technician"
+   ]
+  },
+  {
+   "id": "ro-repair",
+   "course": "RO / Water Purifier Repair",
+   "aliases": [
+    "ro repair",
+    "water purifier"
+   ],
+   "category": "Gig & Local",
+   "education_min": "any",
+   "keywords": [
+    "ro technician",
+    "water purifier repair",
+    "filter change",
+    "service visit"
+   ],
+   "titles": [
+    "RO Technician"
+   ]
+  },
+  {
+   "id": "security",
+   "course": "Security Guard (PSARA)",
+   "aliases": [
+    "security guard",
+    "psara",
+    "housekeeping"
+   ],
+   "category": "Gig & Local",
+   "education_min": "10",
+   "keywords": [
+    "security guard",
+    "housekeeping",
+    "cleaning staff",
+    "supervisor",
+    "watchman"
+   ],
+   "titles": [
+    "Security Guard",
+    "Housekeeping Staff"
+   ]
+  },
+  {
+   "id": "tailoring",
+   "course": "Tailoring (NSQF)",
+   "aliases": [
+    "tailoring",
+    "darji",
+    "stitching"
+   ],
+   "category": "Gig & Local",
+   "education_min": "any",
+   "keywords": [
+    "tailor",
+    "darji",
+    "stitching",
+    "alteration",
+    "boutique assistant",
+    "embroidery"
+   ],
+   "titles": [
+    "Tailor",
+    "Boutique Assistant"
+   ]
+  },
+  {
+   "id": "vet",
+   "course": "BVSc",
+   "aliases": [
+    "bvsc",
+    "veterinary"
+   ],
+   "category": "Veterinary",
+   "education_min": "pg",
+   "keywords": [
+    "veterinary assistant",
+    "veterinary doctor",
+    "livestock",
+    "dairy vet",
+    "animal health"
+   ],
+   "titles": [
+    "Veterinary Assistant",
+    "Veterinary Doctor"
+   ]
+  },
+  {
+   "id": "watch-repair",
+   "course": "Watch Repair",
+   "aliases": [
+    "watch repair",
+    "watchmaker"
+   ],
+   "category": "Gig & Local",
+   "education_min": "any",
+   "keywords": [
+    "watch repair",
+    "battery change",
+    "movement repair",
+    "strap fitting"
+   ],
+   "titles": [
+    "Watch Repair Technician"
+   ]
+  },
+  {
+   "id": "yoga",
+   "course": "Yoga (YCB certified)",
+   "aliases": [
+    "yoga",
+    "ycb",
+    "yoga instructor"
+   ],
+   "category": "Sports & Fitness",
+   "education_min": "any",
+   "keywords": [
+    "yoga instructor",
+    "yoga therapist",
+    "wellness trainer",
+    "pranayama",
+    "hatha yoga"
+   ],
+   "titles": [
+    "Yoga Instructor",
+    "Yoga Therapist"
+   ]
+  }
+ ]
+}
