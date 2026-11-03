@@ -560,13 +560,19 @@
    "category": "Pharmacy",
    "education_min": "grad",
    "keywords": [
-    "pharmacist",
+    "dispensing",
+    "drug inspector",
+    "gmp",
     "hospital pharmacist",
+    "medical representative",
+    "packing",
+    "pharmacist",
     "production chemist",
-    "qc chemist",
+    "production officer",
     "qa officer",
-    "regulatory affairs",
-    "dispensing"
+    "qc analyst",
+    "qc chemist",
+    "regulatory affairs"
    ],
    "titles": [
     "Hospital Pharmacist",
@@ -796,6 +802,36 @@
     "Staff Nurse",
     "ICU Nurse",
     "Nursing Officer"
+   ]
+  },
+  {
+   "id": "bsc-pharma",
+   "course": "B.Sc Pharmaceutical Science",
+   "aliases": [
+    "bsc pharma",
+    "b.sc pharma",
+    "pharmaceutical science",
+    "bsc pharmaceutical chemistry"
+   ],
+   "category": "Pharmacy",
+   "education_min": "grad",
+   "keywords": [
+    "qa officer",
+    "qc analyst",
+    "production chemist",
+    "production officer",
+    "packing",
+    "documentation",
+    "gmp",
+    "analyst",
+    "quality assurance",
+    "quality control",
+    "chemist"
+   ],
+   "titles": [
+    "QA Officer",
+    "QC Analyst",
+    "Production Officer"
    ]
   },
   {
@@ -1348,7 +1384,7 @@
   },
   {
    "id": "dpharm",
-   "course": "D.Pharm",
+   "course": "Diploma in Pharmacy (D.Pharm)",
    "aliases": [
     "d.pharm",
     "dpharm",
@@ -1357,11 +1393,16 @@
    "category": "Pharmacy",
    "education_min": "dip",
    "keywords": [
-    "retail pharmacist",
+    "assistant pharmacist",
     "chemist shop",
+    "community pharmacist",
     "dispensing pharmacist",
+    "drug licence",
+    "medical store",
+    "pharmacist grade",
     "pharmacy assistant",
-    "medical store"
+    "retail pharmacist",
+    "retail pharmacy"
    ],
    "titles": [
     "Retail Pharmacist",
@@ -1956,16 +1997,48 @@
    "category": "Pharmacy",
    "education_min": "pg",
    "keywords": [
+    "analytical development",
     "clinical research associate",
     "cra",
-    "pharmacovigilance",
+    "drug safety",
+    "formulation",
+    "hplc",
     "medical writing",
-    "regulatory affairs",
-    "drug safety"
+    "pharmacovigilance",
+    "r&d",
+    "regulatory affairs"
    ],
    "titles": [
     "Clinical Research Associate",
     "Pharmacovigilance Associate"
+   ]
+  },
+  {
+   "id": "msc-pharma",
+   "course": "M.Sc Pharmaceutical Chemistry",
+   "aliases": [
+    "msc pharma",
+    "m.sc pharma",
+    "pharmaceutical chemistry",
+    "msc medicinal chemistry"
+   ],
+   "category": "Pharmacy",
+   "education_min": "pg",
+   "keywords": [
+    "research associate",
+    "formulation development",
+    "r&d chemist",
+    "analytical development",
+    "hplc",
+    "method validation",
+    "drug design",
+    "research scientist",
+    "scientist"
+   ],
+   "titles": [
+    "Research Associate",
+    "Formulation Scientist",
+    "Analytical Chemist"
    ]
   },
   {
@@ -2133,6 +2206,34 @@
    ]
   },
   {
+   "id": "pharm-d",
+   "course": "Pharm.D (Doctor of Pharmacy)",
+   "aliases": [
+    "pharmd",
+    "pharm d",
+    "doctor of pharmacy",
+    "clinical pharmacy"
+   ],
+   "category": "Pharmacy",
+   "education_min": "pg",
+   "keywords": [
+    "clinical pharmacist",
+    "hospital pharmacist",
+    "ward pharmacist",
+    "clinical pharmacy",
+    "medication review",
+    "drug information",
+    "patient counselling",
+    "pharmacovigilance",
+    "adverse drug reaction"
+   ],
+   "titles": [
+    "Clinical Pharmacist",
+    "Hospital Pharmacist",
+    "Drug Information Officer"
+   ]
+  },
+  {
    "id": "phd",
    "course": "PhD",
    "aliases": [
@@ -2153,6 +2254,35 @@
    "titles": [
     "Research Associate",
     "Assistant Professor"
+   ]
+  },
+  {
+   "id": "phd-pharma",
+   "course": "PhD (Pharmaceutical Sciences)",
+   "aliases": [
+    "phd pharma",
+    "ph.d pharmacy",
+    "doctorate pharmacy",
+    "phd pharmaceutical"
+   ],
+   "category": "Teaching",
+   "education_min": "pg",
+   "keywords": [
+    "research scientist",
+    "postdoctoral",
+    "principal investigator",
+    "research associate",
+    "formulation scientist",
+    "assistant professor",
+    "scientist",
+    "research fellow",
+    "jrf",
+    "srf"
+   ],
+   "titles": [
+    "Research Scientist",
+    "Assistant Professor",
+    "Research Fellow"
    ]
   },
   {
