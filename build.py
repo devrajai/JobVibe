@@ -41,6 +41,9 @@ block = "\n".join(
 cs_path = root / "data" / "city-state.json"
 citystate = json.loads(cs_path.read_text(encoding="utf-8")) if cs_path.exists() else {"cities": {}, "aliases": {}, "special": {}}
 block += f"\nconst LIVE = {json.dumps(live_jobs, ensure_ascii=False)};"
+ss_path = root / "data" / "state-sources.json"
+state_sources = json.loads(ss_path.read_text(encoding="utf-8")) if ss_path.exists() else {"states": []}
+block += f"\nconst STATE_SOURCES = {json.dumps(state_sources.get('states', []), ensure_ascii=False)};"
 block += f"\nconst CITYSTATE = {json.dumps({'cities': citystate.get('cities', {}), 'aliases': citystate.get('aliases', {})}, ensure_ascii=False)};"
 block += f"\nconst LIVE_DATE = {json.dumps(fetched)};"
 
