@@ -1,17 +1,47 @@
 [
   {
-    "ats": "greenhouse",
-    "token": "stripe",
-    "note": "replace with employers relevant to you"
-  },
-  {
-    "ats": "lever",
-    "token": "spotify",
-    "note": "example board — swap for Indian employers"
+    "ats": "ashby",
+    "token": "atlan",
+    "india": true
   },
   {
     "ats": "ashby",
     "token": "notion",
-    "note": "example board"
+    "india": false
+  },
+  {
+    "ats": "ashby",
+    "token": "navi",
+    "india": true
+  },
+  {
+    "ats": "ashby",
+    "token": "mosaic",
+    "india": true
+  },
+  {
+    "ats": "ashby",
+    "token": "kiwi",
+    "india": true
+  },
+  {
+    "ats": "ashby",
+    "token": "supabase",
+    "india": false
+  },
+  {
+    "ats": "ashby",
+    "token": "sentry",
+    "india": false
+  },
+  {
+    "ats": "ashby",
+    "token": "linear",
+    "india": false
+  },
+  {
+    "ats": "ashby",
+    "token": "posthog",
+    "india": false
   }
 ]
