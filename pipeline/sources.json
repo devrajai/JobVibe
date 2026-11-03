@@ -1,0 +1,17 @@
+[
+  {
+    "ats": "greenhouse",
+    "token": "stripe",
+    "note": "replace with employers relevant to you"
+  },
+  {
+    "ats": "lever",
+    "token": "spotify",
+    "note": "example board — swap for Indian employers"
+  },
+  {
+    "ats": "ashby",
+    "token": "notion",
+    "note": "example board"
+  }
+]
