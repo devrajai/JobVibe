@@ -83,6 +83,20 @@ block it. Adzuna and Jooble have free keys, but their terms restrict how you
 may present and monetise the listings, and Adzuna forbids contacting the
 employer directly — read the licence before you build on either.
 
+## Forms: one line to make them real
+
+`template.html` has a `FORM` block near the top of the script:
+
+```js
+const FORM = { web3forms_key: "", email: "" };
+```
+
+Get a free key at web3forms.com (250 submissions/month, no card), paste it into
+`web3forms_key`, and every job post and abuse report lands in your inbox with
+no server. Leave it empty and the form falls back to the visitor's mail app.
+Either way the submission is also kept on the visitor's device so nothing is
+lost while you set it up.
+
 ## Deploy free
 
 Pick one; all three are free and give you a subdomain.
