@@ -13,6 +13,12 @@ import sys
 root = pathlib.Path(__file__).parent
 data = json.loads((root / "data" / "site-data.json").read_text(encoding="utf-8"))
 
+govt_path = root / "data" / "govt-live.json"
+if govt_path.exists():
+    govt_live = json.loads(govt_path.read_text(encoding="utf-8"))
+else:
+    govt_live = {"fetched": "", "jobs": []}
+
 live_path = root / "data" / "live.json"
 if live_path.exists():
     live = json.loads(live_path.read_text(encoding="utf-8"))
@@ -25,7 +31,7 @@ tpl = (root / "template.html").read_text(encoding="utf-8")
 if "/*__SITE_DATA__*/" not in tpl:
     sys.exit("template.html is missing the /*__SITE_DATA__*/ placeholder")
 
-jobs = live_jobs + data["jobs"]
+jobs = live_jobs + govt_live.get("jobs", []) + data["jobs"]
 pairs = [("JOBS", jobs), ("GOVT", data["govt"]), ("WORKERS", data["workers"]),
          ("COURSES", data["courses"]), ("REVIEWS", data["reviews"])]
 
@@ -38,6 +44,7 @@ block += f"\nconst LIVE_DATE = {json.dumps(fetched)};"
 (root / "index.html").write_text(tpl.replace("/*__SITE_DATA__*/", block), encoding="utf-8")
 
 fields = sorted({j["cat"] for j in jobs})
-print(f"built index.html — {len(jobs)} listings ({len(live_jobs)} live) across "
+print(f"built index.html — {len(jobs)} listings ({len(live_jobs)} live, "
+      f"{len(govt_live.get('jobs', []))} government) across "
       f"{len(fields)} fields, {len(data['workers'])} workers, "
       f"{len(data['courses'])} courses, {len(data['reviews'])} reviews")
