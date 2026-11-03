@@ -3767,6 +3767,73 @@
    "sample": 1
   },
   {
+   "t": "Assistant Pharmacist (D.Pharm – freshers)",
+   "o": "AMRIT Pharmacy",
+   "cat": "Pharmacy",
+   "city": "Nagpur",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 14000,
+   "salTxt": "₹14,000/mo",
+   "exp": 0,
+   "days": 1,
+   "sk": [
+    "D.Pharm",
+    "Dispensing",
+    "Billing",
+    "Freshers welcome"
+   ],
+   "safe": 0,
+   "ver": 0,
+   "sample": 1
+  },
+  {
+   "t": "Clinical Pharmacist (Pharm.D)",
+   "o": "CareWell Hospital",
+   "cat": "Pharmacy",
+   "city": "Ahmedabad",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 35000,
+   "salTxt": "₹35,000/mo",
+   "exp": 0,
+   "days": 2,
+   "sk": [
+    "Pharm.D",
+    "Medication review",
+    "Ward rounds",
+    "Patient counselling"
+   ],
+   "safe": 0,
+   "ver": 0,
+   "sample": 1
+  },
+  {
+   "t": "QA Officer (B.Sc Pharmaceutical Science)",
+   "o": "Vitalis Formulations",
+   "cat": "Pharmacy",
+   "city": "Ankleshwar",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 26000,
+   "salTxt": "₹26,000/mo",
+   "exp": 0,
+   "days": 2,
+   "sk": [
+    "B.Sc Pharma",
+    "GMP",
+    "Documentation",
+    "Batch release",
+    "Quality"
+   ],
+   "safe": 0,
+   "ver": 0,
+   "sample": 1
+  },
+  {
    "t": "Hospital Pharmacist",
    "o": "Sanjeevani Multispecialty",
    "cat": "Pharmacy",
@@ -3785,6 +3852,93 @@
    ],
    "safe": 1,
    "ver": 1,
+   "sample": 1
+  },
+  {
+   "t": "QC Analyst (B.Sc Pharmaceutical Science)",
+   "o": "NovaLife Pharma",
+   "cat": "Pharmacy",
+   "city": "Hyderabad",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 24000,
+   "salTxt": "₹24,000/mo",
+   "exp": 0,
+   "days": 3,
+   "sk": [
+    "B.Sc Pharma",
+    "HPLC",
+    "Titration",
+    "Lab records",
+    "Quality"
+   ],
+   "safe": 0,
+   "ver": 0,
+   "sample": 1
+  },
+  {
+   "t": "Medical Representative (B.Pharm/D.Pharm)",
+   "o": "DailyGoods Pharma",
+   "cat": "Pharmacy",
+   "city": "Rajkot",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 18000,
+   "salTxt": "₹18,000/mo + incentive",
+   "exp": 0,
+   "days": 3,
+   "sk": [
+    "B.Pharm",
+    "D.Pharm",
+    "Field sales",
+    "Doctors"
+   ],
+   "safe": 0,
+   "ver": 0,
+   "sample": 1
+  },
+  {
+   "t": "Drug Information Officer (Pharm.D)",
+   "o": "MedInfo Services",
+   "cat": "Pharmacy",
+   "city": "Remote",
+   "type": "Private",
+   "mode": "Remote",
+   "el": "pg",
+   "sal": 32000,
+   "salTxt": "₹32,000/mo",
+   "exp": 0,
+   "days": 4,
+   "sk": [
+    "Pharm.D",
+    "Drug literature",
+    "ADR reporting"
+   ],
+   "safe": 0,
+   "ver": 0,
+   "sample": 1
+  },
+  {
+   "t": "Research Associate – Formulation (M.Sc Pharma)",
+   "o": "Helix Formulations",
+   "cat": "Pharmacy",
+   "city": "Ahmedabad",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 32000,
+   "salTxt": "₹32,000/mo",
+   "exp": 0,
+   "days": 4,
+   "sk": [
+    "M.Sc Pharma",
+    "Formulation development",
+    "Dissolution"
+   ],
+   "safe": 0,
+   "ver": 0,
    "sample": 1
   },
   {
@@ -3809,6 +3963,49 @@
    "sample": 1
   },
   {
+   "t": "Analytical Development Scientist (M.Sc Pharma)",
+   "o": "BioGen Labs",
+   "cat": "Pharmacy",
+   "city": "Hyderabad",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 38000,
+   "salTxt": "₹38,000/mo",
+   "exp": 1,
+   "days": 5,
+   "sk": [
+    "M.Sc Pharma",
+    "Method validation",
+    "HPLC",
+    "GC"
+   ],
+   "safe": 0,
+   "ver": 0,
+   "sample": 1
+  },
+  {
+   "t": "Pharmacist Grade IV (B.Pharm)",
+   "o": "HLL Pharmacy outlet",
+   "cat": "Pharmacy",
+   "city": "Thiruvananthapuram",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 19000,
+   "salTxt": "₹19,000/mo",
+   "exp": 2,
+   "days": 5,
+   "sk": [
+    "B.Pharm",
+    "Retail pharmacy",
+    "Stock"
+   ],
+   "safe": 0,
+   "ver": 0,
+   "sample": 1
+  },
+  {
    "t": "QC Chemist",
    "o": "Shree Chemicals",
    "cat": "Pharmacy",
@@ -3823,10 +4020,54 @@
    "sk": [
     "B.Sc Chemistry",
     "HPLC",
-    "Lab records"
+    "Lab records",
+    "Quality"
    ],
    "safe": 1,
    "ver": 1,
+   "sample": 1
+  },
+  {
+   "t": "Research Scientist – Drug Delivery (PhD)",
+   "o": "National Research Institute",
+   "cat": "Pharmacy",
+   "city": "Bengaluru",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 65000,
+   "salTxt": "₹65,000/mo",
+   "exp": 0,
+   "days": 6,
+   "sk": [
+    "PhD Pharmacy",
+    "Formulation research",
+    "Publications"
+   ],
+   "safe": 0,
+   "ver": 0,
+   "sample": 1
+  },
+  {
+   "t": "Regulatory Affairs Associate (M.Pharm)",
+   "o": "Vitalis Formulations",
+   "cat": "Pharmacy",
+   "city": "Ankleshwar",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 34000,
+   "salTxt": "₹34,000/mo",
+   "exp": 0,
+   "days": 6,
+   "sk": [
+    "M.Pharm",
+    "CTD dossier",
+    "CDSCO",
+    "Documentation"
+   ],
+   "safe": 0,
+   "ver": 0,
    "sample": 1
   },
   {
@@ -3848,6 +4089,49 @@
    ],
    "safe": 0,
    "ver": 1,
+   "sample": 1
+  },
+  {
+   "t": "Postdoctoral Fellow – Medicinal Chemistry (PhD)",
+   "o": "CSIR-CDRI",
+   "cat": "Pharmacy",
+   "city": "Lucknow",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 55000,
+   "salTxt": "₹55,000/mo",
+   "exp": 0,
+   "days": 7,
+   "sk": [
+    "PhD",
+    "Medicinal chemistry",
+    "Synthesis",
+    "Papers"
+   ],
+   "safe": 0,
+   "ver": 0,
+   "sample": 1
+  },
+  {
+   "t": "Assistant Professor – Pharmaceutics (M.Pharm/PhD)",
+   "o": "Pharmacy College",
+   "cat": "Pharmacy",
+   "city": "Ahmedabad",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 45000,
+   "salTxt": "₹45,000/mo",
+   "exp": 1,
+   "days": 8,
+   "sk": [
+    "Pharmaceutics",
+    "GPAT/NET",
+    "Teaching"
+   ],
+   "safe": 0,
+   "ver": 0,
    "sample": 1
   },
   {
