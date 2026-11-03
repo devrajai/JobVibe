@@ -1,0 +1,1982 @@
+{
+ "jobs": [
+  {
+   "t": "Junior Resident – General Medicine",
+   "o": "City Care Hospital",
+   "cat": "Medical",
+   "city": "Delhi",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 65000,
+   "salTxt": "₹65,000/mo",
+   "exp": 0,
+   "days": 2,
+   "sk": [
+    "MBBS",
+    "Ward rounds",
+    "Emergency"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Duty Medical Officer",
+   "o": "Sanjeevani Multispecialty",
+   "cat": "Medical",
+   "city": "Pune",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 70000,
+   "salTxt": "₹70,000/mo",
+   "exp": 1,
+   "days": 5,
+   "sk": [
+    "MBBS",
+    "ICU",
+    "Casualty"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Medical Officer – PHC (Contract)",
+   "o": "National Health Mission",
+   "cat": "Medical",
+   "city": "Jaipur",
+   "type": "Government",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 55000,
+   "salTxt": "₹55,000/mo",
+   "exp": 0,
+   "days": 1,
+   "sk": [
+    "MBBS",
+    "Primary care",
+    "Rural posting"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "url": "https://nhm.rajasthan.gov.in"
+  },
+  {
+   "t": "Senior Resident – Anaesthesiology",
+   "o": "AIIMS (via AIIMS Exams)",
+   "cat": "Medical",
+   "city": "Delhi",
+   "type": "Government",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 100000,
+   "salTxt": "₹1,00,000/mo",
+   "exp": 2,
+   "days": 3,
+   "sk": [
+    "MBBS",
+    "MD Anaesthesia",
+    "OT"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "url": "https://www.aiimsexams.ac.in"
+  },
+  {
+   "t": "Staff Nurse – General Ward",
+   "o": "Medanta Care",
+   "cat": "Nursing",
+   "city": "Gurugram",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 28000,
+   "salTxt": "₹28,000/mo",
+   "exp": 0,
+   "days": 3,
+   "sk": [
+    "B.Sc Nursing",
+    "GNM",
+    "Patient care"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "ICU Staff Nurse",
+   "o": "LifeLine Hospital",
+   "cat": "Nursing",
+   "city": "Hyderabad",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 34000,
+   "salTxt": "₹34,000/mo",
+   "exp": 1,
+   "days": 4,
+   "sk": [
+    "ICU",
+    "Ventilator",
+    "B.Sc Nursing"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "OT Nurse",
+   "o": "Nova Superspeciality",
+   "cat": "Nursing",
+   "city": "Ahmedabad",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 26000,
+   "salTxt": "₹26,000/mo",
+   "exp": 0,
+   "days": 8,
+   "sk": [
+    "OT technique",
+    "Sterilisation",
+    "Assist surgeon"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Community Health Nurse",
+   "o": "Aarogya Foundation",
+   "cat": "Nursing",
+   "city": "Patna",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 22000,
+   "salTxt": "₹22,000/mo",
+   "exp": 0,
+   "days": 9,
+   "sk": [
+    "GNM",
+    "Immunisation",
+    "Outreach"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Staff Nurse – District Hospital",
+   "o": "State Health Society",
+   "cat": "Nursing",
+   "city": "Patna",
+   "type": "Government",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 30000,
+   "salTxt": "₹30,000/mo",
+   "exp": 0,
+   "days": 2,
+   "sk": [
+    "GNM",
+    "B.Sc Nursing",
+    "Contractual"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "url": "https://statehealthsocietybihar.org"
+  },
+  {
+   "t": "Radiology Technician",
+   "o": "Sunrise Diagnostics",
+   "cat": "Paramedical",
+   "city": "Mumbai",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 25000,
+   "salTxt": "₹25,000/mo",
+   "exp": 0,
+   "days": 2,
+   "sk": [
+    "B.Sc Radiology",
+    "X-ray",
+    "CT scan"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Lab Technician (DMLT)",
+   "o": "PathCare Labs",
+   "cat": "Paramedical",
+   "city": "Lucknow",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 20000,
+   "salTxt": "₹20,000/mo",
+   "exp": 0,
+   "days": 6,
+   "sk": [
+    "DMLT",
+    "Phlebotomy",
+    "Sample handling"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Operation Theatre Technician",
+   "o": "Nova Superspeciality",
+   "cat": "Paramedical",
+   "city": "Ahmedabad",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 21000,
+   "salTxt": "₹21,000/mo",
+   "exp": 0,
+   "days": 8,
+   "sk": [
+    "OT tech",
+    "CSSD",
+    "Anaesthesia support"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Optometry Assistant",
+   "o": "ClearSight Eye Clinic",
+   "cat": "Paramedical",
+   "city": "Bengaluru",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 18000,
+   "salTxt": "₹18,000/mo",
+   "exp": 0,
+   "days": 11,
+   "sk": [
+    "B.Optom",
+    "Refraction",
+    "Counselling"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Physiotherapy Assistant",
+   "o": "RehabFirst Clinic",
+   "cat": "Paramedical",
+   "city": "Kochi",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 22000,
+   "salTxt": "₹22,000/mo",
+   "exp": 0,
+   "days": 7,
+   "sk": [
+    "BPT",
+    "Exercise therapy",
+    "Ortho rehab"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Dialysis Technician",
+   "o": "NephroCare Centre",
+   "cat": "Paramedical",
+   "city": "Chennai",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 24000,
+   "salTxt": "₹24,000/mo",
+   "exp": 0,
+   "days": 5,
+   "sk": [
+    "Diploma Dialysis",
+    "Machine setup",
+    "Patient monitoring"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Cath Lab / ECG Technician",
+   "o": "HeartWorks Institute",
+   "cat": "Paramedical",
+   "city": "Delhi",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 28000,
+   "salTxt": "₹28,000/mo",
+   "exp": 1,
+   "days": 4,
+   "sk": [
+    "ECG",
+    "Cath lab",
+    "Cardiac care"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Hospital Pharmacist",
+   "o": "Sanjeevani Multispecialty",
+   "cat": "Pharmacy",
+   "city": "Pune",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 26000,
+   "salTxt": "₹26,000/mo",
+   "exp": 0,
+   "days": 3,
+   "sk": [
+    "B.Pharm",
+    "Dispensing",
+    "Inventory"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Retail Pharmacist",
+   "o": "Wellness Forever",
+   "cat": "Pharmacy",
+   "city": "Nagpur",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 20000,
+   "salTxt": "₹20,000/mo",
+   "exp": 0,
+   "days": 10,
+   "sk": [
+    "D.Pharm",
+    "Billing",
+    "Stock audit"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Clinical Research Associate",
+   "o": "Vitalis CRO",
+   "cat": "Pharmacy",
+   "city": "Chennai",
+   "type": "Private",
+   "mode": "Hybrid",
+   "el": "pg",
+   "sal": 40000,
+   "salTxt": "₹40,000/mo",
+   "exp": 1,
+   "days": 5,
+   "sk": [
+    "M.Pharm",
+    "GCP",
+    "Trial documentation"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "QC Chemist",
+   "o": "Shree Chemicals",
+   "cat": "Pharmacy",
+   "city": "Vadodara",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 28000,
+   "salTxt": "₹28,000/mo",
+   "exp": 0,
+   "days": 6,
+   "sk": [
+    "B.Sc Chemistry",
+    "HPLC",
+    "Lab records"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Production Chemist",
+   "o": "NovaLife Pharma",
+   "cat": "Pharmacy",
+   "city": "Hyderabad",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 30000,
+   "salTxt": "₹30,000/mo",
+   "exp": 0,
+   "days": 7,
+   "sk": [
+    "B.Pharm",
+    "GMP",
+    "Shift work"
+   ],
+   "safe": 0,
+   "ver": 1
+  },
+  {
+   "t": "Chemical Process Engineer Trainee",
+   "o": "Gujarat Chem Works",
+   "cat": "Pharmacy",
+   "city": "Ankleshwar",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 32000,
+   "salTxt": "₹3.8 LPA",
+   "exp": 0,
+   "days": 9,
+   "sk": [
+    "B.Tech Chemical",
+    "Process safety",
+    "DCS"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Graduate Engineer Trainee – Mechanical",
+   "o": "Bharat Auto Components",
+   "cat": "Engineering",
+   "city": "Chennai",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 33000,
+   "salTxt": "₹4.0 LPA",
+   "exp": 0,
+   "days": 1,
+   "sk": [
+    "B.Tech Mech",
+    "AutoCAD",
+    "SolidWorks"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Civil Site Engineer",
+   "o": "Skyline Infra Projects",
+   "cat": "Engineering",
+   "city": "Noida",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 28000,
+   "salTxt": "₹28,000/mo",
+   "exp": 0,
+   "days": 4,
+   "sk": [
+    "B.Tech Civil",
+    "Site execution",
+    "Quantity survey"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Electrical Engineer – Solar",
+   "o": "GreenVolt Energy",
+   "cat": "Engineering",
+   "city": "Indore",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 33000,
+   "salTxt": "₹4.0 LPA",
+   "exp": 0,
+   "days": 6,
+   "sk": [
+    "B.E Electrical",
+    "Solar PV",
+    "Inverters"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Production Supervisor (Diploma)",
+   "o": "Precision Works",
+   "cat": "Engineering",
+   "city": "Rajkot",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 22000,
+   "salTxt": "₹22,000/mo",
+   "exp": 0,
+   "days": 12,
+   "sk": [
+    "Diploma Mech",
+    "CNC",
+    "Shop floor"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "ITI Electrician – Maintenance",
+   "o": "Metro Manufacturing",
+   "cat": "Engineering",
+   "city": "Pune",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "iti",
+   "sal": 19000,
+   "salTxt": "₹19,000/mo",
+   "exp": 0,
+   "days": 3,
+   "sk": [
+    "ITI Electrician",
+    "Panel wiring",
+    "Preventive maint."
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "ITI Welder",
+   "o": "SteelFab Industries",
+   "cat": "Engineering",
+   "city": "Raipur",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "iti",
+   "sal": 21000,
+   "salTxt": "₹21,000/mo",
+   "exp": 0,
+   "days": 5,
+   "sk": [
+    "ITI Welder",
+    "MIG",
+    "6G welding"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "CNC Operator",
+   "o": "ToolCraft Precision",
+   "cat": "Engineering",
+   "city": "Coimbatore",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "iti",
+   "sal": 23000,
+   "salTxt": "₹23,000/mo",
+   "exp": 1,
+   "days": 8,
+   "sk": [
+    "CNC",
+    "Reading drawings",
+    "VMC"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "QA Engineer – Software",
+   "o": "Trellis Systems",
+   "cat": "IT & Data",
+   "city": "Bengaluru",
+   "type": "Private",
+   "mode": "Remote",
+   "el": "grad",
+   "sal": 50000,
+   "salTxt": "₹6.0 LPA",
+   "exp": 0,
+   "days": 2,
+   "sk": [
+    "Manual testing",
+    "Selenium",
+    "SQL"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Data Analyst (Fresher)",
+   "o": "Metricly Analytics",
+   "cat": "IT & Data",
+   "city": "Remote",
+   "type": "Private",
+   "mode": "Remote",
+   "el": "grad",
+   "sal": 41000,
+   "salTxt": "₹5.0 LPA",
+   "exp": 0,
+   "days": 3,
+   "sk": [
+    "SQL",
+    "Python",
+    "Power BI"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Junior Web Developer",
+   "o": "Pixelcraft Studio",
+   "cat": "IT & Data",
+   "city": "Remote",
+   "type": "Private",
+   "mode": "Remote",
+   "el": "any",
+   "sal": 37000,
+   "salTxt": "₹4.5 LPA",
+   "exp": 0,
+   "days": 6,
+   "sk": [
+    "HTML/CSS",
+    "JavaScript",
+    "Portfolio needed"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "SOC Analyst L1 (Cyber Security)",
+   "o": "ShieldNet Labs",
+   "cat": "IT & Data",
+   "city": "Hyderabad",
+   "type": "Private",
+   "mode": "Hybrid",
+   "el": "grad",
+   "sal": 35000,
+   "salTxt": "₹4.2 LPA",
+   "exp": 0,
+   "days": 4,
+   "sk": [
+    "Networking",
+    "Linux",
+    "SOC monitoring"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Data Entry Operator",
+   "o": "InfoBridge Services",
+   "cat": "IT & Data",
+   "city": "Indore",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "12",
+   "sal": 15000,
+   "salTxt": "₹15,000/mo",
+   "exp": 0,
+   "days": 7,
+   "sk": [
+    "Typing 30wpm",
+    "Excel",
+    "Hindi + English"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Computer Teacher (Graphics + Basics)",
+   "o": "Bright Institute",
+   "cat": "IT & Data",
+   "city": "Jaipur",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "12",
+   "sal": 18000,
+   "salTxt": "₹18,000/mo",
+   "exp": 0,
+   "days": 9,
+   "sk": [
+    "Photoshop",
+    "MS Office",
+    "Teaching"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Accounts Executive",
+   "o": "Shah & Associates",
+   "cat": "Commerce",
+   "city": "Surat",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 22000,
+   "salTxt": "₹22,000/mo",
+   "exp": 0,
+   "days": 5,
+   "sk": [
+    "B.Com",
+    "Tally",
+    "Bank reconciliation"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "GST & Taxation Associate",
+   "o": "Nexus Advisory",
+   "cat": "Commerce",
+   "city": "Mumbai",
+   "type": "Private",
+   "mode": "Hybrid",
+   "el": "grad",
+   "sal": 28000,
+   "salTxt": "₹28,000/mo",
+   "exp": 0,
+   "days": 8,
+   "sk": [
+    "B.Com",
+    "GST",
+    "Return filing"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "HR Executive",
+   "o": "PeopleBridge Services",
+   "cat": "Commerce",
+   "city": "Gurugram",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 28000,
+   "salTxt": "₹28,000/mo",
+   "exp": 0,
+   "days": 9,
+   "sk": [
+    "BBA",
+    "Recruitment",
+    "MS Excel"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Business Development Executive",
+   "o": "GrowthLoop",
+   "cat": "Commerce",
+   "city": "Delhi",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "any",
+   "sal": 29000,
+   "salTxt": "₹3.5 LPA + incentive",
+   "exp": 0,
+   "days": 2,
+   "sk": [
+    "Sales",
+    "Hindi",
+    "Field visits"
+   ],
+   "safe": 0,
+   "ver": 1
+  },
+  {
+   "t": "Junior Assistant – Clerical",
+   "o": "District Collectorate",
+   "cat": "Government",
+   "city": "Coimbatore",
+   "type": "Government",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 25500,
+   "salTxt": "₹25,500/mo",
+   "exp": 0,
+   "days": 3,
+   "sk": [
+    "B.Com",
+    "Typing",
+    "Office procedure"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "url": "https://www.tnpsc.gov.in"
+  },
+  {
+   "t": "School Teacher – Science",
+   "o": "Vidya Public School",
+   "cat": "Teaching",
+   "city": "Bhopal",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 25000,
+   "salTxt": "₹25,000/mo",
+   "exp": 0,
+   "days": 6,
+   "sk": [
+    "B.Ed",
+    "CBSE",
+    "Classroom mgmt"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Spoken English Trainer",
+   "o": "FluentEdge Academy",
+   "cat": "Teaching",
+   "city": "Remote",
+   "type": "Private",
+   "mode": "Remote",
+   "el": "grad",
+   "sal": 20000,
+   "salTxt": "₹20,000/mo",
+   "exp": 0,
+   "days": 10,
+   "sk": [
+    "BA English",
+    "TEFL",
+    "Online teaching"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Assistant Professor – Physics",
+   "o": "St. Xavier's Degree College",
+   "cat": "Teaching",
+   "city": "Kochi",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 45000,
+   "salTxt": "₹45,000/mo",
+   "exp": 1,
+   "days": 4,
+   "sk": [
+    "M.Sc Physics",
+    "NET/SET",
+    "UGC norms"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Guest Lecturer – Chemistry",
+   "o": "Government College",
+   "cat": "Teaching",
+   "city": "Jaipur",
+   "type": "Government",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 35000,
+   "salTxt": "₹35,000/mo",
+   "exp": 0,
+   "days": 5,
+   "sk": [
+    "M.Sc Chemistry",
+    "NET preferred",
+    "Lecture load"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "url": "https://rhe.rajasthan.gov.in"
+  },
+  {
+   "t": "Research Associate",
+   "o": "National Research Institute",
+   "cat": "Teaching",
+   "city": "Bengaluru",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "pg",
+   "sal": 55000,
+   "salTxt": "₹55,000/mo",
+   "exp": 0,
+   "days": 7,
+   "sk": [
+    "PhD / M.Sc",
+    "Lab work",
+    "Publications"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Home Tuition – Class 1 to 5",
+   "o": "Parents near you (direct)",
+   "cat": "Teaching",
+   "city": "Your city",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "12",
+   "sal": 16000,
+   "salTxt": "₹350–500 / hour",
+   "exp": 0,
+   "days": 1,
+   "sk": [
+    "Any stream",
+    "Patience",
+    "Local area"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "SSC GD Constable",
+   "o": "Staff Selection Commission",
+   "cat": "Government",
+   "city": "All India",
+   "type": "Government",
+   "mode": "On-site",
+   "el": "10",
+   "sal": 23500,
+   "salTxt": "₹23,500/mo",
+   "exp": 0,
+   "days": 2,
+   "sk": [
+    "10th pass",
+    "Physical test",
+    "PET/PST"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "url": "https://ssc.gov.in"
+  },
+  {
+   "t": "Railway Group D",
+   "o": "Railway Recruitment Board",
+   "cat": "Government",
+   "city": "All India",
+   "type": "Government",
+   "mode": "On-site",
+   "el": "10",
+   "sal": 22000,
+   "salTxt": "₹22,000/mo",
+   "exp": 0,
+   "days": 4,
+   "sk": [
+    "10th / ITI",
+    "CBT exam",
+    "Medical test"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "url": "https://www.rrbcdg.gov.in"
+  },
+  {
+   "t": "India Post GDS (Gramin Dak Sevak)",
+   "o": "India Post",
+   "cat": "Government",
+   "city": "All India",
+   "type": "Government",
+   "mode": "On-site",
+   "el": "10",
+   "sal": 12000,
+   "salTxt": "₹12,000/mo",
+   "exp": 0,
+   "days": 6,
+   "sk": [
+    "10th pass",
+    "Local language",
+    "Merit based"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "url": "https://www.indiapost.gov.in"
+  },
+  {
+   "t": "IBPS Bank Clerk / PO",
+   "o": "IBPS participating banks",
+   "cat": "Government",
+   "city": "All India",
+   "type": "Government",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 29000,
+   "salTxt": "₹29,000/mo",
+   "exp": 0,
+   "days": 3,
+   "sk": [
+    "Any graduate",
+    "Prelims + Mains",
+    "Computer knowledge"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "url": "https://www.ibps.in"
+  },
+  {
+   "t": "ESIC Nursing Officer",
+   "o": "Employees' State Insurance Corporation",
+   "cat": "Government",
+   "city": "All India",
+   "type": "Government",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 45000,
+   "salTxt": "₹45,000/mo",
+   "exp": 0,
+   "days": 5,
+   "sk": [
+    "GNM / B.Sc Nursing",
+    "Nursing exam",
+    "Govt hospital"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "url": "https://www.esic.gov.in"
+  },
+  {
+   "t": "UPSC Civil Services",
+   "o": "Union Public Service Commission",
+   "cat": "Government",
+   "city": "All India",
+   "type": "Government",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 56000,
+   "salTxt": "₹56,100/mo +",
+   "exp": 0,
+   "days": 8,
+   "sk": [
+    "Any graduate",
+    "Prelims",
+    "Age 21–32"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "url": "https://upsc.gov.in"
+  },
+  {
+   "t": "State Police Constable",
+   "o": "State Police Recruitment Board",
+   "cat": "Government",
+   "city": "Your state",
+   "type": "Government",
+   "mode": "On-site",
+   "el": "12",
+   "sal": 25500,
+   "salTxt": "₹25,500/mo",
+   "exp": 0,
+   "days": 7,
+   "sk": [
+    "12th pass",
+    "Running test",
+    "Written exam"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "url": "https://www.ncs.gov.in"
+  },
+  {
+   "t": "Graphic Designer (Fresher)",
+   "o": "Pixelcraft Studio",
+   "cat": "Creative",
+   "city": "Remote",
+   "type": "Private",
+   "mode": "Remote",
+   "el": "any",
+   "sal": 30000,
+   "salTxt": "₹3.6 LPA",
+   "exp": 0,
+   "days": 3,
+   "sk": [
+    "Photoshop",
+    "Illustrator",
+    "Portfolio"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Video Editor",
+   "o": "CreatorHub Media",
+   "cat": "Creative",
+   "city": "Remote",
+   "type": "Private",
+   "mode": "Remote",
+   "el": "any",
+   "sal": 25000,
+   "salTxt": "₹25,000/mo",
+   "exp": 0,
+   "days": 2,
+   "sk": [
+    "Premiere Pro",
+    "Reels",
+    "Colour grading"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Social Media Manager",
+   "o": "BrandLoom",
+   "cat": "Creative",
+   "city": "Remote",
+   "type": "Private",
+   "mode": "Remote",
+   "el": "any",
+   "sal": 22000,
+   "salTxt": "₹22,000/mo",
+   "exp": 0,
+   "days": 5,
+   "sk": [
+    "Instagram",
+    "Canva",
+    "Copywriting"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Photographer Assistant",
+   "o": "Frame Studio",
+   "cat": "Creative",
+   "city": "Jaipur",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "any",
+   "sal": 15000,
+   "salTxt": "₹15,000/mo",
+   "exp": 0,
+   "days": 9,
+   "sk": [
+    "Camera handling",
+    "Lighting",
+    "Editing"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "UI Designer (Fresher)",
+   "o": "Pixelcraft Studio",
+   "cat": "Creative",
+   "city": "Remote",
+   "type": "Private",
+   "mode": "Remote",
+   "el": "any",
+   "sal": 37000,
+   "salTxt": "₹4.5 LPA",
+   "exp": 0,
+   "days": 6,
+   "sk": [
+    "Figma",
+    "Design systems",
+    "Portfolio"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Tailor / Darji – Shop Assistant",
+   "o": "Local tailoring shop",
+   "cat": "Gig & Local",
+   "city": "Your city",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "any",
+   "sal": 16000,
+   "salTxt": "₹600/day",
+   "exp": 0,
+   "days": 1,
+   "sk": [
+    "Stitching",
+    "Alteration",
+    "Measurements"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Plumber – Home Visits",
+   "o": "UrbanFix Services",
+   "cat": "Gig & Local",
+   "city": "Delhi",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "any",
+   "sal": 18000,
+   "salTxt": "₹500/visit",
+   "exp": 0,
+   "days": 1,
+   "sk": [
+    "Pipe fitting",
+    "Leak repair",
+    "Tools own"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Electrician – Repair & Wiring",
+   "o": "UrbanFix Services",
+   "cat": "Gig & Local",
+   "city": "Mumbai",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "iti",
+   "sal": 22000,
+   "salTxt": "₹700/visit",
+   "exp": 1,
+   "days": 2,
+   "sk": [
+    "House wiring",
+    "Fan / AC point",
+    "Safety"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Carpenter – Furniture Repair",
+   "o": "HomeServe India",
+   "cat": "Gig & Local",
+   "city": "Pune",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "any",
+   "sal": 24000,
+   "salTxt": "₹800/day",
+   "exp": 1,
+   "days": 3,
+   "sk": [
+    "Wood work",
+    "Fittings",
+    "Polish"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "House Painter",
+   "o": "Shree Balaji Contractors",
+   "cat": "Gig & Local",
+   "city": "Nagpur",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "any",
+   "sal": 22000,
+   "salTxt": "₹750/day",
+   "exp": 0,
+   "days": 4,
+   "sk": [
+    "Putty",
+    "Emulsion",
+    "Height work"
+   ],
+   "safe": 0,
+   "ver": 0
+  },
+  {
+   "t": "Delivery Partner (part-time)",
+   "o": "QuickShip",
+   "cat": "Gig & Local",
+   "city": "Bengaluru",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "10",
+   "sal": 18000,
+   "salTxt": "₹18,000/mo",
+   "exp": 0,
+   "days": 1,
+   "sk": [
+    "18+",
+    "Own two-wheeler",
+    "Smartphone"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Construction Helper",
+   "o": "Site contractor",
+   "cat": "Gig & Local",
+   "city": "Your city",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "any",
+   "sal": 17000,
+   "salTxt": "₹650/day",
+   "exp": 0,
+   "days": 2,
+   "sk": [
+    "Lifting",
+    "Masonry support",
+    "Site work"
+   ],
+   "safe": 0,
+   "ver": 0
+  },
+  {
+   "t": "Mochi / Cobbler – Shop Assistant",
+   "o": "Local cobbler shop",
+   "cat": "Gig & Local",
+   "city": "Your city",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "any",
+   "sal": 13000,
+   "salTxt": "₹450/day",
+   "exp": 0,
+   "days": 5,
+   "sk": [
+    "Shoe repair",
+    "Stitching",
+    "Polishing"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "AC / Fridge Repair Technician",
+   "o": "CoolCare Services",
+   "cat": "Gig & Local",
+   "city": "Chennai",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "iti",
+   "sal": 25000,
+   "salTxt": "₹25,000/mo",
+   "exp": 1,
+   "days": 3,
+   "sk": [
+    "Gas charging",
+    "Compressor",
+    "ITI Refrigeration"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Watch Repair Apprentice",
+   "o": "TimeWorks",
+   "cat": "Gig & Local",
+   "city": "Kolkata",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "any",
+   "sal": 12000,
+   "salTxt": "₹12,000/mo",
+   "exp": 0,
+   "days": 6,
+   "sk": [
+    "Hand tools",
+    "Battery change",
+    "Learn on job"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Housekeeping / Cleaning Staff",
+   "o": "CleanNest Facility",
+   "cat": "Gig & Local",
+   "city": "Gurugram",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "any",
+   "sal": 14000,
+   "salTxt": "₹14,000/mo",
+   "exp": 0,
+   "days": 7,
+   "sk": [
+    "Cleaning",
+    "No age limit",
+    "Shift work"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Security Guard",
+   "o": "SecureOne Services",
+   "cat": "Gig & Local",
+   "city": "Noida",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "10",
+   "sal": 16000,
+   "salTxt": "₹16,000/mo",
+   "exp": 0,
+   "days": 8,
+   "sk": [
+    "10th pass",
+    "Night shift",
+    "Age 21–55"
+   ],
+   "safe": 1,
+   "ver": 1
+  },
+  {
+   "t": "Mehndi Artist – Home Service",
+   "o": "Self / direct customers",
+   "cat": "Gig & Local",
+   "city": "Your city",
+   "type": "Gig",
+   "mode": "On-site",
+   "el": "any",
+   "sal": 15000,
+   "salTxt": "₹1,500 / booking",
+   "exp": 0,
+   "days": 2,
+   "sk": [
+    "Designs",
+    "Bridal mehndi",
+    "Own kit"
+   ],
+   "safe": 1,
+   "ver": 0
+  },
+  {
+   "t": "Hospital Administration Intern",
+   "o": "City Care Hospital",
+   "cat": "Management",
+   "city": "Delhi",
+   "type": "Internship",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 12000,
+   "salTxt": "₹12,000 stipend",
+   "exp": 0,
+   "days": 2,
+   "sk": [
+    "MHA / BBA",
+    "Patient flow",
+    "Ops"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "intern": "paid"
+  },
+  {
+   "t": "Lab Intern (DMLT / B.Sc)",
+   "o": "PathCare Labs",
+   "cat": "Paramedical",
+   "city": "Lucknow",
+   "type": "Internship",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 8000,
+   "salTxt": "₹8,000 stipend",
+   "exp": 0,
+   "days": 4,
+   "sk": [
+    "Sample handling",
+    "Reports",
+    "Learning"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "intern": "paid"
+  },
+  {
+   "t": "Cybersecurity Intern",
+   "o": "ShieldNet Labs",
+   "cat": "IT & Data",
+   "city": "Hyderabad",
+   "type": "Internship",
+   "mode": "Hybrid",
+   "el": "grad",
+   "sal": 15000,
+   "salTxt": "₹15,000 stipend",
+   "exp": 0,
+   "days": 1,
+   "sk": [
+    "Networking",
+    "Linux",
+    "SOC basics"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "intern": "paid"
+  },
+  {
+   "t": "Digital Marketing Intern",
+   "o": "GrowthLoop",
+   "cat": "Commerce",
+   "city": "Remote",
+   "type": "Internship",
+   "mode": "Remote",
+   "el": "any",
+   "sal": 10000,
+   "salTxt": "₹10,000 stipend",
+   "exp": 0,
+   "days": 3,
+   "sk": [
+    "Canva",
+    "Instagram",
+    "Basic ads"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "intern": "paid"
+  },
+  {
+   "t": "Video Editing Intern",
+   "o": "CreatorHub Media",
+   "cat": "Creative",
+   "city": "Remote",
+   "type": "Internship",
+   "mode": "Remote",
+   "el": "any",
+   "sal": 8000,
+   "salTxt": "₹8,000 stipend",
+   "exp": 0,
+   "days": 5,
+   "sk": [
+    "Premiere Pro",
+    "Reels",
+    "Quick turnaround"
+   ],
+   "safe": 1,
+   "ver": 0,
+   "intern": "paid"
+  },
+  {
+   "t": "Research Intern (certificate only)",
+   "o": "National Research Institute",
+   "cat": "Teaching",
+   "city": "Remote",
+   "type": "Internship",
+   "mode": "Remote",
+   "el": "pg",
+   "sal": 0,
+   "salTxt": "Unpaid — certificate + LOR",
+   "exp": 0,
+   "days": 6,
+   "sk": [
+    "Literature review",
+    "Data work",
+    "M.Sc / PhD"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "intern": "unpaid"
+  },
+  {
+   "t": "Nursing Clinical Internship",
+   "o": "Medanta Care",
+   "cat": "Nursing",
+   "city": "Gurugram",
+   "type": "Internship",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 9000,
+   "salTxt": "₹9,000 stipend + food",
+   "exp": 0,
+   "days": 7,
+   "sk": [
+    "Clinical posting",
+    "Ward duty",
+    "Certificate"
+   ],
+   "safe": 1,
+   "ver": 1,
+   "intern": "paid"
+  },
+  {
+   "t": "Graphic Design Intern (certificate only)",
+   "o": "Pixelcraft Studio",
+   "cat": "Creative",
+   "city": "Remote",
+   "type": "Internship",
+   "mode": "Remote",
+   "el": "any",
+   "sal": 0,
+   "salTxt": "Unpaid — portfolio + certificate",
+   "exp": 0,
+   "days": 9,
+   "sk": [
+    "Photoshop",
+    "Social posts",
+    "Portfolio building"
+   ],
+   "safe": 1,
+   "ver": 0,
+   "intern": "unpaid"
+  }
+ ],
+ "govt": [
+  {
+   "n": "SSC — Staff Selection Commission",
+   "d": "GD Constable, CHSL, CGL, MTS, JE. 10th, 12th and graduate level central government exams.",
+   "u": "https://ssc.gov.in",
+   "tag": "10th / 12th / Graduate"
+  },
+  {
+   "n": "UPSC — Civil Services & more",
+   "d": "IAS, IPS, IFS, NDA, CDS, Engineering Services, Medical Services.",
+   "u": "https://upsc.gov.in",
+   "tag": "Graduate +"
+  },
+  {
+   "n": "Railway Recruitment Board",
+   "d": "Group D, NTPC, ALP, Technician. Largest recruiter for 10th and ITI holders.",
+   "u": "https://www.rrbcdg.gov.in",
+   "tag": "10th / ITI"
+  },
+  {
+   "n": "IBPS — Bank exams",
+   "d": "Clerk, Probationary Officer, SO and RRB posts across public sector banks.",
+   "u": "https://www.ibps.in",
+   "tag": "Graduate"
+  },
+  {
+   "n": "ESIC — Employees' State Insurance",
+   "d": "Nursing Officer, Paramedical and UDC posts in ESIC hospitals.",
+   "u": "https://www.esic.gov.in",
+   "tag": "Nursing / Paramedical"
+  },
+  {
+   "n": "AIIMS Exams",
+   "d": "Nursing Officer, Senior Resident, Junior Resident, paramedical group B & C.",
+   "u": "https://www.aiimsexams.ac.in",
+   "tag": "Medical / Nursing"
+  },
+  {
+   "n": "India Post",
+   "d": "Gramin Dak Sevak (GDS), Postal Assistant, MTS. 10th pass can apply for GDS.",
+   "u": "https://www.indiapost.gov.in",
+   "tag": "10th pass"
+  },
+  {
+   "n": "National Career Service (NCS)",
+   "d": "Government job exchange — central, state and private listings in one place, with free registration.",
+   "u": "https://www.ncs.gov.in",
+   "tag": "All levels"
+  },
+  {
+   "n": "Skill India Digital Hub",
+   "d": "Free short courses and PMKVY skill training with government certification.",
+   "u": "https://www.skillindiadigital.gov.in",
+   "tag": "Skill courses"
+  },
+  {
+   "n": "Join Indian Army",
+   "d": "Agniveer, TES, SSC Tech, soldier tradesman. 10th, 12th and graduate entries.",
+   "u": "https://joinindianarmy.nic.in",
+   "tag": "10th / 12th / Graduate"
+  },
+  {
+   "n": "Indian Navy",
+   "d": "Agniveer SSR/MR, cadet entries, 10+2 B.Tech entry.",
+   "u": "https://www.joinindiannavy.gov.in",
+   "tag": "12th / Graduate"
+  },
+  {
+   "n": "AFCAT — Indian Air Force",
+   "d": "Flying branch and ground duty officer entries for graduates.",
+   "u": "https://afcat.cdac.in",
+   "tag": "Graduate"
+  }
+ ],
+ "workers": [
+  {
+   "n": "Ramesh Darji",
+   "tr": "Tailor / Darji",
+   "area": "Kothrud, Pune",
+   "exp": 22,
+   "rate": "₹350 per piece",
+   "pd": 1,
+   "cat": [
+    "Blouse stitching",
+    "School uniform",
+    "Alteration"
+   ],
+   "r": 4.8,
+   "jobs": 640,
+   "ph": "98••• ••210"
+  },
+  {
+   "n": "Salim Shaikh",
+   "tr": "Plumber",
+   "area": "Andheri, Mumbai",
+   "exp": 14,
+   "rate": "₹450 per visit",
+   "pd": 0,
+   "cat": [
+    "Leak repair",
+    "Bathroom fitting",
+    "Water tank"
+   ],
+   "r": 4.6,
+   "jobs": 1120,
+   "ph": "99••• ••438"
+  },
+  {
+   "n": "Suresh Yadav",
+   "tr": "Electrician",
+   "area": "Indirapuram, Ghaziabad",
+   "exp": 9,
+   "rate": "₹500 per visit",
+   "pd": 0,
+   "cat": [
+    "House wiring",
+    "Inverter setup",
+    "Fan / light"
+   ],
+   "r": 4.7,
+   "jobs": 830,
+   "ph": "88••• ••907"
+  },
+  {
+   "n": "Kamla Devi",
+   "tr": "Beautician (home service)",
+   "area": "Jaipur West",
+   "exp": 7,
+   "rate": "₹800 per booking",
+   "pd": 1,
+   "cat": [
+    "Bridal makeup",
+    "Threading",
+    "Mehndi"
+   ],
+   "r": 4.9,
+   "jobs": 410,
+   "ph": "70••• ••316"
+  },
+  {
+   "n": "Ashok Vishwakarma",
+   "tr": "Carpenter",
+   "area": "Bhopal",
+   "exp": 18,
+   "rate": "₹800 per day",
+   "pd": 0,
+   "cat": [
+    "Modular kitchen",
+    "Door repair",
+    "Polish"
+   ],
+   "r": 4.5,
+   "jobs": 290,
+   "ph": "93••• ••772"
+  },
+  {
+   "n": "Irfan Mochi",
+   "tr": "Mochi / Cobbler",
+   "area": "Old City, Hyderabad",
+   "exp": 25,
+   "rate": "₹120 per pair",
+   "pd": 1,
+   "cat": [
+    "Sole change",
+    "Zip repair",
+    "Shoe polish"
+   ],
+   "r": 4.4,
+   "jobs": 1560,
+   "ph": "96••• ••105"
+  },
+  {
+   "n": "Deepak Nair",
+   "tr": "AC & Fridge Technician",
+   "area": "Kochi",
+   "exp": 11,
+   "rate": "₹600 per service",
+   "pd": 0,
+   "cat": [
+    "Gas charging",
+    "Compressor change",
+    "Annual service"
+   ],
+   "r": 4.8,
+   "jobs": 980,
+   "ph": "90••• ••663"
+  },
+  {
+   "n": "Mohan Lal",
+   "tr": "Watch Repair",
+   "area": "Chandni Chowk, Delhi",
+   "exp": 30,
+   "rate": "₹200 onwards",
+   "pd": 1,
+   "cat": [
+    "Movement repair",
+    "Battery",
+    "Strap fitting"
+   ],
+   "r": 4.7,
+   "jobs": 2100,
+   "ph": "98••• ••874"
+  },
+  {
+   "n": "Pooja Sahu",
+   "tr": "Home Tutor (Class 1–5)",
+   "area": "Bilaspur",
+   "exp": 4,
+   "rate": "₹400 per hour",
+   "pd": 0,
+   "cat": [
+    "All subjects",
+    "CBSE / State board",
+    "Evening slots"
+   ],
+   "r": 4.9,
+   "jobs": 70,
+   "ph": "78••• ••221"
+  },
+  {
+   "n": "Bharat Solanki",
+   "tr": "Painter",
+   "area": "Ahmedabad",
+   "exp": 15,
+   "rate": "₹750 per day",
+   "pd": 0,
+   "cat": [
+    "Putty work",
+    "Emulsion",
+    "Texture finish"
+   ],
+   "r": 4.3,
+   "jobs": 340,
+   "ph": "97••• ••558"
+  }
+ ],
+ "courses": [
+  {
+   "n": "SWAYAM",
+   "d": "Free courses from IITs, NITs and central universities — school, UG, PG and skill levels.",
+   "free": "Learning free. Optional proctored exam is paid if you want credit.",
+   "u": "https://swayam.gov.in",
+   "tag": "All levels"
+  },
+  {
+   "n": "NPTEL",
+   "d": "Engineering, science and management courses by IIT/IISc faculty. Widely respected in interviews.",
+   "free": "Lectures and assignments free. Certificate exam costs about ₹1,000.",
+   "u": "https://nptel.ac.in",
+   "tag": "Engineering / Science"
+  },
+  {
+   "n": "freeCodeCamp",
+   "d": "Web development, Python, data analysis, machine learning. Entirely free, with free certifications.",
+   "free": "Completely free, including certificates.",
+   "u": "https://www.freecodecamp.org",
+   "tag": "IT / Coding"
+  },
+  {
+   "n": "Kaggle Learn",
+   "d": "Short practical courses in Python, Pandas, SQL and machine learning with real datasets.",
+   "free": "Completely free. No certificate, but notebooks become your portfolio.",
+   "u": "https://www.kaggle.com/learn",
+   "tag": "Data / Analytics"
+  },
+  {
+   "n": "Microsoft Learn",
+   "d": "Azure, Power BI, Excel and security learning paths with free modules.",
+   "free": "Learning free. Some certification exams are paid.",
+   "u": "https://learn.microsoft.com/training",
+   "tag": "IT / Office skills"
+  },
+  {
+   "n": "Google Skillshop",
+   "d": "Official Google Ads, Analytics and digital marketing courses with free completion certificates.",
+   "free": "Free courses and free certificates.",
+   "u": "https://skillshop.withgoogle.com",
+   "tag": "Marketing"
+  },
+  {
+   "n": "Cisco Networking Academy",
+   "d": "Networking basics, cybersecurity essentials and Python — a solid base for SOC analyst roles.",
+   "free": "Many self-paced courses are free; advanced certifications are paid.",
+   "u": "https://www.netacad.com",
+   "tag": "Cyber / Networking"
+  },
+  {
+   "n": "CS50 by Harvard (edX)",
+   "d": "The famous introduction to computer science. Audit it free; problem sets are the real value.",
+   "free": "Free to audit. Paid only if you want the verified certificate.",
+   "u": "https://cs50.harvard.edu/x/",
+   "tag": "Computer Science"
+  },
+  {
+   "n": "Skill India Digital Hub",
+   "d": "Government platform for PMKVY and NSDC skill courses, including healthcare, electrical and tailoring.",
+   "free": "Free government skill training and assessment in many schemes.",
+   "u": "https://www.skillindiadigital.gov.in",
+   "tag": "Vocational"
+  },
+  {
+   "n": "DIKSHA",
+   "d": "Teacher training and school curriculum resources, useful for B.Ed students and tuition teachers.",
+   "free": "Free, government-run.",
+   "u": "https://diksha.gov.in",
+   "tag": "Teaching"
+  },
+  {
+   "n": "OpenLearn (Open University)",
+   "d": "Free short courses across health, business, education and technology with free statements of participation.",
+   "free": "Free learning; some certificates cost a small fee.",
+   "u": "https://www.open.edu/openlearn/",
+   "tag": "All levels"
+  },
+  {
+   "n": "Alison",
+   "d": "Free diploma and certificate courses in healthcare, IT, trades and office skills.",
+   "free": "Free to learn and free certificates in many courses; printed certificates cost money.",
+   "u": "https://alison.com",
+   "tag": "Vocational / Health"
+  }
+ ],
+ "reviews": [
+  {
+   "org": "Medanta Care, Gurugram",
+   "role": "Staff Nurse",
+   "r": 4.5,
+   "yrs": "2022–2024",
+   "good": "Salary always on time on the 1st. Sister-in-charge supported me during night shifts and never forced overtime.",
+   "bad": "Ward is understaffed in monsoon season. Leave approval takes two weeks.",
+   "safe": 1
+  },
+  {
+   "org": "Nova Superspeciality, Ahmedabad",
+   "role": "OT Technician",
+   "r": 3,
+   "yrs": "2023",
+   "good": "Good exposure to surgeries if you are a fresher — you learn fast.",
+   "bad": "Unpaid overtime is normal. Two people left within six months.",
+   "safe": 0
+  },
+  {
+   "org": "GrowthLoop, Delhi",
+   "role": "Business Development Executive",
+   "r": 2,
+   "yrs": "2024",
+   "good": "Incentives are real if you hit targets.",
+   "bad": "Targets change mid-month. Women in the team reported uncomfortable late-evening client calls; complaints went nowhere.",
+   "safe": 0
+  },
+  {
+   "org": "PathCare Labs, Lucknow",
+   "role": "Lab Technician",
+   "r": 4,
+   "yrs": "2021–2023",
+   "good": "Clean lab, proper gloves and safety gear, and the senior tech taught me sample handling properly.",
+   "bad": "Peak hours are exhausting, 12-hour days during health camps.",
+   "safe": 1
+  },
+  {
+   "org": "Pixelcraft Studio (remote)",
+   "role": "Graphic Designer",
+   "r": 4.5,
+   "yrs": "2024–now",
+   "good": "Fully remote, clear briefs, paid on the 5th every month. No calls after 7pm.",
+   "bad": "Design feedback can be vague, so ask questions early.",
+   "safe": 1
+  },
+  {
+   "org": "Local tailoring unit, Pune",
+   "role": "Darji (piece-rate)",
+   "r": 3.5,
+   "yrs": "2023–now",
+   "good": "Pickup and drop of cloth is provided, so no travel cost. Payment per piece is clear.",
+   "bad": "During wedding season, 12-hour days. No ESI or PF for piece-rate workers.",
+   "safe": 1
+  }
+ ]
+}
