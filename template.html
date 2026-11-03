@@ -121,6 +121,8 @@
   .step b{font-size:13.5px}
   .step p{margin:4px 0 0;font-size:12.5px;color:var(--body)}
   .f-live{background:#0b1220;color:#7dd3fc}
+  .f-sample{background:#fef3c7;color:#92400e}
+  .f-govt{background:#eef2ff;color:#3730a3}
 
   /* ---------- layout ---------- */
   main{padding:22px 0 70px;min-height:60vh}
@@ -264,6 +266,7 @@
     <!-- ============ JOBS ============ -->
     <section id="v-jobs">
       <div class="note hide" id="urgentNote"></div>
+      <div class="warn" id="sampleNote"></div>
       <div class="stats" id="stats"></div>
       <div class="liveband" id="liveband"></div>
 
@@ -308,11 +311,13 @@
             </select>
           </div>
           <div class="fg">
-            <h3>Safety & trust</h3>
-            <label><input type="checkbox" id="safeOnly"> Safe-workplace badge only</label>
-            <label><input type="checkbox" id="verOnly"> Verified employer only</label>
+            <h3>Trust</h3>
             <label><input type="checkbox" id="fresherOnly"> Fresher friendly only</label>
             <label><input type="checkbox" id="noFee"> Zero application fee</label>
+            <label><input type="checkbox" id="hideSample"> Hide sample listings</label>
+            <p style="font-size:11.5px;color:var(--muted);margin:9px 0 0;line-height:1.45">
+              “Safe workplace” and “Verified employer” badges are switched off until we have
+              actually checked an employer. We will not show a tick we cannot stand behind.</p>
           </div>
           <button class="clear" id="clear">Clear all filters</button>
         </aside>
@@ -523,7 +528,7 @@ const TABS = [
   ["v-courses","Free courses"],["v-reviews","Reviews & safety"],
   ["v-safety","Safety & report"],["v-post","Post a job"]
 ];
-const state = {q:"",cat:"All",city:"",edu:"",pay:"",types:[],modes:[],safe:false,ver:false,fresh:false,nofee:true,sort:"new",trade:"All",urgent:false};
+const state = {q:"",cat:"All",city:"",edu:"",pay:"",types:[],modes:[],safe:false,ver:false,fresh:false,hideSample:false,nofee:true,sort:"new",trade:"All",urgent:false};
 let SAVED = new Set(JSON.parse(localStorage.getItem("jobvibe_saved") || "[]"));
 
 /* ============================================================
@@ -645,15 +650,14 @@ $("#urgentBtn").addEventListener("click", ()=>{
 });
 $$(".ftype").forEach(c=>c.addEventListener("change",()=>{ state.types = $$(".ftype:checked").map(x=>x.value); renderJobs(); }));
 $$(".fmode").forEach(c=>c.addEventListener("change",()=>{ state.modes = $$(".fmode:checked").map(x=>x.value); renderJobs(); }));
-$("#safeOnly").addEventListener("change", e=>{ state.safe = e.target.checked; renderJobs(); });
-$("#verOnly").addEventListener("change", e=>{ state.ver = e.target.checked; renderJobs(); });
+$("#hideSample").addEventListener("change", e=>{ state.hideSample = e.target.checked; renderJobs(); });
 $("#fresherOnly").addEventListener("change", e=>{ state.fresh = e.target.checked; renderJobs(); });
 $("#noFee").addEventListener("change", e=>{ state.nofee = e.target.checked; renderJobs(); });
 $("#clear").addEventListener("click", ()=>{
   Object.assign(state,{q:"",cat:"All",city:"",edu:"",pay:"",types:[],modes:[],safe:false,ver:false,fresh:false,nofee:true,sort:"new"});
   $("#q").value=""; $("#city").value=""; $("#edu").value=""; $("#pay").value=""; $("#sort").value="new";
   $$(".ftype,.fmode").forEach(c=>c.checked=false);
-  $("#safeOnly").checked=false; $("#verOnly").checked=false; $("#fresherOnly").checked=false; $("#noFee").checked=true;
+  $("#hideSample").checked=false; $("#fresherOnly").checked=false; $("#noFee").checked=true;
   syncChips(); $("#field").value = "All";
   renderJobs();
 });
@@ -669,8 +673,7 @@ function matches(j){
   if(state.pay && j.sal < +state.pay) return false;
   if(state.types.length && !state.types.includes(j.type)) return false;
   if(state.modes.length && !state.modes.includes(j.mode)) return false;
-  if(state.safe && !j.safe) return false;
-  if(state.ver && !j.ver) return false;
+  if(state.hideSample && j.sample) return false;
   if(state.fresh && j.exp > 0) return false;
   if(state.q && !smartMatch(state.q, j)) return false;
   return true;
@@ -802,12 +805,15 @@ function card(j){
     </div>
     <div class="skills">${j.sk.map(s=>`<span class="sk">${esc(s)}</span>`).join("")}</div>
     <div class="flags">
-      ${j.safe?'<span class="flag f-safe">Safe workplace</span>':'<span class="flag" style="background:#f1f5f9;color:#64748b">Not yet reviewed</span>'}
-      ${j.ver?'<span class="flag f-ver">Verified employer</span>':''}
+      ${j.sample?'<span class="flag f-sample">Sample — demo listing</span>':''}
       ${j.live?'<span class="flag f-live">● Live · apply direct</span>':''}
+      ${j.govt?'<span class="flag f-govt">Official notice</span>':''}
       ${j.days<=2?'<span class="flag f-new">New</span>':''}
       ${j.intern==="unpaid"?'<span class="flag" style="background:#fff7ed;color:#c2410c">Unpaid + certificate</span>':''}
     </div>
+    ${(j.source || j.vacancies) ? `<div class="similar"><b>Source:</b> ${esc(j.source || "official portal")}` +
+        `${j.vacancies ? " · " + j.vacancies + " posts" : ""}` +
+        `${j.last_date ? " · last date " + esc(j.last_date) : " · check the notice for the last date"}</div>` : ""}
     ${(() => {
         const sim = (SAME[j.cat] || []).filter(x => x !== j.t).slice(0, 2);
         return sim.length ? `<div class="similar"><b>Similar roles:</b> ${sim.map(esc).join(" · ")}</div>` : "";
@@ -1149,6 +1155,15 @@ $("#careerCards").innerHTML = CAREERS.map(([n,d,u,tag])=>`
     <p>${esc(d)}</p>
     <a class="link" href="${u}" target="_blank" rel="noopener">Official careers page →</a>
   </div>`).join("");
+
+const sampleCount = JOBS.filter(j => j.sample).length;
+const realCount = JOBS.length - sampleCount;
+$("#sampleNote").innerHTML = sampleCount
+  ? `<b>${sampleCount} of these ${JOBS.length} listings are samples</b> for demonstration — not live vacancies.
+     ${realCount} are real: ${LIVE.length} pulled from employer job boards today, and
+     ${JOBS.filter(j => j.govt).length} taken from official government notices with the PDF link.
+     Tick <b>Hide sample listings</b> on the left to see only the real ones.`
+  : "";
 
 /* first paint */
 renderJobs();
