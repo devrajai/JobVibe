@@ -1082,7 +1082,7 @@ function card(j){
     <div class="meta">
       <span>🎓 ${esc(j.cat)}</span>
       <span>🕒 ${j.exp===0?"Fresher OK":j.exp+"+ yr"}</span>
-      <span>📍 ${esc(j.mode)}${stateOf(j) !== "All India / Remote" ? " · " + esc(stateOf(j)) : ""}</span>
+      <span>📍 ${esc(j.mode)}${j.area ? " · " + esc(j.area) : ""}${stateOf(j) !== "All India / Remote" ? " · " + esc(stateOf(j)) : ""}</span>
     </div>
     <div class="skills">${j.sk.map(s=>`<span class="sk">${esc(s)}</span>`).join("")}</div>
     <div class="flags">
@@ -1091,6 +1091,7 @@ function card(j){
       ${j.days<=2?'<span class="flag f-new">New</span>':''}
       ${j.intern==="unpaid"?'<span class="flag" style="background:#fff7ed;color:#c2410c">Unpaid + certificate</span>':''}
     </div>
+    ${j.contact ? `<div class="similar" style="color:#0f766e"><b>Apply:</b> ${esc(j.contact)}</div>` : ""}
     ${(j.source || j.vacancies) ? `<div class="similar"><b>Source:</b> ${esc(j.source || "official portal")}` +
         `${j.vacancies ? " · " + j.vacancies + " posts" : ""}` +
         `${j.last_date ? " · last date " + esc(j.last_date) : " · check the notice for the last date"}</div>` : ""}
