@@ -1,5 +1,127 @@
 {
- "jobs": [],
+ "jobs": [
+  {
+   "t": "QA / QC / Production – open CV channel (B.Pharm, M.Pharm, M.Sc)",
+   "o": "Alembic Pharmaceuticals",
+   "cat": "Pharmacy",
+   "city": "Vadodara",
+   "area": "Alembic Road / Panelav / Karakhadi",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "grad",
+   "sal": 0,
+   "salTxt": "Not disclosed — as per company scale",
+   "exp": 0,
+   "days": 3,
+   "sk": [
+    "QA",
+    "QC",
+    "Injectable production",
+    "cGMP"
+   ],
+   "url": "https://alembicpharmaceuticals.com/careers",
+   "source": "Alembic official careers page, checked 4 Nov 2026",
+   "contact": "careers@alembic.co.in · quality@alembic.co.in (QA/QC) · trainee@alembic.co.in (freshers)",
+   "safe": 0,
+   "ver": 0
+  },
+  {
+   "t": "Pharmacist / Senior Pharmacist (PCI licence required)",
+   "o": "Apollo Pharmacy",
+   "cat": "Pharmacy",
+   "city": "Vadodara",
+   "area": "City-wide outlets",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 0,
+   "salTxt": "Not disclosed — company rolls",
+   "exp": 2,
+   "days": 4,
+   "sk": [
+    "PCI licence",
+    "Prescription filling",
+    "Cold chain"
+   ],
+   "url": "https://apna.co/job/vadodara/pharmacist-sr-pharmacist-1582671274",
+   "source": "apna listing, checked 4 Nov 2026",
+   "contact": "Apply via careers.apollopharmacy.app · trainees without licence apply there too",
+   "safe": 0,
+   "ver": 0
+  },
+  {
+   "t": "Registered Pharmacist – Vadodara, Bharuch, Ankleshwar, Nadiad",
+   "o": "DawaaDost Pharma",
+   "cat": "Pharmacy",
+   "city": "Vadodara",
+   "area": "Ajwa Road (4 Gujarat locations)",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 21500,
+   "salTxt": "₹18,000 – 25,000/mo + PF",
+   "exp": 1,
+   "days": 5,
+   "sk": [
+    "GSPC registration required",
+    "Dispensing",
+    "Inventory audit"
+   ],
+   "url": "https://www.simplyhired.co.in/job/6NRv2zplb3-oBz0dF-0NB6KyrvXRqp8deyjHMvy1kLsH60-0ZcLyJA",
+   "source": "SimplyHired listing, checked 4 Nov 2026",
+   "contact": "Mrinal Sarkar · mrinal.sarkar@dawaadost.com · WhatsApp +91 82401 35744",
+   "safe": 0,
+   "ver": 0
+  },
+  {
+   "t": "Pharmacist – fresher welcome (D.Pharm / B.Pharm / M.Pharm)",
+   "o": "Bliss IVF Hospital",
+   "cat": "Pharmacy",
+   "city": "Vadodara",
+   "area": "Vadiwadi, Race Course Road",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 16500,
+   "salTxt": "₹13,000 – 20,000/mo",
+   "exp": 0,
+   "days": 6,
+   "sk": [
+    "Dispensing",
+    "Stock records",
+    "Freshers welcome"
+   ],
+   "url": "https://www.simplyhired.co.in/job/phisRKa5qEGUJ0AEECh2DLWd1OwMkgHfkJrkpb_LqJ7fS900UbN0UA",
+   "source": "SimplyHired listing, checked 4 Nov 2026",
+   "contact": "HR 90540 65084 (call / WhatsApp) · 10:00 AM – 7:30 PM shift",
+   "safe": 0,
+   "ver": 0
+  },
+  {
+   "t": "OPD Pharmacist (D.Pharm / B.Pharm, 0–5 years)",
+   "o": "Sterling Hospital",
+   "cat": "Pharmacy",
+   "city": "Vadodara",
+   "area": "Race Course Road",
+   "type": "Private",
+   "mode": "On-site",
+   "el": "dip",
+   "sal": 18000,
+   "salTxt": "Up to ₹18,000/mo",
+   "exp": 0,
+   "days": 9,
+   "sk": [
+    "OPD dispensing",
+    "Pharmacy software",
+    "Rotational shift"
+   ],
+   "url": "https://jobs.docthub.com/opd-pharmacist-jobs-in-sterling-hospital-vadodara-gujarat-J107281",
+   "source": "Docthub listing, checked 4 Nov 2026",
+   "contact": "yogesh.srivastav@sterlinghospitals.com · 83197 54909",
+   "safe": 0,
+   "ver": 0
+  }
+ ],
  "govt": [
   {
    "n": "SSC — Staff Selection Commission",
